@@ -8,21 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1440243F11FDE545000F936D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243011FDE545000F936D /* Default.png */; };
-		1440244011FDE545000F936D /* Icon_20.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243111FDE545000F936D /* Icon_20.png */; };
-		1440244111FDE545000F936D /* Icon_29.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243211FDE545000F936D /* Icon_29.png */; };
-		1440244211FDE545000F936D /* Icon_30.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243311FDE545000F936D /* Icon_30.png */; };
-		1440244311FDE545000F936D /* Icon_40.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243411FDE545000F936D /* Icon_40.png */; };
-		1440244411FDE545000F936D /* Icon_50.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243511FDE545000F936D /* Icon_50.png */; };
-		1440244511FDE545000F936D /* Icon_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243611FDE545000F936D /* Icon_57.png */; };
-		1440244611FDE545000F936D /* Icon_58.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243711FDE545000F936D /* Icon_58.png */; };
-		1440244711FDE545000F936D /* Icon_60.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243811FDE545000F936D /* Icon_60.png */; };
-		1440244811FDE545000F936D /* Icon_72.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243911FDE545000F936D /* Icon_72.png */; };
-		1440244911FDE545000F936D /* Icon_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243A11FDE545000F936D /* Icon_114.png */; };
 		1440244A11FDE545000F936D /* Icon_128.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243B11FDE545000F936D /* Icon_128.png */; };
 		1440244B11FDE545000F936D /* Icon_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243C11FDE545000F936D /* Icon_256.png */; };
-		1440244C11FDE545000F936D /* Icon_512.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243D11FDE545000F936D /* Icon_512.png */; };
 		146B767211FDF9450073C279 /* libisimulate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146B767111FDF9450073C279 /* libisimulate.a */; };
 		14DCC6C211FDE35500A98045 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DCC6C111FDE35500A98045 /* CoreLocation.framework */; };
+		14EBCDAA11FE195700F36458 /* LauncherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EBCDA911FE195700F36458 /* LauncherViewController.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -193,21 +183,12 @@
 
 /* Begin PBXFileReference section */
 		1440243011FDE545000F936D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		1440243111FDE545000F936D /* Icon_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_20.png; sourceTree = "<group>"; };
-		1440243211FDE545000F936D /* Icon_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_29.png; sourceTree = "<group>"; };
-		1440243311FDE545000F936D /* Icon_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_30.png; sourceTree = "<group>"; };
-		1440243411FDE545000F936D /* Icon_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_40.png; sourceTree = "<group>"; };
-		1440243511FDE545000F936D /* Icon_50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_50.png; sourceTree = "<group>"; };
-		1440243611FDE545000F936D /* Icon_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_57.png; sourceTree = "<group>"; };
-		1440243711FDE545000F936D /* Icon_58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_58.png; sourceTree = "<group>"; };
-		1440243811FDE545000F936D /* Icon_60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_60.png; sourceTree = "<group>"; };
-		1440243911FDE545000F936D /* Icon_72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_72.png; sourceTree = "<group>"; };
-		1440243A11FDE545000F936D /* Icon_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_114.png; sourceTree = "<group>"; };
 		1440243B11FDE545000F936D /* Icon_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_128.png; sourceTree = "<group>"; };
 		1440243C11FDE545000F936D /* Icon_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_256.png; sourceTree = "<group>"; };
-		1440243D11FDE545000F936D /* Icon_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_512.png; sourceTree = "<group>"; };
 		146B767111FDF9450073C279 /* libisimulate.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libisimulate.a; sourceTree = "<group>"; };
 		14DCC6C111FDE35500A98045 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
+		14EBCDA811FE195700F36458 /* LauncherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LauncherViewController.h; sourceTree = "<group>"; };
+		14EBCDA911FE195700F36458 /* LauncherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LauncherViewController.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* landscapes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = landscapes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -260,6 +241,8 @@
 			children = (
 				EB383C0410BBF8A40000B2D2 /* AppDelegate.h */,
 				EB383C0510BBF8A40000B2D2 /* AppDelegate.m */,
+				14EBCDA811FE195700F36458 /* LauncherViewController.h */,
+				14EBCDA911FE195700F36458 /* LauncherViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -268,19 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				1440243011FDE545000F936D /* Default.png */,
-				1440243111FDE545000F936D /* Icon_20.png */,
-				1440243211FDE545000F936D /* Icon_29.png */,
-				1440243311FDE545000F936D /* Icon_30.png */,
-				1440243411FDE545000F936D /* Icon_40.png */,
-				1440243511FDE545000F936D /* Icon_50.png */,
-				1440243611FDE545000F936D /* Icon_57.png */,
-				1440243711FDE545000F936D /* Icon_58.png */,
-				1440243811FDE545000F936D /* Icon_60.png */,
-				1440243911FDE545000F936D /* Icon_72.png */,
-				1440243A11FDE545000F936D /* Icon_114.png */,
 				1440243B11FDE545000F936D /* Icon_128.png */,
 				1440243C11FDE545000F936D /* Icon_256.png */,
-				1440243D11FDE545000F936D /* Icon_512.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -467,7 +439,6 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "landscapes" */;
 			compatibilityVersion = "Xcode 3.1";
-			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -622,19 +593,8 @@
 			files = (
 				EB383D1110BBFC630000B2D2 /* Three20.bundle in Resources */,
 				1440243F11FDE545000F936D /* Default.png in Resources */,
-				1440244011FDE545000F936D /* Icon_20.png in Resources */,
-				1440244111FDE545000F936D /* Icon_29.png in Resources */,
-				1440244211FDE545000F936D /* Icon_30.png in Resources */,
-				1440244311FDE545000F936D /* Icon_40.png in Resources */,
-				1440244411FDE545000F936D /* Icon_50.png in Resources */,
-				1440244511FDE545000F936D /* Icon_57.png in Resources */,
-				1440244611FDE545000F936D /* Icon_58.png in Resources */,
-				1440244711FDE545000F936D /* Icon_60.png in Resources */,
-				1440244811FDE545000F936D /* Icon_72.png in Resources */,
-				1440244911FDE545000F936D /* Icon_114.png in Resources */,
 				1440244A11FDE545000F936D /* Icon_128.png in Resources */,
 				1440244B11FDE545000F936D /* Icon_256.png in Resources */,
-				1440244C11FDE545000F936D /* Icon_512.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +608,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				28C3AD8A0F43EF2300507BA6 /* landscapes.xcdatamodel in Sources */,
 				EB383C0610BBF8A40000B2D2 /* AppDelegate.m in Sources */,
+				14EBCDAA11FE195700F36458 /* LauncherViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,7 +710,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphonesimulator4.0;
 			};
 			name = Debug;
 		};
@@ -763,7 +724,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphonesimulator4.0;
 			};
 			name = Release;
 		};
