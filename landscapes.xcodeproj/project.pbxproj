@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09AED7C611FE47810040A385 /* AssessmentsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09AED7C511FE47810040A385 /* AssessmentsView.xib */; };
+		09AED7E011FE4A820040A385 /* AssessmentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AED7DE11FE4A820040A385 /* AssessmentTableViewController.m */; };
+		09AED7E111FE4A820040A385 /* AssessmentTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09AED7DF11FE4A820040A385 /* AssessmentTableView.xib */; };
 		1440243F11FDE545000F936D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243011FDE545000F936D /* Default.png */; };
 		1440244A11FDE545000F936D /* Icon_128.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243B11FDE545000F936D /* Icon_128.png */; };
 		1440244B11FDE545000F936D /* Icon_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243C11FDE545000F936D /* Icon_256.png */; };
@@ -183,7 +184,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09AED7C511FE47810040A385 /* AssessmentsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssessmentsView.xib; sourceTree = "<group>"; };
+		09AED7DD11FE4A820040A385 /* AssessmentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssessmentTableViewController.h; sourceTree = "<group>"; };
+		09AED7DE11FE4A820040A385 /* AssessmentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssessmentTableViewController.m; sourceTree = "<group>"; };
+		09AED7DF11FE4A820040A385 /* AssessmentTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssessmentTableView.xib; sourceTree = "<group>"; };
 		1440243011FDE545000F936D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1440243B11FDE545000F936D /* Icon_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_128.png; sourceTree = "<group>"; };
 		1440243C11FDE545000F936D /* Icon_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_256.png; sourceTree = "<group>"; };
@@ -270,7 +273,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				09AED7C511FE47810040A385 /* AssessmentsView.xib */,
 				1440242C11FDE524000F936D /* images */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -278,6 +280,9 @@
 				6EF963BC118E96B7003902E7 /* Dependencies */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				09AED7DD11FE4A820040A385 /* AssessmentTableViewController.h */,
+				09AED7DE11FE4A820040A385 /* AssessmentTableViewController.m */,
+				09AED7DF11FE4A820040A385 /* AssessmentTableView.xib */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -599,7 +604,7 @@
 				1440243F11FDE545000F936D /* Default.png in Resources */,
 				1440244A11FDE545000F936D /* Icon_128.png in Resources */,
 				1440244B11FDE545000F936D /* Icon_256.png in Resources */,
-				09AED7C611FE47810040A385 /* AssessmentsView.xib in Resources */,
+				09AED7E111FE4A820040A385 /* AssessmentTableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,6 +619,7 @@
 				28C3AD8A0F43EF2300507BA6 /* landscapes.xcdatamodel in Sources */,
 				EB383C0610BBF8A40000B2D2 /* AppDelegate.m in Sources */,
 				14EBCDAA11FE195700F36458 /* LauncherViewController.m in Sources */,
+				09AED7E011FE4A820040A385 /* AssessmentTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
