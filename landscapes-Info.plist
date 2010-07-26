@@ -11,7 +11,7 @@
 	<key>CFBundleIconFile</key>
 	<string>Icon_128.png</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>D7YL8U345P.com.allthumbsware.ncpttlandscapes </string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -24,7 +24,5 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSMainNibFile</key>
-	<string>MainWindow</string>
 </dict>
 </plist>
