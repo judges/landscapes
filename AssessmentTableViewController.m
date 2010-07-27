@@ -32,7 +32,7 @@
     [addButtonItem release];	
 	
 	// Set the table view's row height
-    self.tableView.rowHeight = 50.0;
+    self.tableView.rowHeight = 52.0;
 	
 	
     
@@ -100,13 +100,14 @@
     [super viewDidDisappear:animated];
 }
 */
-/*
+
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    //return (interfaceOrientation == UIInterfaceOrientationPortrait);
+	return YES;
 }
-*/
+
 
 
 #pragma mark -
