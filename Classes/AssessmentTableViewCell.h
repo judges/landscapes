@@ -7,14 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Assessment.h"
 
 @interface AssessmentTableViewCell : UITableViewCell {
+    Assessment *assessment;
+    
     UILabel *landscapeName;
     UILabel *typeName;
 }
 
-@property (nonatomic, retain) *landscapeName;
-@property (nonatomic, retain) *typeName;
+@property (nonatomic, retain) Assessment *assessment;
+@property (nonatomic, retain) UILabel *landscapeName;
+@property (nonatomic, retain) UILabel *typeName;
 
 @end

@@ -15,6 +15,7 @@
 
 @implementation AssessmentTableViewCell
 
+@synthesize assessment;
 @synthesize landscapeName;
 @synthesize typeName;
 
@@ -50,6 +51,7 @@
 }
 
 - (void)dealloc {
+    [assessment release];
     [landscapeName release];
     [typeName release];
     [super dealloc];

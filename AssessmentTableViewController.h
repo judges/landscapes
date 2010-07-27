@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Assessment.h"
+#import "AssessmentTableViewCell.h"
 
-
-@interface AssessmentTableViewController : UITableViewController {
+@interface AssessmentTableViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
     @private
         NSFetchedResultsController *fetchedResultsController;
         NSManagedObjectContext *managedObjectContext;

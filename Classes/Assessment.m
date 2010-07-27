@@ -11,4 +11,8 @@
 
 @implementation Assessment
 
+@dynamic id, assessor, created_at;
+//foreign keys
+@dynamic landscape_id, type_id;
+
 @end
