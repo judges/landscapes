@@ -19,11 +19,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	// Configure the navigation bar
+	// Name the navigation bar
     self.title = @"Assessments";
+	
+	// Include an Edit button. More properly, this should be called "Delete"
+	self.navigationItem.leftBarButtonItem = self.editButtonItem;
+	self.navigationItem.leftBarButtonItem.title = @"Delete";
+	
+	// Include an Add + button
+    UIBarButtonItem *addButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add:)];
+    self.navigationItem.rightBarButtonItem = addButtonItem;
+    [addButtonItem release];	
 	
 	// Set the table view's row height
     self.tableView.rowHeight = 44.0;
+	
+	
     
     //Provide dummy Fetch request in order to create tables in SQLite DB
     /*
