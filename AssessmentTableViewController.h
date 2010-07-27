@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "Assessment.h"
 #import "AssessmentTableViewCell.h"
+#import "AppDelegate.h"
 
 @interface AssessmentTableViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
     @private
         NSFetchedResultsController *fetchedResultsController;
         NSManagedObjectContext *managedObjectContext;
+    
 }
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;

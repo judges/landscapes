@@ -16,14 +16,37 @@
 #pragma mark -
 #pragma mark View lifecycle
 
-/*
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    //Provide dummy Fetch request in order to create tables in SQLite DB
+    /*
+     Fetch existing events.
+     Create a fetch request; find the Event entity and assign it to the request; add a sort descriptor; then execute the fetch.
+    */ 
+    if(!managedObjectContext){
+        managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    }
+    
+    //managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Assessment" inManagedObjectContext:managedObjectContext];
+    [request setEntity:entity];
+    
+    // Execute the fetch — create a mutable copy of the result.
+    NSError *error = nil;
+    NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+    if (mutableFetchResults == nil) {
+        // Handle the error.
+    }
+    
+    [request release];
+    
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-*/
+
 
 /*
 - (void)viewWillAppear:(BOOL)animated {

@@ -134,7 +134,7 @@
   return nil;
 }
 
-/*old store code
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSPersistentStoreCoordinator*)persistentStoreCoordinator {
   if( _persistentStoreCoordinator != nil ) {
@@ -142,8 +142,8 @@
   }
 
   //This should load a local sqllite file to prepopulate data
-  NSString* storePath = [[self applicationDocumentsDirectory] stringByAppendingPathComponent: @"landscapes.sqlite"];
-  NSURL *storeUrl = [self storeUrl];
+  NSString* storePath = [[self applicationDocumentsDirectory] stringByAppendingPathComponent: @"landscapeData.sqlite"];
+  NSURL *storeUrl = [NSURL fileURLWithPath:storePath];
 
 	NSError* error;
   _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc]
@@ -191,37 +191,7 @@
 
   return _persistentStoreCoordinator;
 }
-*/
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
-    if (_persistentStoreCoordinator != nil) {
-        return _persistentStoreCoordinator;
-    }
-    NSString *storePath = [[self applicationDocumentsDirectory] stringByAppendingPathComponent: @"landscapesData.sqlite"];
-    /*
-     Set up the store.
-     For the sake of illustration, provide a pre-populated default store.
-     */
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    // If the expected store doesn’t exist, copy the default store.
-    if (![fileManager fileExistsAtPath:storePath]) {
-        NSString *defaultStorePath = [[NSBundle mainBundle] pathForResource:@"landscapesData" ofType:@"sqlite"];
-        if (defaultStorePath) {
-            [fileManager copyItemAtPath:defaultStorePath toPath:storePath error:NULL];
-        }
-    }
-    
-    NSURL *storeUrl = [NSURL fileURLWithPath:storePath];
-    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption, [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
-    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: [self managedObjectModel]];
-    
-    NSError *error;
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:options error:&error]) {
-        // Update to handle the error appropriately.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        exit(-1);  // Fail
-    }
-    return _persistentStoreCoordinator;
-}
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
