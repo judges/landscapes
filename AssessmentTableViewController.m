@@ -24,7 +24,7 @@
     /*
      Fetch existing events.
      Create a fetch request; find the Event entity and assign it to the request; add a sort descriptor; then execute the fetch.
-    */ 
+    
     if(!managedObjectContext){
         managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     }
@@ -42,6 +42,7 @@
     }
     
     [request release];
+    */ 
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
