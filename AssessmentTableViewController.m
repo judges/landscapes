@@ -114,34 +114,50 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 1;
+    NSInteger count = [[fetchedResultsController sections] count];
+    
+    if (count == 0) {
+        count = 1;
+    }
+    NSLog(@"Number of Sections fetched: %d", count);
+    return count;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [[fetchedResultsController fetchedObjects] count];
+    
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
+    NSLog(@"Number of Rows fetched: %d", [sectionInfo numberOfObjects]);
+    return [sectionInfo numberOfObjects];
+    
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+     NSLog(@"cellForRowAtIndexPath called");
     
 	// Define your row
     NSInteger row = [indexPath row];
 	
     static NSString *AssessmentCellIdentifier = @"AssessmentCellIdentifier";
     
-    
+   
     AssessmentTableViewCell *assessmentCell = (AssessmentTableViewCell *)[tableView dequeueReusableCellWithIdentifier:AssessmentCellIdentifier];
     if (assessmentCell == nil) {
         assessmentCell = [[[AssessmentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AssessmentCellIdentifier] autorelease];
+        assessmentCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
     Assessment *assessment = (Assessment *)[fetchedResultsController objectAtIndexPath:indexPath];
     assessmentCell.assessment = assessment;
     
+<<<<<<< Updated upstream
 
+=======
+    UIView *cellView = [cell viewWithTag:111];
+>>>>>>> Stashed changes
     if (row % 2)
         [assessmentCell setBackgroundColor:[UIColor colorWithRed:0.616f green:0.616f blue:0.627f alpha:1.0f]];
     else
