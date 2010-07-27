@@ -32,7 +32,7 @@
     [addButtonItem release];	
 	
 	// Set the table view's row height
-    self.tableView.rowHeight = 44.0;
+    self.tableView.rowHeight = 50.0;
 	
 	
     
@@ -141,7 +141,7 @@
     Assessment *assessment = (Assessment *)[fetchedResultsController objectAtIndexPath:indexPath];
     assessmentCell.assessment = assessment;
     
-	UIView *cellView = [cell viewWithTag:111];
+
     if (row % 2)
         [assessmentCell setBackgroundColor:[UIColor colorWithRed:0.616f green:0.616f blue:0.627f alpha:1.0f]];
     else
