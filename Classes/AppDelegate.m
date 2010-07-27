@@ -142,6 +142,7 @@
   }
 
   //This should load a local sqllite file to prepopulate data
+	
   NSString* storePath = [[self applicationDocumentsDirectory] stringByAppendingPathComponent: @"landscapeData.sqlite"];
   NSURL *storeUrl = [NSURL fileURLWithPath:storePath];
 
