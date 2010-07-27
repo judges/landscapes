@@ -22,12 +22,11 @@
 	// Name the navigation bar
     self.title = @"Assessments";
 	
-	// Include an Edit button. More properly, this should be called "Delete" - see setEditing
-	self.navigationItem.leftBarButtonItem = self.editButtonItem;
-	self.navigationItem.leftBarButtonItem.title = @"Delete";
-	
-	
-	// Include an Add + button
+    UIBarButtonItem *trashButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(trash:)];
+	  self.navigationItem.leftBarButtonItem = trashButtonItem;
+    [trashButtonItem release];
+    
+  // Include an Add + button
     UIBarButtonItem *addButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add:)];
     self.navigationItem.rightBarButtonItem = addButtonItem;
     [addButtonItem release];	
