@@ -22,9 +22,10 @@
 	// Name the navigation bar
     self.title = @"Assessments";
 	
-	// Include an Edit button. More properly, this should be called "Delete"
+	// Include an Edit button. More properly, this should be called "Delete" - see setEditing
 	self.navigationItem.leftBarButtonItem = self.editButtonItem;
 	self.navigationItem.leftBarButtonItem.title = @"Delete";
+	
 	
 	// Include an Add + button
     UIBarButtonItem *addButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add:)];
@@ -62,6 +63,20 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+- (void) setEditing:(BOOL)editing animated:(BOOL)animated {
+    //Do super before, it will change the name of the editing button
+    [super setEditing:editing animated:animated];
+	
+    if (editing) {
+		self.navigationItem.leftBarButtonItem.title = @"Done";
+		self.navigationItem.leftBarButtonItem.style = UIBarButtonItemStyleDone;
+    } else {
+		self.navigationItem.leftBarButtonItem.title = @"Delete";
+		self.navigationItem.leftBarButtonItem.style = UIBarButtonItemStyleBordered;
+    }
+}
+
 
 
 /*
