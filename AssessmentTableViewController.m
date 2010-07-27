@@ -76,7 +76,9 @@
     }
 }
 
-
+- (void)add:(id)sender {
+    //code to add entry
+}
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
