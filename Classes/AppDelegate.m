@@ -154,7 +154,10 @@
   // Check whether the store already exists or not.
   NSFileManager* fileManager = [NSFileManager defaultManager];
   BOOL exists = [fileManager fileExistsAtPath:storePath];
-
+  if(exists)
+  {
+      NSLog(@"local db exists");
+  }
   TTDINFO(storePath);
   if( !exists ) {
     _modelCreated = YES;
