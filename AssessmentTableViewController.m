@@ -127,6 +127,9 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+	// Define your row
+    NSInteger row = [indexPath row];
+	
     static NSString *AssessmentCellIdentifier = @"AssessmentCellIdentifier";
     
     
@@ -138,6 +141,11 @@
     Assessment *assessment = (Assessment *)[fetchedResultsController objectAtIndexPath:indexPath];
     assessmentCell.assessment = assessment;
     
+	UIView *cellView = [cell viewWithTag:111];
+    if (row % 2)
+        [assessmentCell setBackgroundColor:[UIColor colorWithRed:0.616f green:0.616f blue:0.627f alpha:1.0f]];
+    else
+        [assessmentCell setBackgroundColor:[UIColor colorWithRed:0.525f green:0.5250f blue:0.541f alpha:1.0f]];
     
     return assessmentCell;
 }
