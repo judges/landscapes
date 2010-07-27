@@ -40,7 +40,7 @@
     /*
      Fetch existing events.
      Create a fetch request; find the Event entity and assign it to the request; add a sort descriptor; then execute the fetch.
-    
+    */
     if(!managedObjectContext){
         managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     }
@@ -55,9 +55,8 @@
     if (mutableFetchResults == nil) {
         // Handle the error.
     }
-    
     [request release];
-     */
+     
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -154,11 +153,6 @@
     Assessment *assessment = (Assessment *)[fetchedResultsController objectAtIndexPath:indexPath];
     assessmentCell.assessment = assessment;
     
-<<<<<<< Updated upstream
-
-=======
-    UIView *cellView = [cell viewWithTag:111];
->>>>>>> Stashed changes
     if (row % 2)
         [assessmentCell setBackgroundColor:[UIColor colorWithRed:0.616f green:0.616f blue:0.627f alpha:1.0f]];
     else
@@ -233,6 +227,12 @@
         // Edit the entity name as appropriate.
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Assessment" inManagedObjectContext:managedObjectContext];
         [fetchRequest setEntity:entity];
+        
+        for (NSPropertyDescription *property in entity)
+        {
+            NSLog(@"%@", property.name);
+        }
+        
         
         // Edit the sort key as appropriate.
         //NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
