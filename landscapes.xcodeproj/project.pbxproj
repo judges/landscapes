@@ -11,7 +11,7 @@
 		09AED7E111FE4A820040A385 /* AssessmentTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09AED7DF11FE4A820040A385 /* AssessmentTableView.xib */; };
 		09AED84011FF29760040A385 /* AssessmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AED83F11FF29760040A385 /* AssessmentTableViewCell.m */; };
 		09AED84C11FF365C0040A385 /* Assessment.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AED84B11FF365C0040A385 /* Assessment.m */; };
-		09AED9F611FF70A80040A385 /* landscapeData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 09AED9F511FF70A80040A385 /* landscapeData.sqlite */; };
+		09E293C311FF8130004A12FA /* landscapeData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 09E293C211FF8130004A12FA /* landscapeData.sqlite */; };
 		1440243F11FDE545000F936D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243011FDE545000F936D /* Default.png */; };
 		1440244A11FDE545000F936D /* Icon_128.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243B11FDE545000F936D /* Icon_128.png */; };
 		1440244B11FDE545000F936D /* Icon_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243C11FDE545000F936D /* Icon_256.png */; };
@@ -194,7 +194,7 @@
 		09AED83F11FF29760040A385 /* AssessmentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssessmentTableViewCell.m; sourceTree = "<group>"; };
 		09AED84A11FF365C0040A385 /* Assessment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Assessment.h; sourceTree = "<group>"; };
 		09AED84B11FF365C0040A385 /* Assessment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Assessment.m; sourceTree = "<group>"; };
-		09AED9F511FF70A80040A385 /* landscapeData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = landscapeData.sqlite; sourceTree = "<group>"; };
+		09E293C211FF8130004A12FA /* landscapeData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = landscapeData.sqlite; sourceTree = "<group>"; };
 		1440243011FDE545000F936D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1440243B11FDE545000F936D /* Icon_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_128.png; sourceTree = "<group>"; };
 		1440243C11FDE545000F936D /* Icon_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_256.png; sourceTree = "<group>"; };
@@ -334,7 +334,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				09AED9F511FF70A80040A385 /* landscapeData.sqlite */,
+				09E293C211FF8130004A12FA /* landscapeData.sqlite */,
 				09AED7DF11FE4A820040A385 /* AssessmentTableView.xib */,
 				EB383D1010BBFC630000B2D2 /* Three20.bundle */,
 				28C3AD890F43EF2300507BA6 /* landscapes.xcdatamodel */,
@@ -641,7 +641,7 @@
 				1440244A11FDE545000F936D /* Icon_128.png in Resources */,
 				1440244B11FDE545000F936D /* Icon_256.png in Resources */,
 				09AED7E111FE4A820040A385 /* AssessmentTableView.xib in Resources */,
-				09AED9F611FF70A80040A385 /* landscapeData.sqlite in Resources */,
+				09E293C311FF8130004A12FA /* landscapeData.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

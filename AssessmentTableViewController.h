@@ -3,7 +3,7 @@
 //  landscapes
 //
 //  Created by Evan Cordell on 7/26/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Copyright 2010 NCPTT. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

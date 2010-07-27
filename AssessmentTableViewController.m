@@ -3,7 +3,7 @@
 //  landscapes
 //
 //  Created by Evan Cordell on 7/26/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Copyright 2010 NCPTT. All rights reserved.
 //
 
 #import "AssessmentTableViewController.h"
@@ -29,7 +29,6 @@
         managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     }
     
-    //managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Assessment" inManagedObjectContext:managedObjectContext];
     [request setEntity:entity];
@@ -42,7 +41,7 @@
     }
     
     [request release];
-    */ 
+     */
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
