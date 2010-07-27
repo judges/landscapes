@@ -39,9 +39,11 @@
   TTURLMap* map = navigator.URLMap;
 
   [map from:@"*" toViewController:[TTWebController class]];
+  [map from:@"tt://assessments" toViewController:[AssessmentTableViewController class]];
 
   if (![navigator restoreViewControllers]) {
-    [navigator openURLAction:[TTURLAction actionWithURLPath:@"http://www.ncptt.nps.gov/category/historic-landscapes/"]];
+    //loading assessments view as default for testing for now
+    [navigator openURLAction:[TTURLAction actionWithURLPath:@"tt://assessments"]];
   }
 }
 

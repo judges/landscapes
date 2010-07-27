@@ -184,8 +184,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09AED7DD11FE4A820040A385 /* AssessmentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssessmentTableViewController.h; sourceTree = "<group>"; };
-		09AED7DE11FE4A820040A385 /* AssessmentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssessmentTableViewController.m; sourceTree = "<group>"; };
+		09AED7DD11FE4A820040A385 /* AssessmentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssessmentTableViewController.h; path = ../AssessmentTableViewController.h; sourceTree = "<group>"; };
+		09AED7DE11FE4A820040A385 /* AssessmentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssessmentTableViewController.m; path = ../AssessmentTableViewController.m; sourceTree = "<group>"; };
 		09AED7DF11FE4A820040A385 /* AssessmentTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssessmentTableView.xib; sourceTree = "<group>"; };
 		1440243011FDE545000F936D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1440243B11FDE545000F936D /* Icon_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_128.png; sourceTree = "<group>"; };
@@ -244,6 +244,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				09AED7DD11FE4A820040A385 /* AssessmentTableViewController.h */,
+				09AED7DE11FE4A820040A385 /* AssessmentTableViewController.m */,
 				EB383C0410BBF8A40000B2D2 /* AppDelegate.h */,
 				EB383C0510BBF8A40000B2D2 /* AppDelegate.m */,
 				14EBCDA811FE195700F36458 /* LauncherViewController.h */,
@@ -280,9 +282,6 @@
 				6EF963BC118E96B7003902E7 /* Dependencies */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				09AED7DD11FE4A820040A385 /* AssessmentTableViewController.h */,
-				09AED7DE11FE4A820040A385 /* AssessmentTableViewController.m */,
-				09AED7DF11FE4A820040A385 /* AssessmentTableView.xib */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -299,6 +298,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				09AED7DF11FE4A820040A385 /* AssessmentTableView.xib */,
 				EB383D1010BBFC630000B2D2 /* Three20.bundle */,
 				28C3AD890F43EF2300507BA6 /* landscapes.xcdatamodel */,
 				8D1107310486CEB800E47090 /* landscapes-Info.plist */,
