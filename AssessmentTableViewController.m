@@ -19,6 +19,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	// Configure the navigation bar
+    self.title = @"Assessments";
+	
+	// Set the table view's row height
+    self.tableView.rowHeight = 44.0;
     
     //Provide dummy Fetch request in order to create tables in SQLite DB
     /*
