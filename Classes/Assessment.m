@@ -3,7 +3,7 @@
 //  landscapes
 //
 //  Created by Evan Cordell on 7/27/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Copyright National Park Service/NCPTT 2010. All rights reserved.
 //
 
 #import "Assessment.h"
