@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		09AED7E011FE4A820040A385 /* AssessmentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AED7DE11FE4A820040A385 /* AssessmentTableViewController.m */; };
 		09AED7E111FE4A820040A385 /* AssessmentTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09AED7DF11FE4A820040A385 /* AssessmentTableView.xib */; };
+		09AED84011FF29760040A385 /* AssessmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AED83F11FF29760040A385 /* AssessmentTableViewCell.m */; };
+		09AED84C11FF365C0040A385 /* Assessment.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AED84B11FF365C0040A385 /* Assessment.m */; };
 		1440243F11FDE545000F936D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243011FDE545000F936D /* Default.png */; };
 		1440244A11FDE545000F936D /* Icon_128.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243B11FDE545000F936D /* Icon_128.png */; };
 		1440244B11FDE545000F936D /* Icon_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243C11FDE545000F936D /* Icon_256.png */; };
@@ -187,6 +189,10 @@
 		09AED7DD11FE4A820040A385 /* AssessmentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssessmentTableViewController.h; path = ../AssessmentTableViewController.h; sourceTree = "<group>"; };
 		09AED7DE11FE4A820040A385 /* AssessmentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssessmentTableViewController.m; path = ../AssessmentTableViewController.m; sourceTree = "<group>"; };
 		09AED7DF11FE4A820040A385 /* AssessmentTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssessmentTableView.xib; sourceTree = "<group>"; };
+		09AED83E11FF29760040A385 /* AssessmentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssessmentTableViewCell.h; sourceTree = "<group>"; };
+		09AED83F11FF29760040A385 /* AssessmentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssessmentTableViewCell.m; sourceTree = "<group>"; };
+		09AED84A11FF365C0040A385 /* Assessment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Assessment.h; sourceTree = "<group>"; };
+		09AED84B11FF365C0040A385 /* Assessment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Assessment.m; sourceTree = "<group>"; };
 		1440243011FDE545000F936D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1440243B11FDE545000F936D /* Icon_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_128.png; sourceTree = "<group>"; };
 		1440243C11FDE545000F936D /* Icon_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_256.png; sourceTree = "<group>"; };
@@ -244,14 +250,42 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				09AED7DD11FE4A820040A385 /* AssessmentTableViewController.h */,
-				09AED7DE11FE4A820040A385 /* AssessmentTableViewController.m */,
+				09AED84311FF2F040040A385 /* Controllers */,
+				09AED84211FF2EFC0040A385 /* Views */,
+				09AED84111FF2EF40040A385 /* Models */,
 				EB383C0410BBF8A40000B2D2 /* AppDelegate.h */,
 				EB383C0510BBF8A40000B2D2 /* AppDelegate.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		09AED84111FF2EF40040A385 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				09AED84A11FF365C0040A385 /* Assessment.h */,
+				09AED84B11FF365C0040A385 /* Assessment.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		09AED84211FF2EFC0040A385 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		09AED84311FF2F040040A385 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				09AED83E11FF29760040A385 /* AssessmentTableViewCell.h */,
+				09AED83F11FF29760040A385 /* AssessmentTableViewCell.m */,
+				09AED7DD11FE4A820040A385 /* AssessmentTableViewController.h */,
+				09AED7DE11FE4A820040A385 /* AssessmentTableViewController.m */,
 				14EBCDA811FE195700F36458 /* LauncherViewController.h */,
 				14EBCDA911FE195700F36458 /* LauncherViewController.m */,
 			);
-			path = Classes;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		1440242C11FDE524000F936D /* images */ = {
@@ -620,6 +654,8 @@
 				EB383C0610BBF8A40000B2D2 /* AppDelegate.m in Sources */,
 				14EBCDAA11FE195700F36458 /* LauncherViewController.m in Sources */,
 				09AED7E011FE4A820040A385 /* AssessmentTableViewController.m in Sources */,
+				09AED84011FF29760040A385 /* AssessmentTableViewCell.m in Sources */,
+				09AED84C11FF365C0040A385 /* Assessment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

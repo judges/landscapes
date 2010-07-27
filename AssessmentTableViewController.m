@@ -10,7 +10,8 @@
 
 
 @implementation AssessmentTableViewController
-
+@synthesize fetchedResultsController;
+@synthesize managedObjectContext;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -78,7 +79,8 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    // Configure the cell...
+    NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
+    
     
     return cell;
 }
@@ -156,6 +158,8 @@
 
 
 - (void)dealloc {
+    [fetchedResultsController release];
+    [managedObjectContext release];
     [super dealloc];
 }
 
