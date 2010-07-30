@@ -159,7 +159,7 @@
   {
       NSLog(@"local db exists");
   }
-    NSLog(storePath);
+    NSLog(@"%@", storePath);
   TTDINFO(storePath);
   if( !exists ) {
     _modelCreated = YES;

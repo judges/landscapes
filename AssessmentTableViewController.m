@@ -12,6 +12,7 @@
 @implementation AssessmentTableViewController
 @synthesize fetchedResultsController;
 @synthesize managedObjectContext;
+@synthesize results;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -33,14 +34,6 @@
 	
 	// Set the table view's row height
     self.tableView.rowHeight = 52.0;
-	
-	
-    
-    //Provide dummy Fetch request in order to create tables in SQLite DB
-    /*
-     Fetch existing events.
-     Create a fetch request; find the Event entity and assign it to the request; add a sort descriptor; then execute the fetch.
-    */
     if(!managedObjectContext){
         managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     }
@@ -48,18 +41,14 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Assessment" inManagedObjectContext:managedObjectContext];
     [request setEntity:entity];
-    for (NSPropertyDescription *property in entity)
-    {
-        NSLog(@"%@", property.name);
-    }
+    
     // Execute the fetch — create a mutable copy of the result.
     NSError *error = nil;
-    NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
-    if (mutableFetchResults == nil) {
+    results = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+    if (results == nil) {
         // Handle the error.
     }
     [request release];
-     
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -127,7 +116,7 @@
     return count;
 }
 
-
+/*
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     
@@ -136,7 +125,11 @@
     return [sectionInfo numberOfObjects];
     
 }
-
+ */
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"%d", [results count]);
+    return [results count];
+}
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -163,10 +156,12 @@
 }
 - (void)configureCell:(AssessmentTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     // Configure the cell
-    Assessment *assessment = (Assessment *)[fetchedResultsController objectAtIndexPath:indexPath];
+    Assessment *assessment = (Assessment *)[results objectAtIndex:[indexPath indexAtPosition:0]];
     cell.assessment = assessment;
-    
-        
+    cell.landscapeName.text = assessment.assessor; 
+     NSLog(@"%@", indexPath);
+     NSLog(@"%@", assessment);
+     NSLog(@"%@", assessment.assessor);
 }
 
 
@@ -322,6 +317,7 @@
 - (void)dealloc {
     [fetchedResultsController release];
     [managedObjectContext release];
+    [results release];
     [super dealloc];
 }
 
