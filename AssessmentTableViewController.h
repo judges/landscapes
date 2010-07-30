@@ -12,7 +12,6 @@
 #import "AppDelegate.h"
 
 @interface AssessmentTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate> {
-    NSMutableArray *results;
     @private
         NSFetchedResultsController *fetchedResultsController;
         NSManagedObjectContext *managedObjectContext;
@@ -20,7 +19,6 @@
 }
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, retain) NSMutableArray *results;
 
 - (void)configureCell:(AssessmentTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 
