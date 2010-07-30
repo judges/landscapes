@@ -10,8 +10,23 @@
 		09AED7E011FE4A820040A385 /* AssessmentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AED7DE11FE4A820040A385 /* AssessmentTableViewController.m */; };
 		09AED7E111FE4A820040A385 /* AssessmentTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09AED7DF11FE4A820040A385 /* AssessmentTableView.xib */; };
 		09AED84011FF29760040A385 /* AssessmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AED83F11FF29760040A385 /* AssessmentTableViewCell.m */; };
-		09AED84C11FF365C0040A385 /* Assessment.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AED84B11FF365C0040A385 /* Assessment.m */; };
 		09E293C311FF8130004A12FA /* landscapeData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 09E293C211FF8130004A12FA /* landscapeData.sqlite */; };
+		09F0CF7C1203739400BD9631 /* TreeOverallRecommendation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F0CF5D1203739400BD9631 /* TreeOverallRecommendation.m */; };
+		09F0CF7D1203739400BD9631 /* TreeFormRecommendation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F0CF5F1203739400BD9631 /* TreeFormRecommendation.m */; };
+		09F0CF7E1203739400BD9631 /* TreeRootsCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F0CF611203739400BD9631 /* TreeRootsCondition.m */; };
+		09F0CF7F1203739400BD9631 /* TreeRootFlareCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F0CF631203739400BD9631 /* TreeRootFlareCondition.m */; };
+		09F0CF801203739400BD9631 /* Landscape.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F0CF651203739400BD9631 /* Landscape.m */; };
+		09F0CF811203739400BD9631 /* TreeOverallCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F0CF671203739400BD9631 /* TreeOverallCondition.m */; };
+		09F0CF821203739400BD9631 /* TreeCrownRecommendation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F0CF691203739400BD9631 /* TreeCrownRecommendation.m */; };
+		09F0CF831203739400BD9631 /* TreeRootFlareRecommendation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F0CF6B1203739400BD9631 /* TreeRootFlareRecommendation.m */; };
+		09F0CF841203739400BD9631 /* TreeTrunkCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F0CF6D1203739400BD9631 /* TreeTrunkCondition.m */; };
+		09F0CF851203739400BD9631 /* Assessment.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F0CF6F1203739400BD9631 /* Assessment.m */; };
+		09F0CF861203739400BD9631 /* TreeRootsRecommendation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F0CF711203739400BD9631 /* TreeRootsRecommendation.m */; };
+		09F0CF871203739400BD9631 /* TreeFormCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F0CF731203739400BD9631 /* TreeFormCondition.m */; };
+		09F0CF881203739400BD9631 /* TreeCrownCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F0CF751203739400BD9631 /* TreeCrownCondition.m */; };
+		09F0CF891203739400BD9631 /* TreeTrunkRecommendation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F0CF771203739400BD9631 /* TreeTrunkRecommendation.m */; };
+		09F0CF8A1203739400BD9631 /* AssessmentTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F0CF791203739400BD9631 /* AssessmentTree.m */; };
+		09F0CF8B1203739400BD9631 /* AssessmentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F0CF7B1203739400BD9631 /* AssessmentType.m */; };
 		1440243F11FDE545000F936D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243011FDE545000F936D /* Default.png */; };
 		1440244A11FDE545000F936D /* Icon_128.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243B11FDE545000F936D /* Icon_128.png */; };
 		1440244B11FDE545000F936D /* Icon_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243C11FDE545000F936D /* Icon_256.png */; };
@@ -192,9 +207,39 @@
 		09AED7DF11FE4A820040A385 /* AssessmentTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssessmentTableView.xib; sourceTree = "<group>"; };
 		09AED83E11FF29760040A385 /* AssessmentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssessmentTableViewCell.h; sourceTree = "<group>"; };
 		09AED83F11FF29760040A385 /* AssessmentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssessmentTableViewCell.m; sourceTree = "<group>"; };
-		09AED84A11FF365C0040A385 /* Assessment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Assessment.h; sourceTree = "<group>"; };
-		09AED84B11FF365C0040A385 /* Assessment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Assessment.m; sourceTree = "<group>"; };
 		09E293C211FF8130004A12FA /* landscapeData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = landscapeData.sqlite; sourceTree = "<group>"; };
+		09F0CF5C1203739400BD9631 /* TreeOverallRecommendation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreeOverallRecommendation.h; path = ../TreeOverallRecommendation.h; sourceTree = "<group>"; };
+		09F0CF5D1203739400BD9631 /* TreeOverallRecommendation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreeOverallRecommendation.m; path = ../TreeOverallRecommendation.m; sourceTree = "<group>"; };
+		09F0CF5E1203739400BD9631 /* TreeFormRecommendation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreeFormRecommendation.h; path = ../TreeFormRecommendation.h; sourceTree = "<group>"; };
+		09F0CF5F1203739400BD9631 /* TreeFormRecommendation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreeFormRecommendation.m; path = ../TreeFormRecommendation.m; sourceTree = "<group>"; };
+		09F0CF601203739400BD9631 /* TreeRootsCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreeRootsCondition.h; path = ../TreeRootsCondition.h; sourceTree = "<group>"; };
+		09F0CF611203739400BD9631 /* TreeRootsCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreeRootsCondition.m; path = ../TreeRootsCondition.m; sourceTree = "<group>"; };
+		09F0CF621203739400BD9631 /* TreeRootFlareCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreeRootFlareCondition.h; path = ../TreeRootFlareCondition.h; sourceTree = "<group>"; };
+		09F0CF631203739400BD9631 /* TreeRootFlareCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreeRootFlareCondition.m; path = ../TreeRootFlareCondition.m; sourceTree = "<group>"; };
+		09F0CF641203739400BD9631 /* Landscape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Landscape.h; path = ../Landscape.h; sourceTree = "<group>"; };
+		09F0CF651203739400BD9631 /* Landscape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Landscape.m; path = ../Landscape.m; sourceTree = "<group>"; };
+		09F0CF661203739400BD9631 /* TreeOverallCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreeOverallCondition.h; path = ../TreeOverallCondition.h; sourceTree = "<group>"; };
+		09F0CF671203739400BD9631 /* TreeOverallCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreeOverallCondition.m; path = ../TreeOverallCondition.m; sourceTree = "<group>"; };
+		09F0CF681203739400BD9631 /* TreeCrownRecommendation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreeCrownRecommendation.h; path = ../TreeCrownRecommendation.h; sourceTree = "<group>"; };
+		09F0CF691203739400BD9631 /* TreeCrownRecommendation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreeCrownRecommendation.m; path = ../TreeCrownRecommendation.m; sourceTree = "<group>"; };
+		09F0CF6A1203739400BD9631 /* TreeRootFlareRecommendation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreeRootFlareRecommendation.h; path = ../TreeRootFlareRecommendation.h; sourceTree = "<group>"; };
+		09F0CF6B1203739400BD9631 /* TreeRootFlareRecommendation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreeRootFlareRecommendation.m; path = ../TreeRootFlareRecommendation.m; sourceTree = "<group>"; };
+		09F0CF6C1203739400BD9631 /* TreeTrunkCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreeTrunkCondition.h; path = ../TreeTrunkCondition.h; sourceTree = "<group>"; };
+		09F0CF6D1203739400BD9631 /* TreeTrunkCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreeTrunkCondition.m; path = ../TreeTrunkCondition.m; sourceTree = "<group>"; };
+		09F0CF6E1203739400BD9631 /* Assessment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Assessment.h; path = ../Assessment.h; sourceTree = "<group>"; };
+		09F0CF6F1203739400BD9631 /* Assessment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Assessment.m; path = ../Assessment.m; sourceTree = "<group>"; };
+		09F0CF701203739400BD9631 /* TreeRootsRecommendation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreeRootsRecommendation.h; path = ../TreeRootsRecommendation.h; sourceTree = "<group>"; };
+		09F0CF711203739400BD9631 /* TreeRootsRecommendation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreeRootsRecommendation.m; path = ../TreeRootsRecommendation.m; sourceTree = "<group>"; };
+		09F0CF721203739400BD9631 /* TreeFormCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreeFormCondition.h; path = ../TreeFormCondition.h; sourceTree = "<group>"; };
+		09F0CF731203739400BD9631 /* TreeFormCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreeFormCondition.m; path = ../TreeFormCondition.m; sourceTree = "<group>"; };
+		09F0CF741203739400BD9631 /* TreeCrownCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreeCrownCondition.h; path = ../TreeCrownCondition.h; sourceTree = "<group>"; };
+		09F0CF751203739400BD9631 /* TreeCrownCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreeCrownCondition.m; path = ../TreeCrownCondition.m; sourceTree = "<group>"; };
+		09F0CF761203739400BD9631 /* TreeTrunkRecommendation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreeTrunkRecommendation.h; path = ../TreeTrunkRecommendation.h; sourceTree = "<group>"; };
+		09F0CF771203739400BD9631 /* TreeTrunkRecommendation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreeTrunkRecommendation.m; path = ../TreeTrunkRecommendation.m; sourceTree = "<group>"; };
+		09F0CF781203739400BD9631 /* AssessmentTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssessmentTree.h; path = ../AssessmentTree.h; sourceTree = "<group>"; };
+		09F0CF791203739400BD9631 /* AssessmentTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssessmentTree.m; path = ../AssessmentTree.m; sourceTree = "<group>"; };
+		09F0CF7A1203739400BD9631 /* AssessmentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssessmentType.h; path = ../AssessmentType.h; sourceTree = "<group>"; };
+		09F0CF7B1203739400BD9631 /* AssessmentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssessmentType.m; path = ../AssessmentType.m; sourceTree = "<group>"; };
 		1440243011FDE545000F936D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1440243B11FDE545000F936D /* Icon_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_128.png; sourceTree = "<group>"; };
 		1440243C11FDE545000F936D /* Icon_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_256.png; sourceTree = "<group>"; };
@@ -264,8 +309,38 @@
 		09AED84111FF2EF40040A385 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				09AED84A11FF365C0040A385 /* Assessment.h */,
-				09AED84B11FF365C0040A385 /* Assessment.m */,
+				09F0CF5C1203739400BD9631 /* TreeOverallRecommendation.h */,
+				09F0CF5D1203739400BD9631 /* TreeOverallRecommendation.m */,
+				09F0CF5E1203739400BD9631 /* TreeFormRecommendation.h */,
+				09F0CF5F1203739400BD9631 /* TreeFormRecommendation.m */,
+				09F0CF601203739400BD9631 /* TreeRootsCondition.h */,
+				09F0CF611203739400BD9631 /* TreeRootsCondition.m */,
+				09F0CF621203739400BD9631 /* TreeRootFlareCondition.h */,
+				09F0CF631203739400BD9631 /* TreeRootFlareCondition.m */,
+				09F0CF641203739400BD9631 /* Landscape.h */,
+				09F0CF651203739400BD9631 /* Landscape.m */,
+				09F0CF661203739400BD9631 /* TreeOverallCondition.h */,
+				09F0CF671203739400BD9631 /* TreeOverallCondition.m */,
+				09F0CF681203739400BD9631 /* TreeCrownRecommendation.h */,
+				09F0CF691203739400BD9631 /* TreeCrownRecommendation.m */,
+				09F0CF6A1203739400BD9631 /* TreeRootFlareRecommendation.h */,
+				09F0CF6B1203739400BD9631 /* TreeRootFlareRecommendation.m */,
+				09F0CF6C1203739400BD9631 /* TreeTrunkCondition.h */,
+				09F0CF6D1203739400BD9631 /* TreeTrunkCondition.m */,
+				09F0CF6E1203739400BD9631 /* Assessment.h */,
+				09F0CF6F1203739400BD9631 /* Assessment.m */,
+				09F0CF701203739400BD9631 /* TreeRootsRecommendation.h */,
+				09F0CF711203739400BD9631 /* TreeRootsRecommendation.m */,
+				09F0CF721203739400BD9631 /* TreeFormCondition.h */,
+				09F0CF731203739400BD9631 /* TreeFormCondition.m */,
+				09F0CF741203739400BD9631 /* TreeCrownCondition.h */,
+				09F0CF751203739400BD9631 /* TreeCrownCondition.m */,
+				09F0CF761203739400BD9631 /* TreeTrunkRecommendation.h */,
+				09F0CF771203739400BD9631 /* TreeTrunkRecommendation.m */,
+				09F0CF781203739400BD9631 /* AssessmentTree.h */,
+				09F0CF791203739400BD9631 /* AssessmentTree.m */,
+				09F0CF7A1203739400BD9631 /* AssessmentType.h */,
+				09F0CF7B1203739400BD9631 /* AssessmentType.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -658,7 +733,22 @@
 				14EBCDAA11FE195700F36458 /* LauncherViewController.m in Sources */,
 				09AED7E011FE4A820040A385 /* AssessmentTableViewController.m in Sources */,
 				09AED84011FF29760040A385 /* AssessmentTableViewCell.m in Sources */,
-				09AED84C11FF365C0040A385 /* Assessment.m in Sources */,
+				09F0CF7C1203739400BD9631 /* TreeOverallRecommendation.m in Sources */,
+				09F0CF7D1203739400BD9631 /* TreeFormRecommendation.m in Sources */,
+				09F0CF7E1203739400BD9631 /* TreeRootsCondition.m in Sources */,
+				09F0CF7F1203739400BD9631 /* TreeRootFlareCondition.m in Sources */,
+				09F0CF801203739400BD9631 /* Landscape.m in Sources */,
+				09F0CF811203739400BD9631 /* TreeOverallCondition.m in Sources */,
+				09F0CF821203739400BD9631 /* TreeCrownRecommendation.m in Sources */,
+				09F0CF831203739400BD9631 /* TreeRootFlareRecommendation.m in Sources */,
+				09F0CF841203739400BD9631 /* TreeTrunkCondition.m in Sources */,
+				09F0CF851203739400BD9631 /* Assessment.m in Sources */,
+				09F0CF861203739400BD9631 /* TreeRootsRecommendation.m in Sources */,
+				09F0CF871203739400BD9631 /* TreeFormCondition.m in Sources */,
+				09F0CF881203739400BD9631 /* TreeCrownCondition.m in Sources */,
+				09F0CF891203739400BD9631 /* TreeTrunkRecommendation.m in Sources */,
+				09F0CF8A1203739400BD9631 /* AssessmentTree.m in Sources */,
+				09F0CF8B1203739400BD9631 /* AssessmentType.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

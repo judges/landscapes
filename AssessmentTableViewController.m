@@ -34,26 +34,17 @@
 	// Set the table view's row height
     self.tableView.rowHeight = 52.0;
 	
+    //load managedObjectContext from AppDelegate
     if(!managedObjectContext){
         managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     }
     
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"id" ascending:YES];
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Assessment" inManagedObjectContext:managedObjectContext];
-    [request setSortDescriptors:sortDescriptors];
-    [request setEntity:entity];
-    [sortDescriptors release];
-    [sortDescriptor release];    
-    
-    fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:@"assessment_cache"];
-    [request release];
-    
+    //set up fetchedResultsController
+    [self fetchedResultsController];
+
+    //Perform fetch and catch any errors
     NSError *error = nil;
-    
     [fetchedResultsController performFetch:&error];
-    
     if (!error) {
         NSLog(@"Error occured fetching from db.");
     }
@@ -162,8 +153,7 @@
     // Configure the cell
     Assessment *assessment = (Assessment *)[fetchedResultsController objectAtIndexPath:indexPath];
     cell.assessment = assessment;
-    
-        
+    cell.landscapeName.text = assessment.assessor;
 }
 
 
@@ -233,28 +223,22 @@
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Assessment" inManagedObjectContext:managedObjectContext];
         [fetchRequest setEntity:entity];
         
-        for (NSPropertyDescription *property in entity)
-        {
-            NSLog(@"%@", property.name);
-        }
-        
-        
         // Edit the sort key as appropriate.
-        //NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
-        //NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"id" ascending:YES];
+        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
         
-        //[fetchRequest setSortDescriptors:sortDescriptors];
+        [fetchRequest setSortDescriptors:sortDescriptors];
         
         // Edit the section name key path and cache name if appropriate.
         // nil for section name key path means "no sections".
-        NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:@"Root"];
+        NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:@"assessment_cache"];
         aFetchedResultsController.delegate = self;
         self.fetchedResultsController = aFetchedResultsController;
         
         [aFetchedResultsController release];
         [fetchRequest release];
-        //[sortDescriptor release];
-        //[sortDescriptors release];
+        [sortDescriptor release];
+        [sortDescriptors release];
     }
     
     return fetchedResultsController;
