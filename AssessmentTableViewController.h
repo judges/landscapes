@@ -11,7 +11,7 @@
 #import "AssessmentTableViewCell.h"
 #import "AppDelegate.h"
 
-@interface AssessmentTableViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
+@interface AssessmentTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate> {
     @private
         NSFetchedResultsController *fetchedResultsController;
         NSManagedObjectContext *managedObjectContext;
