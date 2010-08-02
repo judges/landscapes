@@ -26,6 +26,7 @@
 		09F0D05C12037D3900BD9631 /* TreeTrunkRecommendation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F0D04A12037D3900BD9631 /* TreeTrunkRecommendation.m */; };
 		09F0D05D12037D3900BD9631 /* AssessmentTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F0D04C12037D3900BD9631 /* AssessmentTree.m */; };
 		09F0D05E12037D3900BD9631 /* AssessmentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F0D04E12037D3900BD9631 /* AssessmentType.m */; };
+		09F0D0DD1207199F00BD9631 /* AssessmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F0D0DC1207199F00BD9631 /* AssessmentTableViewCell.xib */; };
 		1440243F11FDE545000F936D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243011FDE545000F936D /* Default.png */; };
 		1440244A11FDE545000F936D /* Icon_128.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243B11FDE545000F936D /* Icon_128.png */; };
 		1440244B11FDE545000F936D /* Icon_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243C11FDE545000F936D /* Icon_256.png */; };
@@ -238,6 +239,7 @@
 		09F0D04C12037D3900BD9631 /* AssessmentTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssessmentTree.m; path = ../AssessmentTree.m; sourceTree = "<group>"; };
 		09F0D04D12037D3900BD9631 /* AssessmentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssessmentType.h; path = ../AssessmentType.h; sourceTree = "<group>"; };
 		09F0D04E12037D3900BD9631 /* AssessmentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssessmentType.m; path = ../AssessmentType.m; sourceTree = "<group>"; };
+		09F0D0DC1207199F00BD9631 /* AssessmentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssessmentTableViewCell.xib; sourceTree = "<group>"; };
 		1440243011FDE545000F936D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1440243B11FDE545000F936D /* Icon_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_128.png; sourceTree = "<group>"; };
 		1440243C11FDE545000F936D /* Icon_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_256.png; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 			isa = PBXGroup;
 			children = (
 				09AED7DF11FE4A820040A385 /* AssessmentTableView.xib */,
+				09F0D0DC1207199F00BD9631 /* AssessmentTableViewCell.xib */,
 				EB383D1010BBFC630000B2D2 /* Three20.bundle */,
 				28C3AD890F43EF2300507BA6 /* landscapes.xcdatamodel */,
 				8D1107310486CEB800E47090 /* landscapes-Info.plist */,
@@ -713,6 +716,7 @@
 				1440244A11FDE545000F936D /* Icon_128.png in Resources */,
 				1440244B11FDE545000F936D /* Icon_256.png in Resources */,
 				09AED7E111FE4A820040A385 /* AssessmentTableView.xib in Resources */,
+				09F0D0DD1207199F00BD9631 /* AssessmentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

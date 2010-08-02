@@ -150,13 +150,18 @@
 	// Define your row
     NSInteger row = [indexPath row];
 	
-    static NSString *AssessmentCellIdentifier = @"AssessmentCellIdentifier";
+    static NSString *AssessmentCellIdentifier = @"AssessmentTableViewCell";
     
    
     AssessmentTableViewCell *assessmentCell = (AssessmentTableViewCell *)[tableView dequeueReusableCellWithIdentifier:AssessmentCellIdentifier];
     if (assessmentCell == nil) {
-        assessmentCell = [[[AssessmentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AssessmentCellIdentifier] autorelease];
-        assessmentCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"AssessmentTableViewCell" owner:nil options:nil];
+        for (id currentObject in topLevelObjects) {
+            if ([currentObject isKindOfClass:[UITableViewCell class]]) {
+                assessmentCell = (AssessmentTableViewCell *) currentObject;
+                break;
+            }
+        }
     }
     [self configureCell:assessmentCell atIndexPath:indexPath];
     if (row % 2)
@@ -171,6 +176,12 @@
     Assessment *assessment = (Assessment *)[fetchedResultsController objectAtIndexPath:indexPath];
     cell.assessment = assessment;
     cell.landscapeName.text = assessment.landscape.name;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+    NSString *date= [dateFormatter stringFromDate:assessment.created_at];
+    [dateFormatter release];
+    cell.date.text = date;
+    cell.typeName.text = assessment.type.name;
 }
 
 

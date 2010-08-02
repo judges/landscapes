@@ -12,12 +12,14 @@
 @interface AssessmentTableViewCell : UITableViewCell {
     Assessment *assessment;
     
-    UILabel *landscapeName;
-    UILabel *typeName;
+    IBOutlet UILabel *landscapeName;
+    IBOutlet UILabel *typeName;
+    IBOutlet UILabel *date;
 }
 
 @property (nonatomic, retain) Assessment *assessment;
 @property (nonatomic, retain) UILabel *landscapeName;
 @property (nonatomic, retain) UILabel *typeName;
+@property (nonatomic, retain) UILabel *date;
 
 @end
