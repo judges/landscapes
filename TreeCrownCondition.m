@@ -11,7 +11,6 @@
 
 @implementation TreeCrownCondition 
 
-@dynamic id;
 @dynamic name;
 
 @end

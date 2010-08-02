@@ -11,7 +11,6 @@
 
 @implementation TreeRootFlareCondition 
 
-@dynamic id;
 @dynamic name;
 
 @end

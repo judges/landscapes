@@ -11,7 +11,6 @@
 
 @implementation TreeOverallCondition 
 
-@dynamic id;
 @dynamic name;
 
 @end

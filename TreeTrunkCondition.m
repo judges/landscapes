@@ -11,7 +11,6 @@
 
 @implementation TreeTrunkCondition 
 
-@dynamic id;
 @dynamic name;
 
 @end

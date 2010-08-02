@@ -38,21 +38,38 @@
     if(!managedObjectContext){
         managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     }
-    
+    //[self prepopulateDb];
     //set up fetchedResultsController
     [self fetchedResultsController];
 
     //Perform fetch and catch any errors
     NSError *error = nil;
     [fetchedResultsController performFetch:&error];
-    if (!error) {
-        NSLog(@"Error occured fetching from db.");
+    if (error) {
+        NSLog(@"Error occured fetching from db: %@", error);
     }
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
+- (void)prepopulateDb {    
+    NSManagedObjectContext *context = [self managedObjectContext];
+    Landscape *landscape = [NSEntityDescription insertNewObjectForEntityForName:@"Landscape" inManagedObjectContext:context];
+    landscape.name = @"Test Landscape";
+    AssessmentType *type = [NSEntityDescription insertNewObjectForEntityForName: @"AssessmentType" inManagedObjectContext:context];
+    type.name = @"Test Type";
+    Assessment *assessment = [NSEntityDescription insertNewObjectForEntityForName:@"Assessment" inManagedObjectContext:context];
+    assessment.assessor = @"Test Assessor";
+    assessment.created_at = [NSDate date];
+    assessment.landscape = landscape;
+    assessment.type = type;
+    AssessmentTree *assessmentTree = [NSEntityDescription insertNewObjectForEntityForName:@"AssessmentTree" inManagedObjectContext:context];
+    assessmentTree.assessment = assessment;
+    NSError *error;
+    if (![context save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+}
 - (void) setEditing:(BOOL)editing animated:(BOOL)animated {
     //Do super before, it will change the name of the editing button
     [super setEditing:editing animated:animated];
@@ -153,7 +170,7 @@
     // Configure the cell
     Assessment *assessment = (Assessment *)[fetchedResultsController objectAtIndexPath:indexPath];
     cell.assessment = assessment;
-    cell.landscapeName.text = assessment.assessor;
+    cell.landscapeName.text = assessment.landscape.name;
 }
 
 
@@ -224,7 +241,7 @@
         [fetchRequest setEntity:entity];
         
         // Edit the sort key as appropriate.
-        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"id" ascending:YES];
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"assessor" ascending:YES];
         NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
         
         [fetchRequest setSortDescriptors:sortDescriptors];

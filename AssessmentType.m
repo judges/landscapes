@@ -12,6 +12,5 @@
 @implementation AssessmentType 
 
 @dynamic name;
-@dynamic id;
 
 @end

@@ -45,8 +45,8 @@
     //loading assessments view as default for testing for now
     [navigator openURLAction:[TTURLAction actionWithURLPath:@"tt://assessments"]];
   }
+  
 }
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)dealloc {

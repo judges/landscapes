@@ -11,7 +11,6 @@
 
 @implementation TreeOverallRecommendation 
 
-@dynamic id;
 @dynamic name;
 
 @end

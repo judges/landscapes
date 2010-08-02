@@ -24,21 +24,20 @@
 
 @implementation AssessmentTree 
 
-@dynamic id;
 @dynamic caliper;
 @dynamic height;
-@dynamic form_condition_id;
-@dynamic trunk_condition_id;
-@dynamic rootflare_recommendation_id;
-@dynamic rootflare_condition_id;
-@dynamic crown_condition_id;
-@dynamic assessment_id;
-@dynamic crown_recommendation_id;
-@dynamic trunk_recommendation_id;
-@dynamic overall_recommendation_id;
-@dynamic roots_condition_id;
-@dynamic roots_recommendation_id;
-@dynamic overall_condition_id;
-@dynamic form_recommendation_id;
+@dynamic crown_condition;
+@dynamic overall_condition;
+@dynamic form_recommendation;
+@dynamic form_condition;
+@dynamic overall_recommendation;
+@dynamic assessment;
+@dynamic roots_condition;
+@dynamic rootflare_recommendation;
+@dynamic trunk_recommendation;
+@dynamic rootflare_condition;
+@dynamic crown_recommendation;
+@dynamic roots_recommendation;
+@dynamic trunk_condition;
 
 @end

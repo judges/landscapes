@@ -11,7 +11,6 @@
 
 @implementation TreeRootsCondition 
 
-@dynamic id;
 @dynamic name;
 
 @end

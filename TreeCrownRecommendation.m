@@ -11,7 +11,6 @@
 
 @implementation TreeCrownRecommendation 
 
-@dynamic id;
 @dynamic name;
 
 @end

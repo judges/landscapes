@@ -11,7 +11,6 @@
 
 @implementation Landscape 
 
-@dynamic id;
 @dynamic name;
 
 @end

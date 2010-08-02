@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Assessment.h"
+#import "Landscape.h"
+#import "AssessmentTree.h"
+#import "AssessmentType.h"
 #import "AssessmentTableViewCell.h"
 #import "AppDelegate.h"
 
@@ -21,5 +24,5 @@
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 - (void)configureCell:(AssessmentTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
-
+- (void)prepopulateDb;
 @end

@@ -11,7 +11,6 @@
 
 @implementation TreeRootsRecommendation 
 
-@dynamic id;
 @dynamic name;
 
 @end

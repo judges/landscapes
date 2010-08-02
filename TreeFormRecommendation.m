@@ -11,7 +11,6 @@
 
 @implementation TreeFormRecommendation 
 
-@dynamic id;
 @dynamic name;
 
 @end

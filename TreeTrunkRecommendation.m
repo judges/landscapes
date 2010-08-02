@@ -11,7 +11,6 @@
 
 @implementation TreeTrunkRecommendation 
 
-@dynamic id;
 @dynamic name;
 
 @end

@@ -14,7 +14,6 @@
 }
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * id;
 
 @end
 

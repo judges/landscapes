@@ -11,7 +11,6 @@
 
 @implementation TreeRootFlareRecommendation 
 
-@dynamic id;
 @dynamic name;
 
 @end

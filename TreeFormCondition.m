@@ -11,7 +11,6 @@
 
 @implementation TreeFormCondition 
 
-@dynamic id;
 @dynamic name;
 
 @end

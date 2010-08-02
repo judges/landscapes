@@ -13,7 +13,6 @@
 {
 }
 
-@property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) NSString * name;
 
 @end
