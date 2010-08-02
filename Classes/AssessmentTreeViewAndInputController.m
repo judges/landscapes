@@ -69,14 +69,24 @@
     [dateFormatter setDateStyle:NSDateFormatterLongStyle];
     NSString *dateStr= [dateFormatter stringFromDate:self.assessment.created_at];
     [dateFormatter release];
-    NSLog(@"%@", dateStr);
     self.date.text = dateStr;
     if (self.assessment) {
-        //self.assessmentTree = (AssessmentTree *)[fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        self.assessmentTree = (AssessmentTree *)([fetchedResultsController.fetchedObjects objectAtIndex:0]);
+        self.formCText.text = self.assessmentTree.form_condition.name;
+        self.crownCText.text = self.assessmentTree.crown_condition.name;
+        self.trunkCText.text = self.assessmentTree.trunk_condition.name;
+        self.rootFlareCText.text = self.assessmentTree.rootflare_condition.name;
+        self.rootsCText.text = self.assessmentTree.roots_condition.name;
+        self.overallCText.text = self.assessmentTree.overall_condition.name;
+        self.formRText.text = self.assessmentTree.form_recommendation.name;
+        self.crownRText.text = self.assessmentTree.crown_recommendation.name;
+        self.trunkRText.text = self.assessmentTree.trunk_recommendation.name;
+        self.rootFlareRText.text = self.assessmentTree.rootflare_recommendation.name;
+        self.rootsRText.text = self.assessmentTree.roots_recommendation.name;
+        self.overallRText.text = self.assessmentTree.overall_recommendation.name;
     }
     //NSLog(@"%@", [fetchedResultsController count]);
-    id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:0];
-    NSLog(@"Number of Rows fetched: %d", [sectionInfo numberOfObjects]);
+    NSLog(@"Number of Rows fetched: %d", [fetchedResultsController.fetchedObjects count]);
 }
 
 
@@ -112,8 +122,7 @@
         // Edit the entity name as appropriate.
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"AssessmentTree" inManagedObjectContext:managedObjectContext];
         [fetchRequest setEntity:entity];
-        
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"assessment.created_at == %@", self.assessment.created_at];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"assessment == %@", self.assessment];
         [fetchRequest setPredicate:predicate];
         
         // Edit the sort key as appropriate.
