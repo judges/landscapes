@@ -10,7 +10,7 @@
 
 
 @implementation AssessmentTreeViewAndInputController
-@synthesize assessment, assessmentTree, assessor, date, fetchedResultsController, managedObjectContext;
+@synthesize assessment, assessmentTree, assessor, date, caliper, height, fetchedResultsController, managedObjectContext;
 @synthesize formCText, crownCText, trunkCText, rootFlareCText, rootsCText, overallCText;
 @synthesize formRText, crownRText, trunkRText, rootFlareRText, rootsRText, overallRText;
 
@@ -20,6 +20,8 @@
             self.assessment = (Assessment*) [query objectForKey:@"assessment"]; 
             self.assessor = [[UILabel alloc] init];
             self.date = [[UILabel alloc] init];
+            self.caliper = [[UILabel alloc] init];
+            self.height = [[UILabel alloc] init];
             self.formCText = [[UILabel alloc] init];
             self.crownCText = [[UILabel alloc] init];
             self.trunkCText = [[UILabel alloc] init];
@@ -72,6 +74,8 @@
     self.date.text = dateStr;
     if (self.assessment) {
         self.assessmentTree = (AssessmentTree *)([fetchedResultsController.fetchedObjects objectAtIndex:0]);
+        self.caliper.text = [NSString stringWithFormat:@"%@ \'", [self.assessmentTree.caliper stringValue]];
+        self.height.text = [NSString stringWithFormat:@"%@ \'", [self.assessmentTree.height stringValue]]   ;
         self.formCText.text = self.assessmentTree.form_condition.name;
         self.crownCText.text = self.assessmentTree.crown_condition.name;
         self.trunkCText.text = self.assessmentTree.trunk_condition.name;
@@ -85,8 +89,6 @@
         self.rootsRText.text = self.assessmentTree.roots_recommendation.name;
         self.overallRText.text = self.assessmentTree.overall_recommendation.name;
     }
-    //NSLog(@"%@", [fetchedResultsController count]);
-    NSLog(@"Number of Rows fetched: %d", [fetchedResultsController.fetchedObjects count]);
 }
 
 
@@ -149,6 +151,8 @@
 - (void)dealloc {
     [assessor release];
     [date release];
+    [caliper release];
+    [height release];
     [formCText release];
     [crownCText release];
     [trunkCText release];

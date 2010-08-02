@@ -16,6 +16,8 @@
     AssessmentTree *assessmentTree;
     IBOutlet UILabel *assessor;
     IBOutlet UILabel *date;
+    IBOutlet UILabel *caliper;
+    IBOutlet UILabel *height;
     IBOutlet UILabel *formCText;
     IBOutlet UILabel *crownCText;
     IBOutlet UILabel *trunkCText;
@@ -28,6 +30,7 @@
     IBOutlet UILabel *rootFlareRText;
     IBOutlet UILabel *rootsRText;
     IBOutlet UILabel *overallRText;
+    
  @private
     NSFetchedResultsController *fetchedResultsController;
     NSManagedObjectContext *managedObjectContext;
@@ -36,6 +39,8 @@
 @property (nonatomic, retain) AssessmentTree *assessmentTree;
 @property (nonatomic, retain) UILabel *assessor;
 @property (nonatomic, retain) UILabel *date;
+@property (nonatomic, retain) UILabel *caliper;
+@property (nonatomic, retain) UILabel *height;
 @property (nonatomic, retain) UILabel *formCText;
 @property (nonatomic, retain) UILabel *crownCText;
 @property (nonatomic, retain) UILabel *trunkCText;
