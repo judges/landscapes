@@ -56,15 +56,58 @@
     NSManagedObjectContext *context = [self managedObjectContext];
     Landscape *landscape = [NSEntityDescription insertNewObjectForEntityForName:@"Landscape" inManagedObjectContext:context];
     landscape.name = @"Test Landscape";
+    
     AssessmentType *type = [NSEntityDescription insertNewObjectForEntityForName: @"AssessmentType" inManagedObjectContext:context];
-    type.name = @"Test Type";
+    type.name = @"Tree";
+    
     Assessment *assessment = [NSEntityDescription insertNewObjectForEntityForName:@"Assessment" inManagedObjectContext:context];
     assessment.assessor = @"Test Assessor";
     assessment.created_at = [NSDate date];
     assessment.landscape = landscape;
     assessment.type = type;
+    
     AssessmentTree *assessmentTree = [NSEntityDescription insertNewObjectForEntityForName:@"AssessmentTree" inManagedObjectContext:context];
     assessmentTree.assessment = assessment;
+    /*
+    TreeCrownCondition *treeCrownCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeCrownCondition" inManagedObjectContext:context];
+    treeCrownCondition.name = @"Good";
+    TreeFormCondition *treeFormCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeFormCondition" inManagedObjectContext:context];
+    treeFormCondition.name = @"Good";
+    TreeRootFlareCondition *treeRootFlareCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootFlareCondition" inManagedObjectContext:context];
+    treeRootFlareCondition.name = @"Good";
+    TreeRootsCondition *treeRootsCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootsCondition" inManagedObjectContext:context];
+    treeRootsCondition.name = @"Good";
+    TreeTrunkCondition *treeTrunkCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeTrunkCondition" inManagedObjectContext:context];
+    treeTrunkCondition.name = @"Good";
+    TreeOverallCondition *treeOverallCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeOverallCondition" inManagedObjectContext:context];
+    treeOverallCondition.name = @"Good";
+    
+    TreeCrownRecommendation *treeCrownRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeCrownRecommendation" inManagedObjectContext:context];
+    treeCrownRecommendation.name = @"No Action";
+    TreeFormRecommendation *treeFormRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeFormRecommendation" inManagedObjectContext:context];
+    treeFormRecommendation.name = @"No Action";
+    TreeRootFlareRecommendation *treeRootFlareRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootFlareRecommendation" inManagedObjectContext:context];
+    treeRootFlareRecommendation.name = @"No Action";
+    TreeRootsRecommendation *treeRootsRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootsRecommendation" inManagedObjectContext:context];
+    treeRootsRecommendation.name = @"No Action";
+    TreeTrunkRecommendation *treeTrunkRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeTrunkRecommendation" inManagedObjectContext:context];
+    treeTrunkRecommendation.name = @"No Action";
+    TreeOverallRecommendation *treeOverallRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeOverallRecommendation" inManagedObjectContext:context];
+    treeOverallRecommendation.name = @"No Action";
+    
+    assessmentTree.crown_condition = treeCrownCondition;
+    assessmentTree.form_condition = treeFormCondition;
+    assessmentTree.rootflare_condition = treeRootFlareCondition;
+    assessmentTree.roots_condition = treeRootsCondition;
+    assessmentTree.trunk_condition = treeTrunkCondition;
+    assessmentTree.overall_condition = treeOverallCondition;
+    assessmentTree.crown_recommendation = treeCrownRecommendation;
+    assessmentTree.form_recommendation = treeFormRecommendation;
+    assessmentTree.rootflare_recommendation = treeRootFlareRecommendation;
+    assessmentTree.roots_recommendation = treeRootsRecommendation;
+    assessmentTree.trunk_recommendation = treeTrunkRecommendation;
+    assessmentTree.overall_recommendation = treeOverallRecommendation;
+    */
     NSError *error;
     if (![context save:&error]) {
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
@@ -229,14 +272,11 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-	/*
-	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
-	 */
+    Assessment *assessment = (Assessment *)[fetchedResultsController objectAtIndexPath:indexPath];
+    NSDictionary *query = [NSDictionary dictionaryWithObject:assessment forKey:@"assessment"];
+    if([assessment.type.name isEqualToString:@"Tree"]) {
+        [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"tt://assessments/TreeViewAndInput"] applyQuery:query] applyAnimated:YES]];
+    }
 }
 
 #pragma mark -

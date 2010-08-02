@@ -7,12 +7,27 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+#import "AssessmentTableViewCell.h"
+
+//needed to prepopulated the db
 #import "Assessment.h"
 #import "Landscape.h"
 #import "AssessmentTree.h"
 #import "AssessmentType.h"
-#import "AssessmentTableViewCell.h"
-#import "AppDelegate.h"
+#import "TreeCrownCondition.h"
+#import "TreeCrownRecommendation.h"
+#import "TreeFormCondition.h"
+#import "TreeFormRecommendation.h"
+#import "TreeOverallCondition.h"
+#import "TreeOverallRecommendation.h"
+#import "TreeRootFlareCondition.h"
+#import "TreeRootFlareRecommendation.h"
+#import "TreeRootsCondition.h"
+#import "TreeRootsRecommendation.h"
+#import "TreeTrunkCondition.h"
+#import "TreeTrunkRecommendation.h"
+
 
 @interface AssessmentTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate> {
     @private
