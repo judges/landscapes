@@ -13,6 +13,7 @@
 #import "LauncherViewController.h"
 #import "AssessmentTableViewController.h"
 #import "AssessmentTreeViewAndInputController.h"
+#import "AssessmentTreeCRViewController.h"
 
 @interface AppDelegate : NSObject <UIApplicationDelegate> {
   NSManagedObjectModel*         _managedObjectModel;

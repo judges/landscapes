@@ -10,6 +10,8 @@
 		091E33071207722F0046784A /* Tree-Assessment-113x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 091E33061207722F0046784A /* Tree-Assessment-113x120.png */; };
 		091E334512085DF10046784A /* Tree-Assessment-280x295.png in Resources */ = {isa = PBXBuildFile; fileRef = 091E334412085DF00046784A /* Tree-Assessment-280x295.png */; };
 		091E33671208622B0046784A /* button-default.png in Resources */ = {isa = PBXBuildFile; fileRef = 091E33661208622B0046784A /* button-default.png */; };
+		091E33A812086B5E0046784A /* AssessmentTreeCRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 091E33A612086B5E0046784A /* AssessmentTreeCRViewController.m */; };
+		091E33A912086B5E0046784A /* AssessmentTreeCRView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091E33A712086B5E0046784A /* AssessmentTreeCRView.xib */; };
 		09AED7E011FE4A820040A385 /* AssessmentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AED7DE11FE4A820040A385 /* AssessmentTableViewController.m */; };
 		09AED7E111FE4A820040A385 /* AssessmentTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09AED7DF11FE4A820040A385 /* AssessmentTableView.xib */; };
 		09AED84011FF29760040A385 /* AssessmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AED83F11FF29760040A385 /* AssessmentTableViewCell.m */; };
@@ -210,6 +212,9 @@
 		091E33061207722F0046784A /* Tree-Assessment-113x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tree-Assessment-113x120.png"; sourceTree = "<group>"; };
 		091E334412085DF00046784A /* Tree-Assessment-280x295.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tree-Assessment-280x295.png"; sourceTree = "<group>"; };
 		091E33661208622B0046784A /* button-default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-default.png"; sourceTree = "<group>"; };
+		091E33A512086B5E0046784A /* AssessmentTreeCRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssessmentTreeCRViewController.h; sourceTree = "<group>"; };
+		091E33A612086B5E0046784A /* AssessmentTreeCRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssessmentTreeCRViewController.m; sourceTree = "<group>"; };
+		091E33A712086B5E0046784A /* AssessmentTreeCRView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AssessmentTreeCRView.xib; path = Classes/AssessmentTreeCRView.xib; sourceTree = "<group>"; };
 		09AED7DD11FE4A820040A385 /* AssessmentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssessmentTableViewController.h; path = ../AssessmentTableViewController.h; sourceTree = "<group>"; };
 		09AED7DE11FE4A820040A385 /* AssessmentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssessmentTableViewController.m; path = ../AssessmentTableViewController.m; sourceTree = "<group>"; };
 		09AED7DF11FE4A820040A385 /* AssessmentTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssessmentTableView.xib; sourceTree = "<group>"; };
@@ -317,6 +322,29 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		091E33AE12086B8E0046784A /* Assessments */ = {
+			isa = PBXGroup;
+			children = (
+				09AED83E11FF29760040A385 /* AssessmentTableViewCell.h */,
+				09AED83F11FF29760040A385 /* AssessmentTableViewCell.m */,
+				09AED7DD11FE4A820040A385 /* AssessmentTableViewController.h */,
+				09AED7DE11FE4A820040A385 /* AssessmentTableViewController.m */,
+				091E33AF12086B940046784A /* AssessmentTree */,
+			);
+			name = Assessments;
+			sourceTree = "<group>";
+		};
+		091E33AF12086B940046784A /* AssessmentTree */ = {
+			isa = PBXGroup;
+			children = (
+				09F0D133120722F800BD9631 /* AssessmentTreeViewAndInputController.h */,
+				09F0D134120722F800BD9631 /* AssessmentTreeViewAndInputController.m */,
+				091E33A512086B5E0046784A /* AssessmentTreeCRViewController.h */,
+				091E33A612086B5E0046784A /* AssessmentTreeCRViewController.m */,
+			);
+			name = AssessmentTree;
+			sourceTree = "<group>";
+		};
 		09AED84111FF2EF40040A385 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,14 +394,9 @@
 		09AED84311FF2F040040A385 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				09AED83E11FF29760040A385 /* AssessmentTableViewCell.h */,
-				09AED83F11FF29760040A385 /* AssessmentTableViewCell.m */,
-				09AED7DD11FE4A820040A385 /* AssessmentTableViewController.h */,
-				09AED7DE11FE4A820040A385 /* AssessmentTableViewController.m */,
+				091E33AE12086B8E0046784A /* Assessments */,
 				14EBCDA811FE195700F36458 /* LauncherViewController.h */,
 				14EBCDA911FE195700F36458 /* LauncherViewController.m */,
-				09F0D133120722F800BD9631 /* AssessmentTreeViewAndInputController.h */,
-				09F0D134120722F800BD9631 /* AssessmentTreeViewAndInputController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -425,6 +448,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				091E33A712086B5E0046784A /* AssessmentTreeCRView.xib */,
 				09F0D135120722F800BD9631 /* AssessmentTreeViewAndInput.xib */,
 				09AED7DF11FE4A820040A385 /* AssessmentTableView.xib */,
 				09F0D0DC1207199F00BD9631 /* AssessmentTableViewCell.xib */,
@@ -738,6 +762,7 @@
 				091E33071207722F0046784A /* Tree-Assessment-113x120.png in Resources */,
 				091E334512085DF10046784A /* Tree-Assessment-280x295.png in Resources */,
 				091E33671208622B0046784A /* button-default.png in Resources */,
+				091E33A912086B5E0046784A /* AssessmentTreeCRView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,6 +796,7 @@
 				09F0D05D12037D3900BD9631 /* AssessmentTree.m in Sources */,
 				09F0D05E12037D3900BD9631 /* AssessmentType.m in Sources */,
 				09F0D136120722F800BD9631 /* AssessmentTreeViewAndInputController.m in Sources */,
+				091E33A812086B5E0046784A /* AssessmentTreeCRViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

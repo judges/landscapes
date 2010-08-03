@@ -41,6 +41,7 @@
   [map from:@"*" toViewController:[TTWebController class]];
   [map from:@"tt://assessments" toViewController:[AssessmentTableViewController class]];
   [map from:@"tt://assessments/TreeViewAndInput?" toViewController:[AssessmentTreeViewAndInputController class]];
+  [map from:@"tt://assessments/TreeForm" toViewController:[AssessmentTreeCRViewController class]];
   if (![navigator restoreViewControllers]) {
     //loading assessments view as default for testing for now
     [navigator openURLAction:[TTURLAction actionWithURLPath:@"tt://assessments"]];

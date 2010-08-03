@@ -10,9 +10,11 @@
 
 
 @implementation AssessmentTreeViewAndInputController
+@synthesize viewView, inputView;
 @synthesize assessment, assessmentTree, assessor, date, caliper, height, fetchedResultsController, managedObjectContext;
 @synthesize formCText, crownCText, trunkCText, rootFlareCText, rootsCText, overallCText;
 @synthesize formRText, crownRText, trunkRText, rootFlareRText, rootsRText, overallRText;
+@synthesize assessorField, caliperField, heightField, button1, button2, button3, button4, button5;
 
 -(id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query { 
     if (self = [super initWithNibName:@"AssessmentTreeViewAndInput" bundle:[NSBundle mainBundle]]){ 
@@ -38,6 +40,28 @@
     } 
     return self; 
 } 
+
+-(IBAction)segmentSwitch:(id)sender {
+    UISegmentedControl *segmentedButton = (UISegmentedControl *) sender;
+    if (segmentedButton.selectedSegmentIndex == 0) {
+        [viewView setHidden:NO];
+        [inputView setHidden:YES];
+    } else {
+        [viewView setHidden:YES];
+        [inputView setHidden:NO];
+    }
+
+}
+-(IBAction)treeButtonClick:(id)sender {
+    int clickId = [[(UIButton*)sender titleLabel].text intValue];
+    switch (clickId) {
+        case 1:
+            [[TTNavigator navigator] openURLAction:[[TTURLAction actionWithURLPath:@"tt://assessments/TreeForm"] applyAnimated:YES]];;
+            break;
+        default:
+            break;
+    }
+}
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -88,6 +112,9 @@
         self.rootFlareRText.text = self.assessmentTree.rootflare_recommendation.name;
         self.rootsRText.text = self.assessmentTree.roots_recommendation.name;
         self.overallRText.text = self.assessmentTree.overall_recommendation.name;
+        self.assessorField.text = self.assessment.assessor;
+        self.caliperField.text = [self.assessmentTree.caliper stringValue];
+        self.heightField.text = [self.assessmentTree.height stringValue];
     }
 }
 
@@ -149,6 +176,16 @@
 }    
 
 - (void)dealloc {
+    [assessorField release];
+    [caliperField release];
+    [heightField release];
+    [button1 release];
+    [button2 release];
+    [button3  release];
+    [button4 release];
+    [button5 release];
+    [viewView release];
+    [inputView release];
     [assessor release];
     [date release];
     [caliper release];
