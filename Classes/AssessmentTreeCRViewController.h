@@ -16,6 +16,10 @@
     IBOutlet UIPickerView *conditionPicker;
     IBOutlet UIPickerView *recommendationPicker;
     IBOutlet UISegmentedControl *switchControl;
+    IBOutlet UIButton *conditionButton;
+    IBOutlet UIButton *recommendationButton;
+    IBOutlet UITextField *conditionField;
+    IBOutlet UITextField *recommendationField;
     NSMutableArray *conditionArray;
     NSMutableArray *recommendationArray;
     NSNumber *whichId;
@@ -26,6 +30,12 @@
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain) NSMutableArray *conditionArray;
 @property (nonatomic, retain) NSMutableArray *recommendationArray;
+@property (nonatomic, retain) UITextField *conditionField;
+@property (nonatomic, retain) UITextField *recommendationField;
 -(id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query;
+-(IBAction)addCondition;
+-(IBAction)addRecommendation;
+-(IBAction)conditionTypingFinished;
+-(IBAction)recommendationTypingFinished;
 -(IBAction)segmentSwitch:(id)sender;
 @end

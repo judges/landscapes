@@ -12,7 +12,7 @@
 
 @implementation AssessmentTreeCRViewController
 
-@synthesize whichId, managedObjectContext, conditionArray, recommendationArray;
+@synthesize whichId, managedObjectContext, conditionArray, recommendationArray, conditionField, recommendationField;
 
 
 -(id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query { 
@@ -35,7 +35,50 @@
         [recommendationView setHidden:NO];
     }
 }
-
+-(IBAction)addCondition {
+    switch ([whichId intValue]) {
+        case 1:
+        {
+            TreeFormCondition *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeFormCondition" inManagedObjectContext:managedObjectContext];
+            item.name = [conditionField text];
+            break;
+        }
+        default:
+            break;
+    }
+    NSError *error;
+    if (![managedObjectContext save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+    
+    [conditionArray addObject:[conditionField text]];
+    [conditionPicker reloadComponent:0];
+}
+-(IBAction)addRecommendation {
+    switch ([whichId intValue]) {
+        case 1:
+        {
+            TreeFormRecommendation *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeFormRecommendation" inManagedObjectContext:managedObjectContext];
+            item.name = [recommendationField text];
+            break;
+        }
+        default:
+            break;
+    }
+    NSError *error;
+    if (![managedObjectContext save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+    
+    [recommendationArray addObject:[recommendationField text]];
+    [recommendationPicker reloadComponent:0];
+}
+-(IBAction)conditionTypingFinished {
+    [conditionField resignFirstResponder];
+}
+-(IBAction)recommendationTypingFinished {
+    [recommendationField resignFirstResponder];
+}
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
