@@ -88,4 +88,8 @@
 -(id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query;
 -(IBAction)segmentSwitch:(id)sender;
 -(IBAction)treeButtonClick:(id)sender;
+-(IBAction)saveAssessor:(id)sender;
+-(IBAction)saveCaliper:(id)sender;
+-(IBAction)saveHeight:(id)sender;
+
 @end

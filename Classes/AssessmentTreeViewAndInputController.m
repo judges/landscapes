@@ -62,6 +62,33 @@
             break;
     }
 }
+-(IBAction)saveAssessor:(id)sender {
+    [assessorField resignFirstResponder];
+    /*NSError *saveError;
+    self.assessor.text = [(UITextField*)sender text];
+    self.assessment.assessor = [(UITextField*)sender text];
+    if (![managedObjectContext save:&saveError]) {
+        NSLog(@"Saving changes to book book two failed: %@", saveError);
+    }*/
+}
+-(IBAction)saveCaliper:(id)sender {
+    [caliperField resignFirstResponder];
+    self.assessmentTree.caliper = [NSDecimalNumber decimalNumberWithString:[(UITextField*)sender text]];
+    NSError *saveError;
+    if (![managedObjectContext save:&saveError]) {
+       NSLog(@"Saving changes to caliper failed: %@", saveError);
+    }
+    self.caliper.text = [self.assessmentTree.caliper stringValue];
+}
+-(IBAction)saveHeight:(id)sender {
+    [heightField resignFirstResponder];
+    self.assessmentTree.height = [NSDecimalNumber decimalNumberWithString:[(UITextField*)sender text]];
+    NSError *saveError;
+    if (![managedObjectContext save:&saveError]) {
+        NSLog(@"Saving changes to height failed: %@", saveError);
+    }
+    self.height.text = [self.assessmentTree.height stringValue];
+}
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -76,6 +103,8 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [NSFetchedResultsController deleteCacheWithName:nil];
+    
     if(!managedObjectContext){
         managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     }
@@ -116,6 +145,7 @@
         self.caliperField.text = [self.assessmentTree.caliper stringValue];
         self.heightField.text = [self.assessmentTree.height stringValue];
     }
+    
 }
 
 
