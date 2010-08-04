@@ -11,11 +11,4 @@
 
 @implementation LauncherViewController
 
-
-
-
-
-
-
-
 @end
