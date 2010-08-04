@@ -374,9 +374,13 @@
     recommendationField.text = @"";
 }
 -(IBAction)conditionTypingFinished {
+    [conditionField setHidden: YES];
+    [conditionSaveButton setHidden: YES];
     [conditionField resignFirstResponder];
 }
 -(IBAction)recommendationTypingFinished {
+    [recommendationField setHidden: YES];
+    [recommendationSaveButton setHidden: YES];
     [recommendationField resignFirstResponder];
 }
 /*
