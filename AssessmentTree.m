@@ -2,7 +2,7 @@
 //  AssessmentTree.m
 //  landscapes
 //
-//  Created by Evan Cordell on 7/30/10.
+//  Created by Evan Cordell on 8/4/10.
 //  Copyright 2010 NCPTT. All rights reserved.
 //
 
@@ -27,16 +27,16 @@
 @dynamic caliper;
 @dynamic height;
 @dynamic crown_condition;
-@dynamic overall_condition;
-@dynamic form_recommendation;
+@dynamic roots_condition;
 @dynamic form_condition;
 @dynamic overall_recommendation;
 @dynamic assessment;
-@dynamic roots_condition;
 @dynamic rootflare_recommendation;
 @dynamic trunk_recommendation;
 @dynamic rootflare_condition;
+@dynamic form_recommendation;
 @dynamic crown_recommendation;
+@dynamic overall_condition;
 @dynamic roots_recommendation;
 @dynamic trunk_condition;
 
