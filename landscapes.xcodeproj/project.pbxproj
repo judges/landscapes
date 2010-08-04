@@ -13,6 +13,8 @@
 		091E33A812086B5E0046784A /* AssessmentTreeCRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 091E33A612086B5E0046784A /* AssessmentTreeCRViewController.m */; };
 		091E33A912086B5E0046784A /* AssessmentTreeCRView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091E33A712086B5E0046784A /* AssessmentTreeCRView.xib */; };
 		091E377B1208CADE0046784A /* add_50.png in Resources */ = {isa = PBXBuildFile; fileRef = 091E377A1208CADE0046784A /* add_50.png */; };
+		091E39191209C9BD0046784A /* delete_50.png in Resources */ = {isa = PBXBuildFile; fileRef = 091E39181209C9BD0046784A /* delete_50.png */; };
+		091E391D1209CAEE0046784A /* edit_50.png in Resources */ = {isa = PBXBuildFile; fileRef = 091E391C1209CAEE0046784A /* edit_50.png */; };
 		09AED7E011FE4A820040A385 /* AssessmentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AED7DE11FE4A820040A385 /* AssessmentTableViewController.m */; };
 		09AED7E111FE4A820040A385 /* AssessmentTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09AED7DF11FE4A820040A385 /* AssessmentTableView.xib */; };
 		09AED84011FF29760040A385 /* AssessmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AED83F11FF29760040A385 /* AssessmentTableViewCell.m */; };
@@ -217,6 +219,8 @@
 		091E33A612086B5E0046784A /* AssessmentTreeCRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssessmentTreeCRViewController.m; sourceTree = "<group>"; };
 		091E33A712086B5E0046784A /* AssessmentTreeCRView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AssessmentTreeCRView.xib; path = Classes/AssessmentTreeCRView.xib; sourceTree = "<group>"; };
 		091E377A1208CADE0046784A /* add_50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_50.png; sourceTree = "<group>"; };
+		091E39181209C9BD0046784A /* delete_50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete_50.png; sourceTree = "<group>"; };
+		091E391C1209CAEE0046784A /* edit_50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_50.png; sourceTree = "<group>"; };
 		09AED7DD11FE4A820040A385 /* AssessmentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssessmentTableViewController.h; path = ../AssessmentTableViewController.h; sourceTree = "<group>"; };
 		09AED7DE11FE4A820040A385 /* AssessmentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssessmentTableViewController.m; path = ../AssessmentTableViewController.m; sourceTree = "<group>"; };
 		09AED7DF11FE4A820040A385 /* AssessmentTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssessmentTableView.xib; sourceTree = "<group>"; };
@@ -406,6 +410,8 @@
 		1440242C11FDE524000F936D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				091E391C1209CAEE0046784A /* edit_50.png */,
+				091E39181209C9BD0046784A /* delete_50.png */,
 				091E377A1208CADE0046784A /* add_50.png */,
 				091E33661208622B0046784A /* button-default.png */,
 				091E334412085DF00046784A /* Tree-Assessment-280x295.png */,
@@ -767,6 +773,8 @@
 				091E33671208622B0046784A /* button-default.png in Resources */,
 				091E33A912086B5E0046784A /* AssessmentTreeCRView.xib in Resources */,
 				091E377B1208CADE0046784A /* add_50.png in Resources */,
+				091E39191209C9BD0046784A /* delete_50.png in Resources */,
+				091E391D1209CAEE0046784A /* edit_50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -36,7 +36,77 @@
         [recommendationView setHidden:NO];
     }
 }
+
 -(IBAction)addCondition {
+    [conditionField becomeFirstResponder];
+}
+-(IBAction)addRecommendation {
+    [recommendationField becomeFirstResponder];
+}
+-(IBAction)editCondition {
+    conditionField.text = [conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
+    [conditionField becomeFirstResponder];
+}
+-(IBAction)editRecommendation {
+    recommendationField.text = [recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
+    [recommendationField becomeFirstResponder];
+}
+-(IBAction)deleteCondition {
+    //TODO: other types of attributes
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    NSError *error;
+    switch ([whichId intValue]) {
+        case 1:
+        {
+            NSEntityDescription *entity = [NSEntityDescription entityForName:@"TreeFormCondition" inManagedObjectContext:managedObjectContext];
+            [fetchRequest setEntity:entity];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", [conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]]];
+            [fetchRequest setPredicate:predicate];
+            NSMutableArray *array = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:&error]];
+            TreeFormCondition *item = (TreeFormCondition *)[array objectAtIndex:0];
+            [managedObjectContext deleteObject:item];
+        }
+            break;
+        default:
+            break;
+    }
+    
+    [fetchRequest release];
+    [sortDescriptors release];
+    [sortDescriptor release];
+    if (![managedObjectContext save:&error]) {
+       NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+    [conditionArray removeObjectAtIndex:[conditionPicker selectedRowInComponent:0]];
+    [conditionPicker reloadComponent:0];
+}
+-(IBAction)deleteRecommendation {
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    NSError *error;
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"TreeFormRecommendation" inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", [recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]]];
+    [fetchRequest setPredicate:predicate];
+    NSMutableArray *array = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:&error]];
+    [fetchRequest release];
+    [sortDescriptors release];
+    [sortDescriptor release];
+    TreeFormRecommendation *fr = (TreeFormRecommendation *)[array objectAtIndex:0];
+    [managedObjectContext deleteObject:fr];
+    if (![managedObjectContext save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+    [recommendationArray removeObjectAtIndex:[recommendationPicker selectedRowInComponent:0]];
+    [recommendationPicker reloadComponent:0];
+}
+-(IBAction)conditionSaveButtonClick {
+    [conditionField resignFirstResponder];
     switch ([whichId intValue]) {
         case 1:
         {
@@ -54,8 +124,10 @@
     
     [conditionArray addObject:[conditionField text]];
     [conditionPicker reloadComponent:0];
+    conditionField.text = @"";
 }
--(IBAction)addRecommendation {
+-(IBAction)recommendationSaveButtonClick {
+    [recommendationField resignFirstResponder];
     switch ([whichId intValue]) {
         case 1:
         {
@@ -73,6 +145,7 @@
     
     [recommendationArray addObject:[recommendationField text]];
     [recommendationPicker reloadComponent:0];
+    recommendationField.text = @"";
 }
 -(IBAction)conditionTypingFinished {
     [conditionField resignFirstResponder];
@@ -193,9 +266,6 @@
     return s;
 }
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    if(!managedObjectContext){
-        managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-    }
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
