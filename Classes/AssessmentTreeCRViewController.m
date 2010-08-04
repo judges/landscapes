@@ -12,13 +12,14 @@
 
 @implementation AssessmentTreeCRViewController
 
-@synthesize whichId, managedObjectContext, conditionArray, recommendationArray, conditionField, recommendationField;
+@synthesize whichId, managedObjectContext, conditionArray, recommendationArray, conditionField, recommendationField, tree;
 
 
 -(id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query { 
     if (self = [super initWithNibName:@"AssessmentTreeCRView" bundle:[NSBundle mainBundle]]){
         if(query && [query objectForKey:@"assessmentTree"] && [query objectForKey:@"id"]){ 
             whichId = [query objectForKey:@"id"];
+            tree = [query objectForKey:@"assessmentTree"];
             conditionArray = [[NSMutableArray alloc] init];
             recommendationArray = [[NSMutableArray alloc] init];
         }
@@ -120,15 +121,26 @@
     [rFetchRequest setSortDescriptors:sortDescriptors];
     
     NSError *error;
-    NSArray *cArray = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:cFetchRequest error:&error]];
-    NSArray *rArray = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:rFetchRequest error:&error]];
-    
+    NSMutableArray *cArray = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:cFetchRequest error:&error]];
+    NSMutableArray *rArray = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:rFetchRequest error:&error]];
+    int selectedConditionIndex = 0;
+    int selectedRecommendationIndex = 0;
+    int cCtr = 0;
+    int rCtr = 0;
     switch ([whichId intValue]) {
         case 1:
             for (TreeFormCondition *item in cArray) {
+                cCtr++;
+                if (tree.form_condition == item) {
+                    selectedConditionIndex = cCtr;
+                }
                 [conditionArray addObject:item.name];
             }
             for (TreeFormRecommendation *item in rArray) {
+                rCtr++;
+                if (tree.form_recommendation == item) {
+                    selectedConditionIndex = rCtr;
+                }
                 [recommendationArray addObject:item.name];
             }
             break;
@@ -136,12 +148,14 @@
             break;
     }
     
-    
-    
     [cFetchRequest release];
     [rFetchRequest release];
     [sortDescriptor release];
     [sortDescriptors release];
+    
+    
+    [conditionPicker selectRow:selectedConditionIndex inComponent:0 animated:YES];
+    [recommendationPicker selectRow:selectedRecommendationIndex inComponent:0 animated:YES];
 }
 
 
@@ -179,11 +193,53 @@
     }
     return s;
 }
+- (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    if (thePickerView == conditionPicker) {
+        switch ([whichId intValue]) {
+            case 1:
+                {
+                    if(!managedObjectContext){
+                        managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+                    }
+                    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+                    NSEntityDescription *entity = [NSEntityDescription entityForName:@"TreeFormCondition" inManagedObjectContext:managedObjectContext];
+                    [fetchRequest setEntity:entity];
+                    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+                    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+                    [fetchRequest setSortDescriptors:sortDescriptors];
+                    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", [conditionArray objectAtIndex:row]];
+                    [fetchRequest setPredicate:predicate];
+                    NSError *error;
+                    NSMutableArray *array = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:&error]];
+                    [fetchRequest release];
+                    [sortDescriptors release];
+                    [sortDescriptor release];
+                    TreeFormCondition *fc = (TreeFormCondition *)[array objectAtIndex:0];
+                    tree.form_condition = fc;
+
+                }
+                break;
+            default:
+                break;
+        }
+    }
+    else if (thePickerView == recommendationPicker) {
+        switch ([whichId intValue]) {
+            case 1:
+            {
+                NSLog(@"test");
+            }
+                break;
+            default:
+                break;
+        }
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
+    NSLog(@"Memory Warning");
     // Release any cached data, images, etc that aren't in use.
 }
 

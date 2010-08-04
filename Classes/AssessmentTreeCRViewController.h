@@ -11,6 +11,7 @@
 #import "TreeFormCondition.h"
 
 @interface AssessmentTreeCRViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, NSFetchedResultsControllerDelegate> {
+    AssessmentTree *tree;
     IBOutlet UIView *conditionView;
     IBOutlet UIView *recommendationView;
     IBOutlet UIPickerView *conditionPicker;
@@ -26,6 +27,7 @@
     @private
         NSManagedObjectContext *managedObjectContext;
 }
+@property (nonatomic, retain) AssessmentTree *tree;
 @property (nonatomic, retain) NSNumber *whichId;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain) NSMutableArray *conditionArray;
