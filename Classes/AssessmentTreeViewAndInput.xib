@@ -863,6 +863,27 @@
 									<string key="NSResourceName">button-default.png</string>
 								</object>
 							</object>
+							<object class="IBUIButton" id="537987941">
+								<reference key="NSNextResponder" ref="815865319"/>
+								<int key="NSvFlags">292</int>
+								<string key="NSFrame">{{0, 256}, {50, 50}}</string>
+								<reference key="NSSuperview" ref="815865319"/>
+								<bool key="IBUIOpaque">NO</bool>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<int key="IBUIContentHorizontalAlignment">0</int>
+								<int key="IBUIContentVerticalAlignment">0</int>
+								<reference key="IBUIFont" ref="730358796"/>
+								<double key="IBUIContentEdgeInsets.top">0.0</double>
+								<double key="IBUIContentEdgeInsets.bottom">0.0</double>
+								<double key="IBUIContentEdgeInsets.left">2</double>
+								<double key="IBUIContentEdgeInsets.right">0.0</double>
+								<string key="IBUIHighlightedTitle">6</string>
+								<string key="IBUINormalTitle">6</string>
+								<reference key="IBUIHighlightedTitleColor" ref="792955774"/>
+								<reference key="IBUINormalTitleColor" ref="96568460"/>
+								<reference key="IBUINormalTitleShadowColor" ref="276161386"/>
+								<reference key="IBUINormalBackgroundImage" ref="355736517"/>
+							</object>
 							<object class="IBUIButton" id="792525358">
 								<reference key="NSNextResponder" ref="815865319"/>
 								<int key="NSvFlags">292</int>
@@ -1293,6 +1314,15 @@
 					</object>
 					<int key="connectionID">106</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">treeButtonClick:</string>
+						<reference key="source" ref="537987941"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">108</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -1347,6 +1377,7 @@
 							<reference ref="395351096"/>
 							<reference ref="443061333"/>
 							<reference ref="96780863"/>
+							<reference ref="537987941"/>
 						</object>
 						<reference key="parent" ref="191373211"/>
 					</object>
@@ -1610,6 +1641,11 @@
 						<reference key="object" ref="96780863"/>
 						<reference key="parent" ref="815865319"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">107</int>
+						<reference key="object" ref="537987941"/>
+						<reference key="parent" ref="815865319"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -1620,6 +1656,7 @@
 					<string>-2.CustomClassName</string>
 					<string>1.IBEditorWindowLastContentRect</string>
 					<string>1.IBPluginDependency</string>
+					<string>107.IBPluginDependency</string>
 					<string>12.IBPluginDependency</string>
 					<string>14.IBPluginDependency</string>
 					<string>15.IBPluginDependency</string>
@@ -1721,6 +1758,7 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -1739,7 +1777,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">106</int>
+			<int key="maxID">108</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

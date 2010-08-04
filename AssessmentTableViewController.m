@@ -68,7 +68,7 @@
     
     AssessmentTree *assessmentTree = [NSEntityDescription insertNewObjectForEntityForName:@"AssessmentTree" inManagedObjectContext:context];
     assessmentTree.assessment = assessment;
-    /*
+    
     TreeCrownCondition *treeCrownCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeCrownCondition" inManagedObjectContext:context];
     treeCrownCondition.name = @"Good";
     TreeFormCondition *treeFormCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeFormCondition" inManagedObjectContext:context];
@@ -107,7 +107,7 @@
     assessmentTree.roots_recommendation = treeRootsRecommendation;
     assessmentTree.trunk_recommendation = treeTrunkRecommendation;
     assessmentTree.overall_recommendation = treeOverallRecommendation;
-    */
+    
     NSError *error;
     if (![context save:&error]) {
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);

@@ -2,7 +2,7 @@
 //  AssessmentTree.h
 //  landscapes
 //
-//  Created by Evan Cordell on 7/30/10.
+//  Created by Evan Cordell on 8/4/10.
 //  Copyright 2010 NCPTT. All rights reserved.
 //
 
@@ -29,16 +29,16 @@
 @property (nonatomic, retain) NSDecimalNumber * caliper;
 @property (nonatomic, retain) NSDecimalNumber * height;
 @property (nonatomic, retain) TreeCrownCondition * crown_condition;
-@property (nonatomic, retain) TreeOverallCondition * overall_condition;
-@property (nonatomic, retain) TreeFormRecommendation * form_recommendation;
+@property (nonatomic, retain) TreeRootsCondition * roots_condition;
 @property (nonatomic, retain) TreeFormCondition * form_condition;
 @property (nonatomic, retain) TreeOverallRecommendation * overall_recommendation;
 @property (nonatomic, retain) Assessment * assessment;
-@property (nonatomic, retain) TreeRootsCondition * roots_condition;
 @property (nonatomic, retain) TreeRootFlareRecommendation * rootflare_recommendation;
 @property (nonatomic, retain) TreeTrunkRecommendation * trunk_recommendation;
 @property (nonatomic, retain) TreeRootFlareCondition * rootflare_condition;
+@property (nonatomic, retain) TreeFormRecommendation * form_recommendation;
 @property (nonatomic, retain) TreeCrownRecommendation * crown_recommendation;
+@property (nonatomic, retain) TreeOverallCondition * overall_condition;
 @property (nonatomic, retain) TreeRootsRecommendation * roots_recommendation;
 @property (nonatomic, retain) TreeTrunkCondition * trunk_condition;
 

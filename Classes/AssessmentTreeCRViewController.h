@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
-#import "TreeFormCondition.h"
-#import "TreeFormRecommendation.h"
+
 
 @interface AssessmentTreeCRViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, NSFetchedResultsControllerDelegate> {
     AssessmentTree *tree;
@@ -18,8 +17,14 @@
     IBOutlet UIPickerView *conditionPicker;
     IBOutlet UIPickerView *recommendationPicker;
     IBOutlet UISegmentedControl *switchControl;
-    IBOutlet UIButton *conditionButton;
-    IBOutlet UIButton *recommendationButton;
+    IBOutlet UIButton *conditionSaveButton;
+    IBOutlet UIButton *recommendationSaveButton;
+    IBOutlet UIButton *addConditionButton;
+    IBOutlet UIButton *addRecommendationButton;
+    IBOutlet UIButton *editConditionButton;
+    IBOutlet UIButton *editRecommendationButton;
+    IBOutlet UIButton *deleteConditionButton;
+    IBOutlet UIButton *deleteRecommendationButton;
     IBOutlet UITextField *conditionField;
     IBOutlet UITextField *recommendationField;
     NSMutableArray *conditionArray;
@@ -28,6 +33,7 @@
     @private
         NSManagedObjectContext *managedObjectContext;
 }
+@property  BOOL isEditing;
 @property (nonatomic, retain) AssessmentTree *tree;
 @property (nonatomic, retain) NSNumber *whichId;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
@@ -38,6 +44,12 @@
 -(id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query;
 -(IBAction)addCondition;
 -(IBAction)addRecommendation;
+-(IBAction)editCondition;
+-(IBAction)editRecommendation;
+-(IBAction)deleteCondition;
+-(IBAction)deleteRecommendation;
+-(IBAction)conditionSaveButtonClick;
+-(IBAction)recommendationSaveButtonClick;
 -(IBAction)conditionTypingFinished;
 -(IBAction)recommendationTypingFinished;
 -(IBAction)segmentSwitch:(id)sender;
