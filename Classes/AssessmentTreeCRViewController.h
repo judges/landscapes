@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
-#import "TreeFormCondition.h"
-#import "TreeFormRecommendation.h"
+
 
 @interface AssessmentTreeCRViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, NSFetchedResultsControllerDelegate> {
     AssessmentTree *tree;
@@ -34,6 +33,7 @@
     @private
         NSManagedObjectContext *managedObjectContext;
 }
+@property  BOOL isEditing;
 @property (nonatomic, retain) AssessmentTree *tree;
 @property (nonatomic, retain) NSNumber *whichId;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
