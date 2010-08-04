@@ -14,7 +14,7 @@
 @synthesize assessment, assessmentTree, assessor, date, caliper, height, fetchedResultsController, managedObjectContext;
 @synthesize formCText, crownCText, trunkCText, rootFlareCText, rootsCText, overallCText;
 @synthesize formRText, crownRText, trunkRText, rootFlareRText, rootsRText, overallRText;
-@synthesize assessorField, caliperField, heightField, button1, button2, button3, button4, button5;
+@synthesize assessorField, caliperField, heightField, button1, button2, button3, button4, button5, button6;
 
 -(id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query { 
     if (self = [super initWithNibName:@"AssessmentTreeViewAndInput" bundle:[NSBundle mainBundle]]){ 
@@ -59,12 +59,12 @@
 }
 -(IBAction)saveAssessor:(id)sender {
     [assessorField resignFirstResponder];
-    /*NSError *saveError;
+    NSError *saveError;
     self.assessor.text = [(UITextField*)sender text];
     self.assessment.assessor = [(UITextField*)sender text];
     if (![managedObjectContext save:&saveError]) {
         NSLog(@"Saving changes to book book two failed: %@", saveError);
-    }*/
+    }
 }
 -(IBAction)saveCaliper:(id)sender {
     [caliperField resignFirstResponder];
@@ -209,6 +209,7 @@
     [button3  release];
     [button4 release];
     [button5 release];
+    [button6 release];
     [viewView release];
     [inputView release];
     [assessor release];

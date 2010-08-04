@@ -45,6 +45,7 @@
     IBOutlet UIButton *button3;
     IBOutlet UIButton *button4;
     IBOutlet UIButton *button5;
+    IBOutlet UIButton *button6;
  @private
     NSFetchedResultsController *fetchedResultsController;
     NSManagedObjectContext *managedObjectContext;
@@ -81,6 +82,7 @@
 @property (nonatomic, retain) UIButton *button3;
 @property (nonatomic, retain) UIButton *button4;
 @property (nonatomic, retain) UIButton *button5;
+@property (nonatomic, retain) UIButton *button6;
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;

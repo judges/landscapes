@@ -233,7 +233,7 @@
             NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", [recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]]];
             [fetchRequest setPredicate:predicate];
             NSMutableArray *array = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:&error]];
-            TreeRootsRecommendation *item = (TreeCrownRecommendation *)[array objectAtIndex:0];
+            TreeRootsRecommendation *item = (TreeRootsRecommendation *)[array objectAtIndex:0];
             [managedObjectContext deleteObject:item];
             break;
         }
@@ -289,7 +289,7 @@
         }
         case 4:
         {
-            TreeRootFlareCondition *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeTrunkCondition" inManagedObjectContext:managedObjectContext];
+            TreeRootFlareCondition *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootFlareCondition" inManagedObjectContext:managedObjectContext];
             item.name = [conditionField text];
             break;
         }
@@ -345,7 +345,7 @@
         }
         case 4:
         {
-            TreeRootFlareRecommendation *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeTrunkRecommendation" inManagedObjectContext:managedObjectContext];
+            TreeRootFlareRecommendation *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootFlareRecommendation" inManagedObjectContext:managedObjectContext];
             item.name = [recommendationField text];
             break;
         }
