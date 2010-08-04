@@ -130,17 +130,17 @@
     switch ([whichId intValue]) {
         case 1:
             for (TreeFormCondition *item in cArray) {
-                cCtr++;
                 if (tree.form_condition == item) {
                     selectedConditionIndex = cCtr;
                 }
+                ++cCtr;
                 [conditionArray addObject:item.name];
             }
             for (TreeFormRecommendation *item in rArray) {
-                rCtr++;
                 if (tree.form_recommendation == item) {
-                    selectedConditionIndex = rCtr;
+                    selectedRecommendationIndex = rCtr;
                 }
+                ++rCtr;
                 [recommendationArray addObject:item.name];
             }
             break;
@@ -152,7 +152,6 @@
     [rFetchRequest release];
     [sortDescriptor release];
     [sortDescriptors release];
-    
     
     [conditionPicker selectRow:selectedConditionIndex inComponent:0 animated:YES];
     [recommendationPicker selectRow:selectedRecommendationIndex inComponent:0 animated:YES];
@@ -194,29 +193,26 @@
     return s;
 }
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    if(!managedObjectContext){
+        managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    }
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    NSError *error;
+    
     if (thePickerView == conditionPicker) {
         switch ([whichId intValue]) {
             case 1:
                 {
-                    if(!managedObjectContext){
-                        managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-                    }
-                    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
                     NSEntityDescription *entity = [NSEntityDescription entityForName:@"TreeFormCondition" inManagedObjectContext:managedObjectContext];
                     [fetchRequest setEntity:entity];
-                    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
-                    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-                    [fetchRequest setSortDescriptors:sortDescriptors];
                     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", [conditionArray objectAtIndex:row]];
                     [fetchRequest setPredicate:predicate];
-                    NSError *error;
                     NSMutableArray *array = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:&error]];
-                    [fetchRequest release];
-                    [sortDescriptors release];
-                    [sortDescriptor release];
                     TreeFormCondition *fc = (TreeFormCondition *)[array objectAtIndex:0];
                     tree.form_condition = fc;
-
                 }
                 break;
             default:
@@ -227,12 +223,24 @@
         switch ([whichId intValue]) {
             case 1:
             {
-                NSLog(@"test");
+                NSEntityDescription *entity = [NSEntityDescription entityForName:@"TreeFormRecommendation" inManagedObjectContext:managedObjectContext];
+                [fetchRequest setEntity:entity];
+                NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", [recommendationArray objectAtIndex:row]];
+                [fetchRequest setPredicate:predicate];
+                NSMutableArray *array = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:&error]];
+                TreeFormRecommendation *fr = (TreeFormRecommendation *)[array objectAtIndex:0];
+                tree.form_recommendation = fr;
             }
                 break;
             default:
                 break;
         }
+    }
+    [fetchRequest release];
+    [sortDescriptors release];
+    [sortDescriptor release];
+    if (![managedObjectContext save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
     }
 }
 
@@ -255,6 +263,9 @@
     [managedObjectContext release];
     [conditionArray release];
     [recommendationArray release];
+    [conditionField release];
+    [recommendationField release];
+    [tree release];
     [super dealloc];
 }
 
