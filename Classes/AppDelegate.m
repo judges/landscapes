@@ -34,19 +34,20 @@
   //_resetModel = YES;
 
   TTNavigator* navigator = [TTNavigator navigator];
-  navigator.persistenceMode = TTNavigatorPersistenceModeAll;
+  navigator.persistenceMode = TTNavigatorPersistenceModeNone;
 
   TTURLMap* map = navigator.URLMap;
 
   [map from:@"*" toViewController:[TTWebController class]];
   [map from:@"tt://assessments" toViewController:[AssessmentTableViewController class]];
-
+  [map from:@"tt://assessments/TreeViewAndInput?" toViewController:[AssessmentTreeViewAndInputController class]];
+  [map from:@"tt://assessments/TreeForm?" toViewController:[AssessmentTreeCRViewController class]];
   if (![navigator restoreViewControllers]) {
     //loading assessments view as default for testing for now
     [navigator openURLAction:[TTURLAction actionWithURLPath:@"tt://assessments"]];
   }
+  
 }
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)dealloc {
@@ -155,11 +156,6 @@
   // Check whether the store already exists or not.
   NSFileManager* fileManager = [NSFileManager defaultManager];
   BOOL exists = [fileManager fileExistsAtPath:storePath];
-  if(exists)
-  {
-      NSLog(@"local db exists");
-  }
-    NSLog(storePath);
   TTDINFO(storePath);
   if( !exists ) {
     _modelCreated = YES;

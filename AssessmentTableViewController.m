@@ -34,37 +34,85 @@
 	// Set the table view's row height
     self.tableView.rowHeight = 52.0;
 	
-	
-    
-    //Provide dummy Fetch request in order to create tables in SQLite DB
-    /*
-     Fetch existing events.
-     Create a fetch request; find the Event entity and assign it to the request; add a sort descriptor; then execute the fetch.
-    */
+    //load managedObjectContext from AppDelegate
     if(!managedObjectContext){
         managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     }
-    
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Assessment" inManagedObjectContext:managedObjectContext];
-    [request setEntity:entity];
-    for (NSPropertyDescription *property in entity)
-    {
-        NSLog(@"%@", property.name);
-    }
-    // Execute the fetch — create a mutable copy of the result.
+    //[self prepopulateDb];
+    //set up fetchedResultsController
+    [self fetchedResultsController];
+
+    //Perform fetch and catch any errors
     NSError *error = nil;
-    NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
-    if (mutableFetchResults == nil) {
-        // Handle the error.
+    [fetchedResultsController performFetch:&error];
+    if (error) {
+        NSLog(@"Error occured fetching from db: %@", error);
     }
-    [request release];
-     
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
+- (void)prepopulateDb {    
+    NSManagedObjectContext *context = [self managedObjectContext];
+    Landscape *landscape = [NSEntityDescription insertNewObjectForEntityForName:@"Landscape" inManagedObjectContext:context];
+    landscape.name = @"Test Landscape";
+    
+    AssessmentType *type = [NSEntityDescription insertNewObjectForEntityForName: @"AssessmentType" inManagedObjectContext:context];
+    type.name = @"Tree";
+    
+    Assessment *assessment = [NSEntityDescription insertNewObjectForEntityForName:@"Assessment" inManagedObjectContext:context];
+    assessment.assessor = @"Test Assessor";
+    assessment.created_at = [NSDate date];
+    assessment.landscape = landscape;
+    assessment.type = type;
+    
+    AssessmentTree *assessmentTree = [NSEntityDescription insertNewObjectForEntityForName:@"AssessmentTree" inManagedObjectContext:context];
+    assessmentTree.assessment = assessment;
+    /*
+    TreeCrownCondition *treeCrownCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeCrownCondition" inManagedObjectContext:context];
+    treeCrownCondition.name = @"Good";
+    TreeFormCondition *treeFormCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeFormCondition" inManagedObjectContext:context];
+    treeFormCondition.name = @"Good";
+    TreeRootFlareCondition *treeRootFlareCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootFlareCondition" inManagedObjectContext:context];
+    treeRootFlareCondition.name = @"Good";
+    TreeRootsCondition *treeRootsCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootsCondition" inManagedObjectContext:context];
+    treeRootsCondition.name = @"Good";
+    TreeTrunkCondition *treeTrunkCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeTrunkCondition" inManagedObjectContext:context];
+    treeTrunkCondition.name = @"Good";
+    TreeOverallCondition *treeOverallCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeOverallCondition" inManagedObjectContext:context];
+    treeOverallCondition.name = @"Good";
+    
+    TreeCrownRecommendation *treeCrownRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeCrownRecommendation" inManagedObjectContext:context];
+    treeCrownRecommendation.name = @"No Action";
+    TreeFormRecommendation *treeFormRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeFormRecommendation" inManagedObjectContext:context];
+    treeFormRecommendation.name = @"No Action";
+    TreeRootFlareRecommendation *treeRootFlareRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootFlareRecommendation" inManagedObjectContext:context];
+    treeRootFlareRecommendation.name = @"No Action";
+    TreeRootsRecommendation *treeRootsRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootsRecommendation" inManagedObjectContext:context];
+    treeRootsRecommendation.name = @"No Action";
+    TreeTrunkRecommendation *treeTrunkRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeTrunkRecommendation" inManagedObjectContext:context];
+    treeTrunkRecommendation.name = @"No Action";
+    TreeOverallRecommendation *treeOverallRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeOverallRecommendation" inManagedObjectContext:context];
+    treeOverallRecommendation.name = @"No Action";
+    
+    assessmentTree.crown_condition = treeCrownCondition;
+    assessmentTree.form_condition = treeFormCondition;
+    assessmentTree.rootflare_condition = treeRootFlareCondition;
+    assessmentTree.roots_condition = treeRootsCondition;
+    assessmentTree.trunk_condition = treeTrunkCondition;
+    assessmentTree.overall_condition = treeOverallCondition;
+    assessmentTree.crown_recommendation = treeCrownRecommendation;
+    assessmentTree.form_recommendation = treeFormRecommendation;
+    assessmentTree.rootflare_recommendation = treeRootFlareRecommendation;
+    assessmentTree.roots_recommendation = treeRootsRecommendation;
+    assessmentTree.trunk_recommendation = treeTrunkRecommendation;
+    assessmentTree.overall_recommendation = treeOverallRecommendation;
+    */
+    NSError *error;
+    if (![context save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+}
 - (void) setEditing:(BOOL)editing animated:(BOOL)animated {
     //Do super before, it will change the name of the editing button
     [super setEditing:editing animated:animated];
@@ -145,13 +193,18 @@
 	// Define your row
     NSInteger row = [indexPath row];
 	
-    static NSString *AssessmentCellIdentifier = @"AssessmentCellIdentifier";
+    static NSString *AssessmentCellIdentifier = @"AssessmentTableViewCell";
     
    
     AssessmentTableViewCell *assessmentCell = (AssessmentTableViewCell *)[tableView dequeueReusableCellWithIdentifier:AssessmentCellIdentifier];
     if (assessmentCell == nil) {
-        assessmentCell = [[[AssessmentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AssessmentCellIdentifier] autorelease];
-        assessmentCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"AssessmentTableViewCell" owner:nil options:nil];
+        for (id currentObject in topLevelObjects) {
+            if ([currentObject isKindOfClass:[UITableViewCell class]]) {
+                assessmentCell = (AssessmentTableViewCell *) currentObject;
+                break;
+            }
+        }
     }
     [self configureCell:assessmentCell atIndexPath:indexPath];
     if (row % 2)
@@ -165,8 +218,13 @@
     // Configure the cell
     Assessment *assessment = (Assessment *)[fetchedResultsController objectAtIndexPath:indexPath];
     cell.assessment = assessment;
-    
-        
+    cell.landscapeName.text = assessment.landscape.name;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+    NSString *date= [dateFormatter stringFromDate:assessment.created_at];
+    [dateFormatter release];
+    cell.date.text = date;
+    cell.typeName.text = assessment.type.name;
 }
 
 
@@ -214,14 +272,11 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-	/*
-	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
-	 */
+    Assessment *assessment = (Assessment *)[fetchedResultsController objectAtIndexPath:indexPath];
+    NSDictionary *query = [NSDictionary dictionaryWithObject:assessment forKey:@"assessment"];
+    if([assessment.type.name isEqualToString:@"Tree"]) {
+        [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"tt://assessments/TreeViewAndInput"] applyQuery:query] applyAnimated:YES]];
+    }
 }
 
 #pragma mark -
@@ -236,28 +291,22 @@
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Assessment" inManagedObjectContext:managedObjectContext];
         [fetchRequest setEntity:entity];
         
-        for (NSPropertyDescription *property in entity)
-        {
-            NSLog(@"%@", property.name);
-        }
-        
-        
         // Edit the sort key as appropriate.
-        //NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
-        //NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"assessor" ascending:YES];
+        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
         
-        //[fetchRequest setSortDescriptors:sortDescriptors];
+        [fetchRequest setSortDescriptors:sortDescriptors];
         
         // Edit the section name key path and cache name if appropriate.
         // nil for section name key path means "no sections".
-        NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:@"Root"];
+        NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:@"assessment_cache"];
         aFetchedResultsController.delegate = self;
         self.fetchedResultsController = aFetchedResultsController;
         
         [aFetchedResultsController release];
         [fetchRequest release];
-        //[sortDescriptor release];
-        //[sortDescriptors release];
+        [sortDescriptor release];
+        [sortDescriptors release];
     }
     
     return fetchedResultsController;
