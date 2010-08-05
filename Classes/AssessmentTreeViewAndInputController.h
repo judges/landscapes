@@ -14,6 +14,7 @@
 @interface AssessmentTreeViewAndInputController : UIViewController <NSFetchedResultsControllerDelegate> {
     IBOutlet UIView *viewView;
     IBOutlet UIView *inputView;
+    IBOutlet UIView *mainView;
     
     Assessment *assessment;
     AssessmentTree *assessmentTree;

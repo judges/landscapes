@@ -12,6 +12,7 @@
 
 @interface AssessmentTreeCRViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, NSFetchedResultsControllerDelegate> {
     AssessmentTree *tree;
+    IBOutlet UIView *mainView;
     IBOutlet UIView *conditionView;
     IBOutlet UIView *recommendationView;
     IBOutlet UIPickerView *conditionPicker;
@@ -39,8 +40,6 @@
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain) NSMutableArray *conditionArray;
 @property (nonatomic, retain) NSMutableArray *recommendationArray;
-@property (nonatomic, retain) UITextField *conditionField;
-@property (nonatomic, retain) UITextField *recommendationField;
 -(id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query;
 -(IBAction)addCondition;
 -(IBAction)addRecommendation;

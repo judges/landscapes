@@ -55,7 +55,6 @@
 		1464EB8D120AC64600F21DCE /* tasks-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB80120AC64600F21DCE /* tasks-57.png */; };
 		1464EB8E120AC64600F21DCE /* vegetation-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB81120AC64600F21DCE /* vegetation-57.png */; };
 		1464EB8F120AC64600F21DCE /* wildlife-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB82120AC64600F21DCE /* wildlife-57.png */; };
-		146B767211FDF9450073C279 /* libisimulate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146B767111FDF9450073C279 /* libisimulate.a */; };
 		14DCC6C211FDE35500A98045 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DCC6C111FDE35500A98045 /* CoreLocation.framework */; };
 		14EBCDAA11FE195700F36458 /* LauncherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EBCDA911FE195700F36458 /* LauncherViewController.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -296,7 +295,6 @@
 		1464EB80120AC64600F21DCE /* tasks-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tasks-57.png"; sourceTree = "<group>"; };
 		1464EB81120AC64600F21DCE /* vegetation-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vegetation-57.png"; sourceTree = "<group>"; };
 		1464EB82120AC64600F21DCE /* wildlife-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wildlife-57.png"; sourceTree = "<group>"; };
-		146B767111FDF9450073C279 /* libisimulate.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libisimulate.a; sourceTree = "<group>"; };
 		14DCC6C111FDE35500A98045 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
 		14EBCDA811FE195700F36458 /* LauncherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LauncherViewController.h; sourceTree = "<group>"; };
 		14EBCDA911FE195700F36458 /* LauncherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LauncherViewController.m; sourceTree = "<group>"; };
@@ -340,7 +338,6 @@
 				6E37974D11B9BDCC0011C497 /* libThree20UICommon.a in Frameworks */,
 				6E37974E11B9BDCD0011C497 /* libThree20UINavigator.a in Frameworks */,
 				14DCC6C211FDE35500A98045 /* CoreLocation.framework in Frameworks */,
-				146B767211FDF9450073C279 /* libisimulate.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,7 +516,6 @@
 			isa = PBXGroup;
 			children = (
 				14DCC6C111FDE35500A98045 /* CoreLocation.framework */,
-				146B767111FDF9450073C279 /* libisimulate.a */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,

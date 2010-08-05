@@ -201,33 +201,9 @@
 }    
 
 - (void)dealloc {
-    [assessorField release];
-    [caliperField release];
-    [heightField release];
-    [button1 release];
-    [button2 release];
-    [button3  release];
-    [button4 release];
-    [button5 release];
-    [button6 release];
-    [viewView release];
-    [inputView release];
-    [assessor release];
-    [date release];
-    [caliper release];
-    [height release];
-    [formCText release];
-    [crownCText release];
-    [trunkCText release];
-    [rootFlareCText release];
-    [rootsCText release];
-    [overallCText release];
-    [formRText release];
-    [crownRText release];
-    [trunkRText release];
-    [rootFlareRText release];
-    [rootsRText release];
-    [overallRText release];
+    [mainView release];
+    [assessment release];
+    [assessmentTree release];
     [fetchedResultsController release];
     [managedObjectContext release];
     

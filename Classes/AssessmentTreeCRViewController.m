@@ -12,7 +12,7 @@
 
 @implementation AssessmentTreeCRViewController
 
-@synthesize whichId, managedObjectContext, conditionArray, recommendationArray, conditionField, recommendationField, tree, isEditing;
+@synthesize whichId, managedObjectContext, conditionArray, recommendationArray, tree, isEditing;
 
 
 -(id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query { 
@@ -775,6 +775,8 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
+    [conditionView release];
+    [recommendationView release];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
@@ -788,6 +790,8 @@
     [conditionField release];
     [recommendationField release];
     [tree release];
+    [mainView release];
+    
     [super dealloc];
 }
 
