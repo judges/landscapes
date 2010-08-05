@@ -369,8 +369,7 @@
 
 
 - (void)dealloc {
-    //[fetchedResultsController release];
-    //[managedObjectContext release];
+    [fetchedResultsController release];
     [super dealloc];
 }
 

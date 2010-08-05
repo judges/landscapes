@@ -20,22 +20,7 @@
     if (self = [super initWithNibName:@"AssessmentTreeViewAndInput" bundle:[NSBundle mainBundle]]){ 
         if(query && [query objectForKey:@"assessment"]){ 
             self.assessment = (Assessment*) [query objectForKey:@"assessment"]; 
-            self.assessor = [[UILabel alloc] init];
-            self.date = [[UILabel alloc] init];
-            self.caliper = [[UILabel alloc] init];
-            self.height = [[UILabel alloc] init];
-            self.formCText = [[UILabel alloc] init];
-            self.crownCText = [[UILabel alloc] init];
-            self.trunkCText = [[UILabel alloc] init];
-            self.rootFlareCText = [[UILabel alloc] init];
-            self.rootsCText = [[UILabel alloc] init];
-            self.overallCText = [[UILabel alloc] init];
-            self.formRText = [[UILabel alloc] init];
-            self.crownRText = [[UILabel alloc] init];
-            self.trunkRText = [[UILabel alloc] init];
-            self.rootFlareRText = [[UILabel alloc] init];
-            self.rootsRText = [[UILabel alloc] init];
-            self.overallRText = [[UILabel alloc] init];
+
         } 
     } 
     return self; 

@@ -783,16 +783,10 @@
 
 
 - (void)dealloc {
-    /*
-    [whichId release];
-    [managedObjectContext release];
+
     [conditionArray release];
     [recommendationArray release];
-    [conditionField release];
-    [recommendationField release];
-    [tree release];
-    [mainView release];
-    */
+
     [super dealloc];
 }
 
