@@ -37,6 +37,10 @@
 		09F0D0DD1207199F00BD9631 /* AssessmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F0D0DC1207199F00BD9631 /* AssessmentTableViewCell.xib */; };
 		09F0D136120722F800BD9631 /* AssessmentTreeViewAndInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F0D134120722F800BD9631 /* AssessmentTreeViewAndInputController.m */; };
 		09F0D137120722F800BD9631 /* AssessmentTreeViewAndInput.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F0D135120722F800BD9631 /* AssessmentTreeViewAndInput.xib */; };
+		141DFC6F120A58F000F86792 /* landscapes-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 141DFC6E120A58F000F86792 /* landscapes-57.png */; };
+		141DFC79120A5AEF00F86792 /* assessments-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 141DFC78120A5AEF00F86792 /* assessments-57.png */; };
+		141DFC81120A5C9200F86792 /* settings-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 141DFC80120A5C9200F86792 /* settings-57.png */; };
+		141DFC8A120A5E2200F86792 /* tasks-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 141DFC89120A5E2200F86792 /* tasks-57.png */; };
 		1440243F11FDE545000F936D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243011FDE545000F936D /* Default.png */; };
 		1440244A11FDE545000F936D /* Icon_128.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243B11FDE545000F936D /* Icon_128.png */; };
 		1440244B11FDE545000F936D /* Icon_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243C11FDE545000F936D /* Icon_256.png */; };
@@ -262,6 +266,10 @@
 		09F0D133120722F800BD9631 /* AssessmentTreeViewAndInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssessmentTreeViewAndInputController.h; sourceTree = "<group>"; };
 		09F0D134120722F800BD9631 /* AssessmentTreeViewAndInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssessmentTreeViewAndInputController.m; sourceTree = "<group>"; };
 		09F0D135120722F800BD9631 /* AssessmentTreeViewAndInput.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AssessmentTreeViewAndInput.xib; path = Classes/AssessmentTreeViewAndInput.xib; sourceTree = "<group>"; };
+		141DFC6E120A58F000F86792 /* landscapes-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "landscapes-57.png"; sourceTree = "<group>"; };
+		141DFC78120A5AEF00F86792 /* assessments-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "assessments-57.png"; sourceTree = "<group>"; };
+		141DFC80120A5C9200F86792 /* settings-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-57.png"; sourceTree = "<group>"; };
+		141DFC89120A5E2200F86792 /* tasks-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tasks-57.png"; sourceTree = "<group>"; };
 		1440243011FDE545000F936D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1440243B11FDE545000F936D /* Icon_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_128.png; sourceTree = "<group>"; };
 		1440243C11FDE545000F936D /* Icon_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_256.png; sourceTree = "<group>"; };
@@ -410,6 +418,10 @@
 		1440242C11FDE524000F936D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				141DFC89120A5E2200F86792 /* tasks-57.png */,
+				141DFC80120A5C9200F86792 /* settings-57.png */,
+				141DFC78120A5AEF00F86792 /* assessments-57.png */,
+				141DFC6E120A58F000F86792 /* landscapes-57.png */,
 				091E391C1209CAEE0046784A /* edit_50.png */,
 				091E39181209C9BD0046784A /* delete_50.png */,
 				091E377A1208CADE0046784A /* add_50.png */,
@@ -775,6 +787,10 @@
 				091E377B1208CADE0046784A /* add_50.png in Resources */,
 				091E39191209C9BD0046784A /* delete_50.png in Resources */,
 				091E391D1209CAEE0046784A /* edit_50.png in Resources */,
+				141DFC6F120A58F000F86792 /* landscapes-57.png in Resources */,
+				141DFC79120A5AEF00F86792 /* assessments-57.png in Resources */,
+				141DFC81120A5C9200F86792 /* settings-57.png in Resources */,
+				141DFC8A120A5E2200F86792 /* tasks-57.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -857,6 +873,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -874,6 +891,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = landscapes;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 			};
 			name = Debug;
 		};
@@ -881,6 +899,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -896,6 +915,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = landscapes;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 			};
 			name = Release;
 		};
@@ -910,7 +930,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphonesimulator4.0;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
@@ -924,7 +944,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphonesimulator4.0;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Release;
 		};

@@ -8,7 +8,92 @@
 
 #import "LauncherViewController.h"
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 @implementation LauncherViewController
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// NSObject
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+		//self.title.font = [UIFont fontWithName:@"Helvetica" size: 10.0];
+		self.title = @"Landscapes";
+		self.navigationBarStyle = UIBarStyleBlackTranslucent;
+	}
+	return self;
+}
+
+- (void)dealloc {
+	[super dealloc];
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// UIViewController
+
+- (void)loadView {
+	[super loadView];
+	
+	_launcherView = [[TTLauncherView alloc] initWithFrame:self.view.bounds];
+	_launcherView.backgroundColor = [UIColor blackColor];
+	_launcherView.delegate = self;
+	_launcherView.columnCount = 3;
+	_launcherView.pages = [NSArray arrayWithObjects:
+						   [NSArray arrayWithObjects:
+							[[[TTLauncherItem alloc] initWithTitle:@"Landscapes"
+															 image:@"bundle://landscapes-57.png"
+															   URL:@"land://data/landscapes"  canDelete:NO] autorelease],
+							
+							[[[TTLauncherItem alloc] initWithTitle:@"Assessments"
+															 image:@"bundle://assessments-57.png"
+															   URL:@"land://assessments" canDelete:NO] autorelease],
+							
+
+							nil],
+						   
+						   
+						   
+						   [NSArray arrayWithObjects:
+							
+							
+							[[[TTLauncherItem alloc] initWithTitle:@"Tasks"
+															 image:@"bundle://tasks-57.png"
+															   URL:@"land://data/Tasks" canDelete:NO] autorelease],	
+													
+							
+							[[[TTLauncherItem alloc] initWithTitle:@"Settings"
+															 image:@"bundle://settings-57.png"
+															   URL:@"land://data/Settings" canDelete:NO] autorelease],							
+							
+
+							nil],
+						   nil
+						   ];
+	[self.view addSubview:_launcherView];
+	
+	//TTLauncherItem* item = [_launcherView itemWithURL:@"land://data/Disasters"];
+	//item.badgeNumber = 2;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// TTLauncherViewDelegate
+
+- (void)launcherView:(TTLauncherView*)launcher didSelectItem:(TTLauncherItem*)item {
+	TTNavigator *navigator = [TTNavigator navigator];
+	
+    [navigator openURLAction:[TTURLAction actionWithURLPath:item.URL]];
+	
+}
+
+- (void)launcherViewDidBeginEditing:(TTLauncherView*)launcher {
+	[self.navigationItem setRightBarButtonItem:[[[UIBarButtonItem alloc]
+												 initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+												 target:_launcherView action:@selector(endEditing)] autorelease] animated:YES];
+}
+
+- (void)launcherViewDidEndEditing:(TTLauncherView*)launcher {
+	[self.navigationItem setRightBarButtonItem:nil animated:YES];
+}
+
 @end
+

@@ -38,7 +38,7 @@
     if(!managedObjectContext){
         managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     }
-    //[self prepopulateDb];
+    [self prepopulateDb];
     //set up fetchedResultsController
     [self fetchedResultsController];
 
