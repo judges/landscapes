@@ -44,22 +44,28 @@
 															 image:@"bundle://landscapes-57.png"
 															   URL:@"land://data/landscapes"  canDelete:NO] autorelease],
 							
+							[[[TTLauncherItem alloc] initWithTitle:@"Architectural"
+															 image:@"bundle://architectural-57.png"
+															   URL:@"land://data/Architectural" canDelete:NO] autorelease],
+							
+							
 							[[[TTLauncherItem alloc] initWithTitle:@"Assessments"
 															 image:@"bundle://assessments-57.png"
 															   URL:@"land://assessments" canDelete:NO] autorelease],
-							
 
-							nil],
-						   
-						   
-						   
-						   [NSArray arrayWithObjects:
 							
 							
+							[[[TTLauncherItem alloc] initWithTitle:@"Vegetation"
+															 image:@"bundle://vegetation-57.png"
+															   URL:@"land://data/Vegetation" canDelete:NO] autorelease],								
+
 							[[[TTLauncherItem alloc] initWithTitle:@"Tasks"
 															 image:@"bundle://tasks-57.png"
-															   URL:@"land://data/Tasks" canDelete:NO] autorelease],	
-													
+															   URL:@"land://data/Tasks" canDelete:NO] autorelease],
+							nil],
+
+						   [NSArray arrayWithObjects:
+								
 							
 							[[[TTLauncherItem alloc] initWithTitle:@"Settings"
 															 image:@"bundle://settings-57.png"
