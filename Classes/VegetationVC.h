@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <Three20/Three20.h>
 
-
-@interface VegetationVC : UIViewController {
-
+@interface VegetationVC : TTViewController <TTLauncherViewDelegate> {
+	TTLauncherView* _vegetationView;
 }
 
 @end
