@@ -55,7 +55,7 @@
 -(IBAction)treeButtonClick:(id)sender {
     int clickId = [[(UIButton*)sender titleLabel].text intValue];
     NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:self.assessmentTree, @"assessmentTree", [NSNumber numberWithInt:clickId], @"id", nil];
-    [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"tt://assessments/TreeForm"] applyQuery:query] applyAnimated:YES]];
+    [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://assessments/TreeForm"] applyQuery:query] applyAnimated:YES]];
 }
 -(IBAction)saveAssessor:(id)sender {
     [assessorField resignFirstResponder];

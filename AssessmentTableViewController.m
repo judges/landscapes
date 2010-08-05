@@ -38,7 +38,7 @@
     if(!managedObjectContext){
         managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     }
-    [self prepopulateDb];
+    //[self prepopulateDb];
     //set up fetchedResultsController
     [self fetchedResultsController];
 
@@ -275,7 +275,7 @@
     Assessment *assessment = (Assessment *)[fetchedResultsController objectAtIndexPath:indexPath];
     NSDictionary *query = [NSDictionary dictionaryWithObject:assessment forKey:@"assessment"];
     if([assessment.type.name isEqualToString:@"Tree"]) {
-        [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"tt://assessments/TreeViewAndInput"] applyQuery:query] applyAnimated:YES]];
+        [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://assessments/TreeViewAndInput"] applyQuery:query] applyAnimated:YES]];
     }
 }
 
