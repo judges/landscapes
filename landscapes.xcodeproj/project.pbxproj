@@ -43,7 +43,7 @@
 		1440244A11FDE545000F936D /* Icon_128.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243B11FDE545000F936D /* Icon_128.png */; };
 		1440244B11FDE545000F936D /* Icon_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243C11FDE545000F936D /* Icon_256.png */; };
 		1464EB83120AC64600F21DCE /* archeologist-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB76120AC64600F21DCE /* archeologist-57.png */; };
-		1464EB84120AC64600F21DCE /* architectural-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB77120AC64600F21DCE /* architectural-57.png */; };
+		1464EB84120AC64600F21DCE /* structures-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB77120AC64600F21DCE /* structures-57.png */; };
 		1464EB85120AC64600F21DCE /* assessments-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB78120AC64600F21DCE /* assessments-57.png */; };
 		1464EB86120AC64600F21DCE /* cemetery-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB79120AC64600F21DCE /* cemetery-57.png */; };
 		1464EB87120AC64600F21DCE /* inventory-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB7A120AC64600F21DCE /* inventory-57.png */; };
@@ -283,7 +283,7 @@
 		1440243B11FDE545000F936D /* Icon_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_128.png; sourceTree = "<group>"; };
 		1440243C11FDE545000F936D /* Icon_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_256.png; sourceTree = "<group>"; };
 		1464EB76120AC64600F21DCE /* archeologist-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "archeologist-57.png"; sourceTree = "<group>"; };
-		1464EB77120AC64600F21DCE /* architectural-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "architectural-57.png"; sourceTree = "<group>"; };
+		1464EB77120AC64600F21DCE /* structures-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "structures-57.png"; sourceTree = "<group>"; };
 		1464EB78120AC64600F21DCE /* assessments-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "assessments-57.png"; sourceTree = "<group>"; };
 		1464EB79120AC64600F21DCE /* cemetery-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cemetery-57.png"; sourceTree = "<group>"; };
 		1464EB7A120AC64600F21DCE /* inventory-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inventory-57.png"; sourceTree = "<group>"; };
@@ -442,7 +442,7 @@
 			isa = PBXGroup;
 			children = (
 				1464EB76120AC64600F21DCE /* archeologist-57.png */,
-				1464EB77120AC64600F21DCE /* architectural-57.png */,
+				1464EB77120AC64600F21DCE /* structures-57.png */,
 				1464EB78120AC64600F21DCE /* assessments-57.png */,
 				1464EB79120AC64600F21DCE /* cemetery-57.png */,
 				1464EB7A120AC64600F21DCE /* inventory-57.png */,
@@ -820,7 +820,7 @@
 				091E391D1209CAEE0046784A /* edit_50.png in Resources */,
 				141DFCCB120A955D00F86792 /* VegetationVC.xib in Resources */,
 				1464EB83120AC64600F21DCE /* archeologist-57.png in Resources */,
-				1464EB84120AC64600F21DCE /* architectural-57.png in Resources */,
+				1464EB84120AC64600F21DCE /* structures-57.png in Resources */,
 				1464EB85120AC64600F21DCE /* assessments-57.png in Resources */,
 				1464EB86120AC64600F21DCE /* cemetery-57.png in Resources */,
 				1464EB87120AC64600F21DCE /* inventory-57.png in Resources */,
