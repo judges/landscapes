@@ -24,15 +24,21 @@
 	return self;
 }
 
+/*
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	//return TTIsSupportedOrientation(interfaceOrientation);
 	return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
+ */
 
+
+/*
 -(void)reloadLauncherView
 {
     [self viewWillAppear:NO ];
 }
+*/
 
 
 - (void)dealloc {
@@ -49,20 +55,13 @@
 	_launcherView.backgroundColor = [UIColor darkGrayColor];
 	_launcherView.opaque = YES;
 	_launcherView.delegate = self;
+	_launcherView.columnCount = 3;
 	
-	if (UIInterfaceOrientationIsPortrait(TTInterfaceOrientation())) {
-		_launcherView.columnCount = 3;
-	} else {
-		_launcherView.columnCount = 4;
-	}
-	
-	//_launcherView.columnCount = 3;
 	_launcherView.pages = [NSArray arrayWithObjects:
 						   [NSArray arrayWithObjects:
 							[[[TTLauncherItem alloc] initWithTitle:@"Landscapes"
-														
 															 image:@"bundle://landscapes-57.png"
-															   URL:@"land://data/landscapes"  canDelete:NO] autorelease],
+															   URL:@"land://Landscapes"  canDelete:NO] autorelease],
 
 							[[[TTLauncherItem alloc] initWithTitle:@"Inventory"
 															 image:@"bundle://inventory-57.png"
@@ -75,7 +74,7 @@
 
 							[[[TTLauncherItem alloc] initWithTitle:@"Tasks"
 															 image:@"bundle://tasks-57.png"
-															   URL:@"land://data/Tasks" canDelete:NO] autorelease],							
+															   URL:@"land://Tasks" canDelete:NO] autorelease],							
 							
 							
 							

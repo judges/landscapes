@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "AssessmentTableViewCell.h"
 
-//needed to prepopulated the db
+//needed to prepopulate the database
 #import "Assessment.h"
 #import "Landscape.h"
 #import "AssessmentTree.h"
