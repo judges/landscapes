@@ -24,6 +24,17 @@
 	return self;
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+	//return TTIsSupportedOrientation(interfaceOrientation);
+	return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+-(void)reloadLauncherView
+{
+    [self viewWillAppear:NO ];
+}
+
+
 - (void)dealloc {
 	[super dealloc];
 }
@@ -35,14 +46,21 @@
 	[super loadView];
 	
 	_launcherView = [[TTLauncherView alloc] initWithFrame:self.view.bounds];
-	_launcherView.backgroundColor = [UIColor blackColor];
+	_launcherView.backgroundColor = [UIColor darkGrayColor];
 	_launcherView.opaque = YES;
-	//_launcherView.
 	_launcherView.delegate = self;
-	_launcherView.columnCount = 3;
+	
+	if (UIInterfaceOrientationIsPortrait(TTInterfaceOrientation())) {
+		_launcherView.columnCount = 3;
+	} else {
+		_launcherView.columnCount = 4;
+	}
+	
+	//_launcherView.columnCount = 3;
 	_launcherView.pages = [NSArray arrayWithObjects:
 						   [NSArray arrayWithObjects:
 							[[[TTLauncherItem alloc] initWithTitle:@"Landscapes"
+														
 															 image:@"bundle://landscapes-57.png"
 															   URL:@"land://data/landscapes"  canDelete:NO] autorelease],
 
@@ -69,7 +87,6 @@
 															 image:@"bundle://cemetery-57.png"
 															   URL:@"land://Cemetery" canDelete:NO] autorelease],								
 							
-							
 							[[[TTLauncherItem alloc] initWithTitle:@"Structures"
 															 image:@"bundle://structures-57.png"
 															   URL:@"land://Structures" canDelete:NO] autorelease],
@@ -78,25 +95,9 @@
 															 image:@"bundle://wildlife-57.png"
 															   URL:@"land://Wildlife" canDelete:NO] autorelease],
 							
-							
-
-							
-
-	
-							
-
-
-							
 							[[[TTLauncherItem alloc] initWithTitle:@"Photos"
 															 image:@"bundle://photos-57.png"
 															   URL:@"land://Photos" canDelete:NO] autorelease],						
-							
-							
-							
-
-
-						
-
 							nil],
 
 						   [NSArray arrayWithObjects:
@@ -106,7 +107,6 @@
 															 image:@"bundle://maps-57.png"
 															   URL:@"land://Maps" canDelete:NO] autorelease],								
 							
-							
 							[[[TTLauncherItem alloc] initWithTitle:@"Settings"
 															 image:@"bundle://settings-57.png"
 															   URL:@"land://data/Settings" canDelete:NO] autorelease],								
@@ -115,7 +115,6 @@
 															 image:@"bundle://ncptt-57.png"
 															   URL:@"land://data/About" canDelete:NO] autorelease],	
 							
-
 							nil],
 						   nil
 						   ];
@@ -127,6 +126,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // TTLauncherViewDelegate
+
 
 - (void)launcherView:(TTLauncherView*)launcher didSelectItem:(TTLauncherItem*)item {
 	TTNavigator *navigator = [TTNavigator navigator];
@@ -144,6 +144,7 @@
 - (void)launcherViewDidEndEditing:(TTLauncherView*)launcher {
 	[self.navigationItem setRightBarButtonItem:nil animated:YES];
 }
+
 
 @end
 

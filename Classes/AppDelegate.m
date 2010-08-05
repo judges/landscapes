@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LauncherViewController.h"
 
 #define kStoreType      NSSQLiteStoreType
 #define kStoreFilename  @"db.sqlite"
@@ -36,7 +37,6 @@
   TTNavigator* navigator = [TTNavigator navigator];
   navigator.persistenceMode = TTNavigatorPersistenceModeNone;
 
-
   TTURLMap* map = navigator.URLMap;
 
   [map from:@"*" toViewController:[TTWebController class]];
@@ -46,14 +46,11 @@
   [map from:@"land://assessments" toViewController:[AssessmentTableViewController class]];
   [map from:@"land://assessments/TreeViewAndInput?" toViewController:[AssessmentTreeViewAndInputController class]];
   [map from:@"land://assessments/TreeForm?" toViewController:[AssessmentTreeCRViewController class]];
-  if (![navigator restoreViewControllers]) {
-	
-	  //set up launcher
-    [navigator openURLAction:[TTURLAction actionWithURLPath:@"land://launcher"]];
-	
-	//loading assessments view as default for testing for now
-	//[navigator openURLAction:[TTURLAction actionWithURLPath:@"land://assessments"]];
 
+	
+	if (![navigator restoreViewControllers]) {
+		//set up launcher
+		[navigator openURLAction:[TTURLAction actionWithURLPath:@"land://launcher"]];
   }
   
 }
@@ -114,7 +111,6 @@
   }
   return _managedObjectContext;
 }
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSManagedObjectModel*)managedObjectModel {
