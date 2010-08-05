@@ -37,25 +37,25 @@
 		09F0D0DD1207199F00BD9631 /* AssessmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F0D0DC1207199F00BD9631 /* AssessmentTableViewCell.xib */; };
 		09F0D136120722F800BD9631 /* AssessmentTreeViewAndInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F0D134120722F800BD9631 /* AssessmentTreeViewAndInputController.m */; };
 		09F0D137120722F800BD9631 /* AssessmentTreeViewAndInput.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F0D135120722F800BD9631 /* AssessmentTreeViewAndInput.xib */; };
-		141DFC6F120A58F000F86792 /* landscapes-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 141DFC6E120A58F000F86792 /* landscapes-57.png */; };
-		141DFC79120A5AEF00F86792 /* assessments-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 141DFC78120A5AEF00F86792 /* assessments-57.png */; };
-		141DFC81120A5C9200F86792 /* settings-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 141DFC80120A5C9200F86792 /* settings-57.png */; };
-		141DFC8A120A5E2200F86792 /* tasks-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 141DFC89120A5E2200F86792 /* tasks-57.png */; };
-		141DFC95120A7F7100F86792 /* structures-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 141DFC94120A7F7100F86792 /* structures-57.png */; };
-		141DFC9B120A819300F86792 /* vegetation-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 141DFC9A120A819300F86792 /* vegetation-57.png */; };
-		141DFCA9120A89DC00F86792 /* markers-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 141DFCA8120A89DC00F86792 /* markers-57.png */; };
 		141DFCCA120A955D00F86792 /* VegetationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 141DFCC8120A955D00F86792 /* VegetationVC.m */; };
 		141DFCCB120A955D00F86792 /* VegetationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141DFCC9120A955D00F86792 /* VegetationVC.xib */; };
-		141DFCF9120A9A2200F86792 /* archeological-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 141DFCF8120A9A2200F86792 /* archeological-57.png */; };
 		1440243F11FDE545000F936D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243011FDE545000F936D /* Default.png */; };
 		1440244A11FDE545000F936D /* Icon_128.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243B11FDE545000F936D /* Icon_128.png */; };
 		1440244B11FDE545000F936D /* Icon_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243C11FDE545000F936D /* Icon_256.png */; };
-		1464EA7E120AA9E600F21DCE /* photos-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EA7D120AA9E600F21DCE /* photos-57.png */; };
-		1464EB34120AB80D00F21DCE /* inventory-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB33120AB80D00F21DCE /* inventory-57.png */; };
-		1464EB49120ABB3600F21DCE /* wildlife-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB48120ABB3600F21DCE /* wildlife-57.png */; };
-		1464EB55120AC05600F21DCE /* maps-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB54120AC05600F21DCE /* maps-57.png */; };
+		1464EB83120AC64600F21DCE /* archeologist-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB76120AC64600F21DCE /* archeologist-57.png */; };
+		1464EB84120AC64600F21DCE /* architectural-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB77120AC64600F21DCE /* architectural-57.png */; };
+		1464EB85120AC64600F21DCE /* assessments-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB78120AC64600F21DCE /* assessments-57.png */; };
+		1464EB86120AC64600F21DCE /* cemetery-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB79120AC64600F21DCE /* cemetery-57.png */; };
+		1464EB87120AC64600F21DCE /* inventory-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB7A120AC64600F21DCE /* inventory-57.png */; };
+		1464EB88120AC64600F21DCE /* landscapes-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB7B120AC64600F21DCE /* landscapes-57.png */; };
+		1464EB89120AC64600F21DCE /* maps-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB7C120AC64600F21DCE /* maps-57.png */; };
+		1464EB8A120AC64600F21DCE /* ncptt-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB7D120AC64600F21DCE /* ncptt-57.png */; };
+		1464EB8B120AC64600F21DCE /* photos-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB7E120AC64600F21DCE /* photos-57.png */; };
+		1464EB8C120AC64600F21DCE /* settings-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB7F120AC64600F21DCE /* settings-57.png */; };
+		1464EB8D120AC64600F21DCE /* tasks-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB80120AC64600F21DCE /* tasks-57.png */; };
+		1464EB8E120AC64600F21DCE /* vegetation-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB81120AC64600F21DCE /* vegetation-57.png */; };
+		1464EB8F120AC64600F21DCE /* wildlife-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB82120AC64600F21DCE /* wildlife-57.png */; };
 		146B767211FDF9450073C279 /* libisimulate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146B767111FDF9450073C279 /* libisimulate.a */; };
-		14CD2532120AA8CF003E97CD /* ncptt-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 14CD2531120AA8CF003E97CD /* ncptt-57.png */; };
 		14DCC6C211FDE35500A98045 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DCC6C111FDE35500A98045 /* CoreLocation.framework */; };
 		14EBCDAA11FE195700F36458 /* LauncherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EBCDA911FE195700F36458 /* LauncherViewController.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -277,26 +277,26 @@
 		09F0D133120722F800BD9631 /* AssessmentTreeViewAndInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssessmentTreeViewAndInputController.h; sourceTree = "<group>"; };
 		09F0D134120722F800BD9631 /* AssessmentTreeViewAndInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssessmentTreeViewAndInputController.m; sourceTree = "<group>"; };
 		09F0D135120722F800BD9631 /* AssessmentTreeViewAndInput.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AssessmentTreeViewAndInput.xib; path = Classes/AssessmentTreeViewAndInput.xib; sourceTree = "<group>"; };
-		141DFC6E120A58F000F86792 /* landscapes-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "landscapes-57.png"; sourceTree = "<group>"; };
-		141DFC78120A5AEF00F86792 /* assessments-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "assessments-57.png"; sourceTree = "<group>"; };
-		141DFC80120A5C9200F86792 /* settings-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-57.png"; sourceTree = "<group>"; };
-		141DFC89120A5E2200F86792 /* tasks-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tasks-57.png"; sourceTree = "<group>"; };
-		141DFC94120A7F7100F86792 /* structures-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "structures-57.png"; sourceTree = "<group>"; };
-		141DFC9A120A819300F86792 /* vegetation-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vegetation-57.png"; sourceTree = "<group>"; };
-		141DFCA8120A89DC00F86792 /* markers-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "markers-57.png"; sourceTree = "<group>"; };
 		141DFCC7120A955D00F86792 /* VegetationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VegetationVC.h; sourceTree = "<group>"; };
 		141DFCC8120A955D00F86792 /* VegetationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VegetationVC.m; sourceTree = "<group>"; };
 		141DFCC9120A955D00F86792 /* VegetationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VegetationVC.xib; sourceTree = "<group>"; };
-		141DFCF8120A9A2200F86792 /* archeological-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "archeological-57.png"; sourceTree = "<group>"; };
 		1440243011FDE545000F936D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1440243B11FDE545000F936D /* Icon_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_128.png; sourceTree = "<group>"; };
 		1440243C11FDE545000F936D /* Icon_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_256.png; sourceTree = "<group>"; };
-		1464EA7D120AA9E600F21DCE /* photos-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photos-57.png"; sourceTree = "<group>"; };
-		1464EB33120AB80D00F21DCE /* inventory-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inventory-57.png"; sourceTree = "<group>"; };
-		1464EB48120ABB3600F21DCE /* wildlife-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wildlife-57.png"; sourceTree = "<group>"; };
-		1464EB54120AC05600F21DCE /* maps-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "maps-57.png"; sourceTree = "<group>"; };
+		1464EB76120AC64600F21DCE /* archeologist-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "archeologist-57.png"; sourceTree = "<group>"; };
+		1464EB77120AC64600F21DCE /* architectural-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "architectural-57.png"; sourceTree = "<group>"; };
+		1464EB78120AC64600F21DCE /* assessments-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "assessments-57.png"; sourceTree = "<group>"; };
+		1464EB79120AC64600F21DCE /* cemetery-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cemetery-57.png"; sourceTree = "<group>"; };
+		1464EB7A120AC64600F21DCE /* inventory-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inventory-57.png"; sourceTree = "<group>"; };
+		1464EB7B120AC64600F21DCE /* landscapes-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "landscapes-57.png"; sourceTree = "<group>"; };
+		1464EB7C120AC64600F21DCE /* maps-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "maps-57.png"; sourceTree = "<group>"; };
+		1464EB7D120AC64600F21DCE /* ncptt-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ncptt-57.png"; sourceTree = "<group>"; };
+		1464EB7E120AC64600F21DCE /* photos-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photos-57.png"; sourceTree = "<group>"; };
+		1464EB7F120AC64600F21DCE /* settings-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-57.png"; sourceTree = "<group>"; };
+		1464EB80120AC64600F21DCE /* tasks-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tasks-57.png"; sourceTree = "<group>"; };
+		1464EB81120AC64600F21DCE /* vegetation-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vegetation-57.png"; sourceTree = "<group>"; };
+		1464EB82120AC64600F21DCE /* wildlife-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wildlife-57.png"; sourceTree = "<group>"; };
 		146B767111FDF9450073C279 /* libisimulate.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libisimulate.a; sourceTree = "<group>"; };
-		14CD2531120AA8CF003E97CD /* ncptt-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ncptt-57.png"; sourceTree = "<group>"; };
 		14DCC6C111FDE35500A98045 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
 		14EBCDA811FE195700F36458 /* LauncherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LauncherViewController.h; sourceTree = "<group>"; };
 		14EBCDA911FE195700F36458 /* LauncherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LauncherViewController.m; sourceTree = "<group>"; };
@@ -444,19 +444,19 @@
 		1440242C11FDE524000F936D /* images */ = {
 			isa = PBXGroup;
 			children = (
-				1464EB54120AC05600F21DCE /* maps-57.png */,
-				1464EB48120ABB3600F21DCE /* wildlife-57.png */,
-				1464EB33120AB80D00F21DCE /* inventory-57.png */,
-				1464EA7D120AA9E600F21DCE /* photos-57.png */,
-				14CD2531120AA8CF003E97CD /* ncptt-57.png */,
-				141DFCF8120A9A2200F86792 /* archeological-57.png */,
-				141DFCA8120A89DC00F86792 /* markers-57.png */,
-				141DFC9A120A819300F86792 /* vegetation-57.png */,
-				141DFC94120A7F7100F86792 /* structures-57.png */,
-				141DFC89120A5E2200F86792 /* tasks-57.png */,
-				141DFC80120A5C9200F86792 /* settings-57.png */,
-				141DFC78120A5AEF00F86792 /* assessments-57.png */,
-				141DFC6E120A58F000F86792 /* landscapes-57.png */,
+				1464EB76120AC64600F21DCE /* archeologist-57.png */,
+				1464EB77120AC64600F21DCE /* architectural-57.png */,
+				1464EB78120AC64600F21DCE /* assessments-57.png */,
+				1464EB79120AC64600F21DCE /* cemetery-57.png */,
+				1464EB7A120AC64600F21DCE /* inventory-57.png */,
+				1464EB7B120AC64600F21DCE /* landscapes-57.png */,
+				1464EB7C120AC64600F21DCE /* maps-57.png */,
+				1464EB7D120AC64600F21DCE /* ncptt-57.png */,
+				1464EB7E120AC64600F21DCE /* photos-57.png */,
+				1464EB7F120AC64600F21DCE /* settings-57.png */,
+				1464EB80120AC64600F21DCE /* tasks-57.png */,
+				1464EB81120AC64600F21DCE /* vegetation-57.png */,
+				1464EB82120AC64600F21DCE /* wildlife-57.png */,
 				091E391C1209CAEE0046784A /* edit_50.png */,
 				091E39181209C9BD0046784A /* delete_50.png */,
 				091E377A1208CADE0046784A /* add_50.png */,
@@ -822,20 +822,20 @@
 				091E377B1208CADE0046784A /* add_50.png in Resources */,
 				091E39191209C9BD0046784A /* delete_50.png in Resources */,
 				091E391D1209CAEE0046784A /* edit_50.png in Resources */,
-				141DFC6F120A58F000F86792 /* landscapes-57.png in Resources */,
-				141DFC79120A5AEF00F86792 /* assessments-57.png in Resources */,
-				141DFC81120A5C9200F86792 /* settings-57.png in Resources */,
-				141DFC8A120A5E2200F86792 /* tasks-57.png in Resources */,
-				141DFC95120A7F7100F86792 /* structures-57.png in Resources */,
-				141DFC9B120A819300F86792 /* vegetation-57.png in Resources */,
-				141DFCA9120A89DC00F86792 /* markers-57.png in Resources */,
 				141DFCCB120A955D00F86792 /* VegetationVC.xib in Resources */,
-				141DFCF9120A9A2200F86792 /* archeological-57.png in Resources */,
-				14CD2532120AA8CF003E97CD /* ncptt-57.png in Resources */,
-				1464EA7E120AA9E600F21DCE /* photos-57.png in Resources */,
-				1464EB34120AB80D00F21DCE /* inventory-57.png in Resources */,
-				1464EB49120ABB3600F21DCE /* wildlife-57.png in Resources */,
-				1464EB55120AC05600F21DCE /* maps-57.png in Resources */,
+				1464EB83120AC64600F21DCE /* archeologist-57.png in Resources */,
+				1464EB84120AC64600F21DCE /* architectural-57.png in Resources */,
+				1464EB85120AC64600F21DCE /* assessments-57.png in Resources */,
+				1464EB86120AC64600F21DCE /* cemetery-57.png in Resources */,
+				1464EB87120AC64600F21DCE /* inventory-57.png in Resources */,
+				1464EB88120AC64600F21DCE /* landscapes-57.png in Resources */,
+				1464EB89120AC64600F21DCE /* maps-57.png in Resources */,
+				1464EB8A120AC64600F21DCE /* ncptt-57.png in Resources */,
+				1464EB8B120AC64600F21DCE /* photos-57.png in Resources */,
+				1464EB8C120AC64600F21DCE /* settings-57.png in Resources */,
+				1464EB8D120AC64600F21DCE /* tasks-57.png in Resources */,
+				1464EB8E120AC64600F21DCE /* vegetation-57.png in Resources */,
+				1464EB8F120AC64600F21DCE /* wildlife-57.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

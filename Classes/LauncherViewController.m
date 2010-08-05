@@ -36,6 +36,8 @@
 	
 	_launcherView = [[TTLauncherView alloc] initWithFrame:self.view.bounds];
 	_launcherView.backgroundColor = [UIColor blackColor];
+	_launcherView.opaque = YES;
+	//_launcherView.
 	_launcherView.delegate = self;
 	_launcherView.columnCount = 3;
 	_launcherView.pages = [NSArray arrayWithObjects:
@@ -57,9 +59,7 @@
 															 image:@"bundle://tasks-57.png"
 															   URL:@"land://data/Tasks" canDelete:NO] autorelease],							
 							
-							[[[TTLauncherItem alloc] initWithTitle:@"Photos"
-															 image:@"bundle://photos-57.png"
-															   URL:@"land://Photos" canDelete:NO] autorelease],								
+							
 							
 							[[[TTLauncherItem alloc] initWithTitle:@"Vegetation"
 															 image:@"bundle://vegetation-57.png"
@@ -80,29 +80,40 @@
 							
 							
 
+							
+
+	
+							
+
+
+							
+							[[[TTLauncherItem alloc] initWithTitle:@"Photos"
+															 image:@"bundle://photos-57.png"
+															   URL:@"land://Photos" canDelete:NO] autorelease],						
+							
+							
+							
+
+
 						
-							[[[TTLauncherItem alloc] initWithTitle:@"Settings"
-															 image:@"bundle://settings-57.png"
-															   URL:@"land://Settings" canDelete:NO] autorelease],	
-							
-					
-							
-							
-							
-
-
-							[[[TTLauncherItem alloc] initWithTitle:@"About NCPTT"
-															 image:@"bundle://ncptt-57.png"
-															   URL:@"land://NCPTT" canDelete:NO] autorelease],							
 
 							nil],
 
 						   [NSArray arrayWithObjects:
-								
+						
+							
 							[[[TTLauncherItem alloc] initWithTitle:@"Maps"
 															 image:@"bundle://maps-57.png"
 															   URL:@"land://Maps" canDelete:NO] autorelease],								
-						
+							
+							
+							[[[TTLauncherItem alloc] initWithTitle:@"Settings"
+															 image:@"bundle://settings-57.png"
+															   URL:@"land://data/Settings" canDelete:NO] autorelease],								
+
+							[[[TTLauncherItem alloc] initWithTitle:@"About NCPTT"
+															 image:@"bundle://ncptt-57.png"
+															   URL:@"land://data/About" canDelete:NO] autorelease],	
 							
 
 							nil],
