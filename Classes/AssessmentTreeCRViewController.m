@@ -783,6 +783,7 @@
 
 
 - (void)dealloc {
+    /*
     [whichId release];
     [managedObjectContext release];
     [conditionArray release];
@@ -791,7 +792,7 @@
     [recommendationField release];
     [tree release];
     [mainView release];
-    
+    */
     [super dealloc];
 }
 
