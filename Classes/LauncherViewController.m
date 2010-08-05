@@ -43,33 +43,54 @@
 							[[[TTLauncherItem alloc] initWithTitle:@"Landscapes"
 															 image:@"bundle://landscapes-57.png"
 															   URL:@"land://data/landscapes"  canDelete:NO] autorelease],
+
+							[[[TTLauncherItem alloc] initWithTitle:@"Archeological"
+															 image:@"bundle://archeological-57.png"
+															   URL:@"land://data/Archeological" canDelete:NO] autorelease],							
+							
+							
 							
 							[[[TTLauncherItem alloc] initWithTitle:@"Architectural"
 															 image:@"bundle://architectural-57.png"
 															   URL:@"land://data/Architectural" canDelete:NO] autorelease],
+
 							
 							
+		
 							[[[TTLauncherItem alloc] initWithTitle:@"Assessments"
 															 image:@"bundle://assessments-57.png"
 															   URL:@"land://assessments" canDelete:NO] autorelease],
 
+
+							
+							[[[TTLauncherItem alloc] initWithTitle:@"Cemetery"
+															 image:@"bundle://cemetery-57.png"
+															   URL:@"land://cemetery" canDelete:NO] autorelease],							
 							
 							
 							[[[TTLauncherItem alloc] initWithTitle:@"Vegetation"
 															 image:@"bundle://vegetation-57.png"
-															   URL:@"land://data/Vegetation" canDelete:NO] autorelease],								
+															   URL:@"land://assessments/TreeViewAndInput?" canDelete:NO] autorelease],								
 
 							[[[TTLauncherItem alloc] initWithTitle:@"Tasks"
 															 image:@"bundle://tasks-57.png"
 															   URL:@"land://data/Tasks" canDelete:NO] autorelease],
+
+							[[[TTLauncherItem alloc] initWithTitle:@"NCPTT"
+															 image:@"bundle://ncptt-57.png"
+															   URL:@"land://data/About" canDelete:NO] autorelease],							
+
+							
+							[[[TTLauncherItem alloc] initWithTitle:@"Settings"
+															 image:@"bundle://settings-57.png"
+															   URL:@"land://data/Settings" canDelete:NO] autorelease],							
+							
 							nil],
 
 						   [NSArray arrayWithObjects:
 								
 							
-							[[[TTLauncherItem alloc] initWithTitle:@"Settings"
-															 image:@"bundle://settings-57.png"
-															   URL:@"land://data/Settings" canDelete:NO] autorelease],							
+						
 							
 
 							nil],
@@ -77,8 +98,8 @@
 						   ];
 	[self.view addSubview:_launcherView];
 	
-	//TTLauncherItem* item = [_launcherView itemWithURL:@"land://data/Disasters"];
-	//item.badgeNumber = 2;
+	TTLauncherItem* item = [_launcherView itemWithURL:@"land://data/assessments"];
+	item.badgeNumber = 2;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
