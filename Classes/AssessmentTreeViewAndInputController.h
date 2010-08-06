@@ -11,7 +11,7 @@
 #import "AssessmentTree.h"
 #import "AppDelegate.h"
 
-@interface AssessmentTreeViewAndInputController : UIViewController <NSFetchedResultsControllerDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate> {
+@interface AssessmentTreeViewAndInputController : UIViewController <UIActionSheetDelegate, UIImagePickerControllerDelegate> {
     IBOutlet UIView *viewView;
     IBOutlet UIView *inputView;
     IBOutlet UIView *mainView;
@@ -52,8 +52,7 @@
     NSFetchedResultsController *fetchedResultsController;
     NSManagedObjectContext *managedObjectContext;
 }
-@property (nonatomic, retain) UIView *viewView;
-@property (nonatomic, retain) UIView *inputView;
+
 @property (nonatomic, retain) Assessment *assessment;
 @property (nonatomic, retain) AssessmentTree *assessmentTree;
 
@@ -79,15 +78,7 @@
 @property (nonatomic, retain) UITextField *assessorField;
 @property (nonatomic, retain) UITextField *caliperField;
 @property (nonatomic, retain) UITextField *heightField;
-@property (nonatomic, retain) UIButton *button1;
-@property (nonatomic, retain) UIButton *button2;
-@property (nonatomic, retain) UIButton *button3;
-@property (nonatomic, retain) UIButton *button4;
-@property (nonatomic, retain) UIButton *button5;
-@property (nonatomic, retain) UIButton *button6;
 
-@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 -(id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query;
 -(IBAction)segmentSwitch:(id)sender;

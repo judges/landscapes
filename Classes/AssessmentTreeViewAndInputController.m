@@ -10,23 +10,24 @@
 
 
 @implementation AssessmentTreeViewAndInputController
-@synthesize viewView, inputView;
-@synthesize assessment, assessmentTree, assessor, date, caliper, height, fetchedResultsController, managedObjectContext;
+
+@synthesize assessment, assessmentTree, assessor, date, caliper, height;
 @synthesize formCText, crownCText, trunkCText, rootFlareCText, rootsCText, overallCText;
 @synthesize formRText, crownRText, trunkRText, rootFlareRText, rootsRText, overallRText;
-@synthesize assessorField, caliperField, heightField, button1, button2, button3, button4, button5, button6;
+@synthesize assessorField, caliperField, heightField;
 
 -(id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query { 
+    //initializes and passes assessment from parent controller
     if (self = [super initWithNibName:@"AssessmentTreeViewAndInput" bundle:[NSBundle mainBundle]]){ 
         if(query && [query objectForKey:@"assessment"]){ 
             self.assessment = (Assessment*) [query objectForKey:@"assessment"]; 
-
         } 
     } 
     return self; 
 } 
 
 -(IBAction)segmentSwitch:(id)sender {
+    //switch between view and input views
     UISegmentedControl *segmentedButton = (UISegmentedControl *) sender;
     if (segmentedButton.selectedSegmentIndex == 0) {
         [viewView setHidden:NO];
@@ -38,6 +39,7 @@
 
 }
 -(IBAction)photoButtonClick:(id)sender {
+    //user clicked photo button
     UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Photos" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take Photo", @"Add Existing", @"View Photos", nil];
     popupQuery.actionSheetStyle = UIActionSheetStyleDefault;
     [popupQuery showInView:self.view];
@@ -45,20 +47,23 @@
     
 }
 -(IBAction)treeButtonClick:(id)sender {
+    //user clicked one of the tree buttons, so send them to the other view with the right id
     int clickId = [[(UIButton*)sender titleLabel].text intValue];
     NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:self.assessmentTree, @"assessmentTree", [NSNumber numberWithInt:clickId], @"id", nil];
     [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://assessments/TreeForm"] applyQuery:query] applyAnimated:YES]];
 }
 -(IBAction)saveAssessor:(id)sender {
+    //edit the assessor field
     [assessorField resignFirstResponder];
     NSError *saveError;
     self.assessor.text = [(UITextField*)sender text];
     self.assessment.assessor = [(UITextField*)sender text];
     if (![managedObjectContext save:&saveError]) {
-        NSLog(@"Saving changes to book book two failed: %@", saveError);
+        NSLog(@"Saving changes to assessor failed: %@", saveError);
     }
 }
 -(IBAction)saveCaliper:(id)sender {
+    //edit the caliper field
     [caliperField resignFirstResponder];
     self.assessmentTree.caliper = [NSDecimalNumber decimalNumberWithString:[(UITextField*)sender text]];
     NSError *saveError;
@@ -68,6 +73,7 @@
     self.caliper.text = [self.assessmentTree.caliper stringValue];
 }
 -(IBAction)saveHeight:(id)sender {
+    //edit the height field
     [heightField resignFirstResponder];
     self.assessmentTree.height = [NSDecimalNumber decimalNumberWithString:[(UITextField*)sender text]];
     NSError *saveError;
@@ -90,20 +96,31 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [NSFetchedResultsController deleteCacheWithName:nil];
     
     if(!managedObjectContext){
         managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     }
-   //set up fetchedResultsController
-    [self fetchedResultsController];
     
-    //Perform fetch and catch any errors
-    NSError *error = nil;
-    [fetchedResultsController performFetch:&error];
-    if (error) {
-        NSLog(@"Error occured fetching from db: %@", error);
-    }
+    // Create the fetch request for the entity.
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    // Grab AssessmentTree that matches the Assessment.
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"AssessmentTree" inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"assessment == %@", self.assessment];
+    [fetchRequest setPredicate:predicate];
+    
+    // sort by assessment
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"assessment" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    NSError *error;
+    NSMutableArray *fetchedObjects = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:&error]];
+    
+    [fetchRequest release];
+    [sortDescriptor release];
+    [sortDescriptors release];
     
     self.title = @"Tree";
     self.assessor.text = self.assessment.assessor;
@@ -113,7 +130,7 @@
     [dateFormatter release];
     self.date.text = dateStr;
     if (self.assessment) {
-        self.assessmentTree = (AssessmentTree *)([fetchedResultsController.fetchedObjects objectAtIndex:0]);
+        self.assessmentTree = (AssessmentTree *)([fetchedObjects objectAtIndex:0]);
         self.caliper.text = [NSString stringWithFormat:@"%@ \'", [self.assessmentTree.caliper stringValue]];
         self.height.text = [NSString stringWithFormat:@"%@ \'", [self.assessmentTree.height stringValue]]   ;
         self.formCText.text = self.assessmentTree.form_condition.name;
@@ -157,40 +174,6 @@
     // e.g. self.myOutlet = nil;
 }
 
-#pragma mark -
-#pragma mark Fetched results controller
-
-- (NSFetchedResultsController *)fetchedResultsController {
-    // Set up the fetched results controller if needed.
-    if (fetchedResultsController == nil) {
-        // Create the fetch request for the entity.
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        // Edit the entity name as appropriate.
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"AssessmentTree" inManagedObjectContext:managedObjectContext];
-        [fetchRequest setEntity:entity];
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"assessment == %@", self.assessment];
-        [fetchRequest setPredicate:predicate];
-        
-        // Edit the sort key as appropriate.
-        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"assessment" ascending:YES];
-        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-        
-        [fetchRequest setSortDescriptors:sortDescriptors];
-        
-        // Edit the section name key path and cache name if appropriate.
-        // nil for section name key path means "no sections".
-        NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:@"assessmentTree_cache"];
-        aFetchedResultsController.delegate = self;
-        self.fetchedResultsController = aFetchedResultsController;
-        
-        [aFetchedResultsController release];
-        [fetchRequest release];
-        [sortDescriptor release];
-        [sortDescriptors release];
-    }
-    
-    return fetchedResultsController;
-}    
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {
@@ -212,7 +195,6 @@
     //[mainView release];
     //[assessment release];
     //[assessmentTree release];
-    [fetchedResultsController release];
     //[managedObjectContext release];
     
     [super dealloc];
