@@ -29,6 +29,8 @@
     IBOutlet UIButton *deleteRecommendationButton;
     IBOutlet UITextField *conditionField;
     IBOutlet UITextField *recommendationField;
+    NSMutableArray *conditionStringArray;
+    NSMutableArray *recommendationStringArray;
     NSMutableArray *conditionArray;
     NSMutableArray *recommendationArray;
     NSNumber *whichId;
@@ -39,6 +41,8 @@
 @property (nonatomic, retain) AssessmentTree *tree;
 @property (nonatomic, retain) NSNumber *whichId;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain) NSMutableArray *conditionStringArray;
+@property (nonatomic, retain) NSMutableArray *recommendationStringArray;
 @property (nonatomic, retain) NSMutableArray *conditionArray;
 @property (nonatomic, retain) NSMutableArray *recommendationArray;
 -(id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query;
