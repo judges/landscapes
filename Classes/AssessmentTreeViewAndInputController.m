@@ -194,11 +194,11 @@
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {
-        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init]; 
+        /*UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init]; 
         imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera; 
         imagePicker.allowsEditing = NO; 
         imagePicker.delegate = self;
-        [self presentModalViewController:imagePicker animated:YES];
+        [self presentModalViewController:imagePicker animated:YES];*/
     } else if (buttonIndex == 1) {
 
     } else if (buttonIndex == 2) {
