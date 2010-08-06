@@ -37,6 +37,13 @@
     }
 
 }
+-(IBAction)photoButtonClick:(id)sender {
+    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Photos" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take Photo", @"Add Existing", @"View Photos", nil];
+    popupQuery.actionSheetStyle = UIActionSheetStyleDefault;
+    [popupQuery showInView:self.view];
+    [popupQuery release];
+    
+}
 -(IBAction)treeButtonClick:(id)sender {
     int clickId = [[(UIButton*)sender titleLabel].text intValue];
     NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:self.assessmentTree, @"assessmentTree", [NSNumber numberWithInt:clickId], @"id", nil];

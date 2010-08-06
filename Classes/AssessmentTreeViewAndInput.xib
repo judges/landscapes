@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="61"/>
+			<integer value="1"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -45,7 +45,7 @@
 					<object class="IBUISegmentedControl" id="612671322">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{5, 5}, {310, 30}}</string>
+						<string key="NSFrame">{{69, 5}, {246, 30}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -971,12 +971,29 @@
 						</object>
 						<string key="NSFrame">{{10, 42}, {300, 405}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<object class="NSColor" key="IBUIBackgroundColor">
-							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MQA</bytes>
-							<reference key="NSCustomColorSpace" ref="123219067"/>
-						</object>
+						<reference key="IBUIBackgroundColor" ref="96568460"/>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+					</object>
+					<object class="IBUIButton" id="660397305">
+						<reference key="NSNextResponder" ref="191373211"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{10, 5}, {51, 29}}</string>
+						<reference key="NSSuperview" ref="191373211"/>
+						<bool key="IBUIOpaque">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<int key="IBUIContentHorizontalAlignment">0</int>
+						<int key="IBUIContentVerticalAlignment">0</int>
+						<reference key="IBUIFont" ref="730358796"/>
+						<reference key="IBUIHighlightedTitleColor" ref="96568460"/>
+						<object class="NSColor" key="IBUINormalTitleColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+						</object>
+						<reference key="IBUINormalTitleShadowColor" ref="276161386"/>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">photo_camera_29.png</string>
+						</object>
 					</object>
 				</object>
 				<string key="NSFrameSize">{320, 460}</string>
@@ -1339,6 +1356,23 @@
 					</object>
 					<int key="connectionID">110</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">photoButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="660397305"/>
+					</object>
+					<int key="connectionID">113</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">photoButtonClick:</string>
+						<reference key="source" ref="660397305"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">114</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -1357,6 +1391,7 @@
 							<reference ref="612671322"/>
 							<reference ref="815865319"/>
 							<reference ref="980112499"/>
+							<reference ref="660397305"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -1662,6 +1697,11 @@
 						<reference key="object" ref="537987941"/>
 						<reference key="parent" ref="815865319"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">112</int>
+						<reference key="object" ref="660397305"/>
+						<reference key="parent" ref="191373211"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -1673,6 +1713,7 @@
 					<string>1.IBEditorWindowLastContentRect</string>
 					<string>1.IBPluginDependency</string>
 					<string>107.IBPluginDependency</string>
+					<string>112.IBPluginDependency</string>
 					<string>12.IBPluginDependency</string>
 					<string>14.IBPluginDependency</string>
 					<string>15.IBPluginDependency</string>
@@ -1725,7 +1766,8 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>AssessmentTreeViewAndInputController</string>
 					<string>UIResponder</string>
-					<string>{{1931, 511}, {320, 480}}</string>
+					<string>{{1857, 481}, {320, 480}}</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -1793,7 +1835,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">110</int>
+			<int key="maxID">114</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1805,6 +1847,7 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>photoButtonClick:</string>
 							<string>saveAssessor:</string>
 							<string>saveCaliper:</string>
 							<string>saveHeight:</string>
@@ -1813,6 +1856,7 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -1824,6 +1868,7 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>photoButtonClick:</string>
 							<string>saveAssessor:</string>
 							<string>saveCaliper:</string>
 							<string>saveHeight:</string>
@@ -1832,6 +1877,10 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">photoButtonClick:</string>
+								<string key="candidateClassName">id</string>
+							</object>
 							<object class="IBActionInfo">
 								<string key="name">saveAssessor:</string>
 								<string key="candidateClassName">id</string>
@@ -1879,6 +1928,7 @@
 							<string>mainView</string>
 							<string>overallCText</string>
 							<string>overallRText</string>
+							<string>photoButton</string>
 							<string>rootFlareCText</string>
 							<string>rootFlareRText</string>
 							<string>rootsCText</string>
@@ -1910,6 +1960,7 @@
 							<string>UIView</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
+							<string>UIButton</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
@@ -1944,6 +1995,7 @@
 							<string>mainView</string>
 							<string>overallCText</string>
 							<string>overallRText</string>
+							<string>photoButton</string>
 							<string>rootFlareCText</string>
 							<string>rootFlareRText</string>
 							<string>rootsCText</string>
@@ -2037,6 +2089,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">overallRText</string>
 								<string key="candidateClassName">UILabel</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">photoButton</string>
+								<string key="candidateClassName">UIButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">rootFlareCText</string>
@@ -2320,12 +2376,14 @@
 				<string>Tree-Assessment-113x120.png</string>
 				<string>Tree-Assessment-280x295.png</string>
 				<string>button-default.png</string>
+				<string>photo_camera_29.png</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>{113, 120}</string>
 				<string>{280, 295}</string>
 				<string>{50, 50}</string>
+				<string>{36, 29}</string>
 			</object>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">117</string>

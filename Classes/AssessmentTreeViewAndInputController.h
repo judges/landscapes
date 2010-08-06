@@ -11,10 +11,11 @@
 #import "AssessmentTree.h"
 #import "AppDelegate.h"
 
-@interface AssessmentTreeViewAndInputController : UIViewController <NSFetchedResultsControllerDelegate> {
+@interface AssessmentTreeViewAndInputController : UIViewController <NSFetchedResultsControllerDelegate, UIActionSheetDelegate> {
     IBOutlet UIView *viewView;
     IBOutlet UIView *inputView;
     IBOutlet UIView *mainView;
+    IBOutlet UIButton *photoButton;
     
     Assessment *assessment;
     AssessmentTree *assessmentTree;
@@ -94,5 +95,6 @@
 -(IBAction)saveAssessor:(id)sender;
 -(IBAction)saveCaliper:(id)sender;
 -(IBAction)saveHeight:(id)sender;
+-(IBAction)photoButtonClick:(id)sender;
 
 @end

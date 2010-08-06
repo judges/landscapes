@@ -17,6 +17,7 @@
     IBOutlet UIView *recommendationView;
     IBOutlet UIPickerView *conditionPicker;
     IBOutlet UIPickerView *recommendationPicker;
+    IBOutlet UIButton *photoButton;
     IBOutlet UISegmentedControl *switchControl;
     IBOutlet UIButton *conditionSaveButton;
     IBOutlet UIButton *recommendationSaveButton;
