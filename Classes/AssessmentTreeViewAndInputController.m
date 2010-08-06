@@ -189,7 +189,7 @@
     //[mainView release];
     //[assessment release];
     //[assessmentTree release];
-    //[fetchedResultsController release];
+    [fetchedResultsController release];
     //[managedObjectContext release];
     
     [super dealloc];

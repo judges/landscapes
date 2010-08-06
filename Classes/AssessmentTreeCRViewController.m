@@ -316,6 +316,7 @@
     [conditionArray addObject:[conditionField text]];
     [conditionPicker reloadComponent:0];
     conditionField.text = @"";
+    [conditionPicker selectRow:[conditionArray count] - 1 inComponent:0 animated:YES];
 }
 -(IBAction)recommendationSaveButtonClick {
     [recommendationField setHidden: YES];
@@ -372,6 +373,7 @@
     [recommendationArray addObject:[recommendationField text]];
     [recommendationPicker reloadComponent:0];
     recommendationField.text = @"";
+    [recommendationPicker selectRow:[recommendationArray count] - 1 inComponent:0 animated:YES];
 }
 -(IBAction)conditionTypingFinished {
     [conditionField resignFirstResponder];
@@ -783,7 +785,7 @@
 
 
 - (void)dealloc {
-
+    //[mainView release];
     [conditionArray release];
     [recommendationArray release];
 
