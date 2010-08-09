@@ -177,17 +177,24 @@
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {
-        /*UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init]; 
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init]; 
         imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera; 
         imagePicker.allowsEditing = NO; 
         imagePicker.delegate = self;
-        [self presentModalViewController:imagePicker animated:YES];*/
+        [self presentModalViewController:imagePicker animated:YES];
+        [imagePicker release];
     } else if (buttonIndex == 1) {
-
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init]; 
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum; 
+        imagePicker.allowsEditing = NO; 
+        imagePicker.delegate = self;
+        [self presentModalViewController:imagePicker animated:YES];
+        [imagePicker release];
     } else if (buttonIndex == 2) {
+        //flip to ttimageview thing
 
     } else if (buttonIndex == 3) {
-        
+        //cancel
     }
 }
 

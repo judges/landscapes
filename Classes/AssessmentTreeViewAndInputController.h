@@ -11,7 +11,7 @@
 #import "AssessmentTree.h"
 #import "AppDelegate.h"
 
-@interface AssessmentTreeViewAndInputController : UIViewController <UIActionSheetDelegate, UIImagePickerControllerDelegate> {
+@interface AssessmentTreeViewAndInputController : UIViewController <UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     IBOutlet UIView *viewView;
     IBOutlet UIView *inputView;
     IBOutlet UIView *mainView;
