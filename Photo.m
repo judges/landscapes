@@ -1,16 +1,17 @@
 // 
-//  AssessmentType.m
+//  Photo.m
 //  landscapes
 //
 //  Created by Evan Cordell on 8/9/10.
 //  Copyright 2010 NCPTT. All rights reserved.
 //
 
-#import "AssessmentType.h"
+#import "Photo.h"
 
 
-@implementation AssessmentType 
+@implementation Photo 
 
-@dynamic name;
+@dynamic image;
+@dynamic image_caption;
 
 @end

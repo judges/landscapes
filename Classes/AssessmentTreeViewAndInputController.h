@@ -19,6 +19,7 @@
     
     Assessment *assessment;
     AssessmentTree *assessmentTree;
+    UIImagePickerController *imagePicker;
     
     //view page
     IBOutlet UILabel *assessor;

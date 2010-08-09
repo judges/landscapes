@@ -21,6 +21,7 @@
     if (self = [super initWithNibName:@"AssessmentTreeViewAndInput" bundle:[NSBundle mainBundle]]){ 
         if(query && [query objectForKey:@"assessment"]){ 
             self.assessment = (Assessment*) [query objectForKey:@"assessment"]; 
+            imagePicker = [[UIImagePickerController alloc] init];
         } 
     } 
     return self; 
@@ -177,19 +178,15 @@
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {
-        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init]; 
         imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera; 
         imagePicker.allowsEditing = NO; 
         imagePicker.delegate = self;
         [self presentModalViewController:imagePicker animated:YES];
-        [imagePicker release];
     } else if (buttonIndex == 1) {
-        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init]; 
         imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum; 
         imagePicker.allowsEditing = NO; 
         imagePicker.delegate = self;
         [self presentModalViewController:imagePicker animated:YES];
-        [imagePicker release];
     } else if (buttonIndex == 2) {
         //flip to ttimageview thing
 
@@ -198,12 +195,30 @@
     }
 }
 
+- (void)imagePickerController: (UIImagePickerController *)picker
+        didFinishPickingImage: (UIImage *)image
+                  editingInfo: (NSDictionary *)editingInfo {
+    assessmentTree.image = UIImageJPEGRepresentation(image, 1.0);
+    NSError *error;
+    if (![managedObjectContext save:&error]) {
+        NSLog(@"Error saving image.");
+    }
+    [[imagePicker parentViewController] dismissModalViewControllerAnimated:YES];
+}
+
+
+- (void)imagePickerControllerDidCancel: (UIImagePickerController *)picker
+{
+    // in case of cancel, get rid of picker
+    [[picker parentViewController] dismissModalViewControllerAnimated:YES];
+}
+
 - (void)dealloc {
     //[mainView release];
     //[assessment release];
     //[assessmentTree release];
     //[managedObjectContext release];
-    
+    [imagePicker release];
     [super dealloc];
 }
 

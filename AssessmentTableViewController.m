@@ -38,13 +38,20 @@
     if(!managedObjectContext){
         managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     }
-    //[self prepopulateDb];
+
     //set up fetchedResultsController
     [self fetchedResultsController];
 
     //Perform fetch and catch any errors
     NSError *error = nil;
     [fetchedResultsController performFetch:&error];
+    
+    //prepopulate if there are no records
+    if ([[[fetchedResultsController sections] objectAtIndex:0] numberOfObjects] == 0) {
+        [self prepopulateDb];
+        [fetchedResultsController performFetch:&error];
+    }
+    
     if (error) {
         NSLog(@"Error occured fetching from db: %@", error);
     }
@@ -53,7 +60,8 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 - (void)prepopulateDb {    
-    NSManagedObjectContext *context = [self managedObjectContext];
+    NSManagedObjectContext *context = [self managedObjectContext];    
+    
     Landscape *landscape = [NSEntityDescription insertNewObjectForEntityForName:@"Landscape" inManagedObjectContext:context];
     landscape.name = @"Test Landscape";
     
@@ -181,6 +189,7 @@
     
     id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
     NSLog(@"Number of Rows fetched: %d", [sectionInfo numberOfObjects]);
+    
     return [sectionInfo numberOfObjects];
     
 }

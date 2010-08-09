@@ -1,5 +1,5 @@
 //
-//  AssessmentType.h
+//  Photo.h
 //  landscapes
 //
 //  Created by Evan Cordell on 8/9/10.
@@ -9,11 +9,12 @@
 #import <CoreData/CoreData.h>
 
 
-@interface AssessmentType :  NSManagedObject  
+@interface Photo :  NSManagedObject  
 {
 }
 
-@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSData * image;
+@property (nonatomic, retain) NSString * image_caption;
 
 @end
 
