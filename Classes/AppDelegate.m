@@ -46,7 +46,7 @@
   [map from:@"land://assessments" toViewController:[AssessmentTableViewController class]];
   [map from:@"land://assessments/TreeViewAndInput?" toViewController:[AssessmentTreeViewAndInputController class]];
   [map from:@"land://assessments/TreeForm?" toViewController:[AssessmentTreeCRViewController class]];
-
+  [map from:@"land://Photos" toViewController:[PhotoViewController class]];
 	
 	if (![navigator restoreViewControllers]) {
 		//set up launcher

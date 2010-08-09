@@ -14,6 +14,7 @@
 #import "AssessmentTableViewController.h"
 #import "AssessmentTreeViewAndInputController.h"
 #import "AssessmentTreeCRViewController.h"
+#import "PhotoViewController.h"
 
 @interface AppDelegate : NSObject <UIApplicationDelegate> {
   NSManagedObjectModel*         _managedObjectModel;

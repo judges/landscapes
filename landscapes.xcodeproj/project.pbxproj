@@ -34,6 +34,9 @@
 		094632D012107AB800773E50 /* AssessmentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 094632BF12107AB800773E50 /* AssessmentType.m */; };
 		094633EF12109A1D00773E50 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 094633ED12109A1D00773E50 /* Image.m */; };
 		094633F712109A4600773E50 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 094633F612109A4600773E50 /* Photo.m */; };
+		094634461210A7A700773E50 /* DisplayPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 094634451210A7A700773E50 /* DisplayPhoto.m */; };
+		0946344B1210A81900773E50 /* PhotoSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 0946344A1210A81900773E50 /* PhotoSet.m */; };
+		094634501210A86500773E50 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0946344F1210A86500773E50 /* PhotoViewController.m */; };
 		09AED7E011FE4A820040A385 /* AssessmentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AED7DE11FE4A820040A385 /* AssessmentTableViewController.m */; };
 		09AED7E111FE4A820040A385 /* AssessmentTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09AED7DF11FE4A820040A385 /* AssessmentTableView.xib */; };
 		09AED84011FF29760040A385 /* AssessmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AED83F11FF29760040A385 /* AssessmentTableViewCell.m */; };
@@ -275,6 +278,12 @@
 		094633ED12109A1D00773E50 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Image.m; path = ../Image.m; sourceTree = "<group>"; };
 		094633F512109A4600773E50 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Photo.h; path = ../Photo.h; sourceTree = "<group>"; };
 		094633F612109A4600773E50 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Photo.m; path = ../Photo.m; sourceTree = "<group>"; };
+		094634441210A7A700773E50 /* DisplayPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayPhoto.h; sourceTree = "<group>"; };
+		094634451210A7A700773E50 /* DisplayPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayPhoto.m; sourceTree = "<group>"; };
+		094634491210A81900773E50 /* PhotoSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoSet.h; sourceTree = "<group>"; };
+		0946344A1210A81900773E50 /* PhotoSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoSet.m; sourceTree = "<group>"; };
+		0946344E1210A86500773E50 /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		0946344F1210A86500773E50 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		09AED7DD11FE4A820040A385 /* AssessmentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssessmentTableViewController.h; path = ../AssessmentTableViewController.h; sourceTree = "<group>"; };
 		09AED7DE11FE4A820040A385 /* AssessmentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssessmentTableViewController.m; path = ../AssessmentTableViewController.m; sourceTree = "<group>"; };
 		09AED7DF11FE4A820040A385 /* AssessmentTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssessmentTableView.xib; sourceTree = "<group>"; };
@@ -390,6 +399,8 @@
 		09AED84111FF2EF40040A385 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				094634491210A81900773E50 /* PhotoSet.h */,
+				0946344A1210A81900773E50 /* PhotoSet.m */,
 				094633EC12109A1D00773E50 /* Image.h */,
 				094633ED12109A1D00773E50 /* Image.m */,
 				0946329E12107AB800773E50 /* TreeOverallRecommendation.h */,
@@ -426,6 +437,8 @@
 				094632BF12107AB800773E50 /* AssessmentType.m */,
 				094633F512109A4600773E50 /* Photo.h */,
 				094633F612109A4600773E50 /* Photo.m */,
+				094634441210A7A700773E50 /* DisplayPhoto.h */,
+				094634451210A7A700773E50 /* DisplayPhoto.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -446,6 +459,8 @@
 				141DFCC7120A955D00F86792 /* VegetationVC.h */,
 				141DFCC8120A955D00F86792 /* VegetationVC.m */,
 				141DFCC9120A955D00F86792 /* VegetationVC.xib */,
+				0946344E1210A86500773E50 /* PhotoViewController.h */,
+				0946344F1210A86500773E50 /* PhotoViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -883,6 +898,9 @@
 				094632D012107AB800773E50 /* AssessmentType.m in Sources */,
 				094633EF12109A1D00773E50 /* Image.m in Sources */,
 				094633F712109A4600773E50 /* Photo.m in Sources */,
+				094634461210A7A700773E50 /* DisplayPhoto.m in Sources */,
+				0946344B1210A81900773E50 /* PhotoSet.m in Sources */,
+				094634501210A86500773E50 /* PhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

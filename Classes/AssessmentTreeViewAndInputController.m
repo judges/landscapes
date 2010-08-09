@@ -189,6 +189,8 @@
         [self presentModalViewController:imagePicker animated:YES];
     } else if (buttonIndex == 2) {
         //flip to ttimageview thing
+        [[TTNavigator navigator] openURLAction:[[TTURLAction actionWithURLPath:@"land://Photos"] applyAnimated:YES]];
+        
 
     } else if (buttonIndex == 3) {
         //cancel
@@ -200,13 +202,15 @@
                   editingInfo: (NSDictionary *)editingInfo {
     NSMutableSet *photos = [assessmentTree mutableSetValueForKey:@"images"];
     Image *newPhoto = [NSEntityDescription insertNewObjectForEntityForName:@"Image" inManagedObjectContext:managedObjectContext];
-    newPhoto.image_data = UIImagePNGRepresentation(image);
+    newPhoto.image_data = UIImageJPEGRepresentation(image, 1.0);
     newPhoto.image_caption = @"Caption";
     [photos addObject:newPhoto];
+    [assessmentTree setValue:photos forKey:@"images"];
     NSError *error;
     if (![managedObjectContext save:&error]) {
         NSLog(@"Error saving image.");
     }
+    [managedObjectContext processPendingChanges];
     [[imagePicker parentViewController] dismissModalViewControllerAnimated:YES];
 }
 
