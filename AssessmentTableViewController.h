@@ -27,7 +27,8 @@
 #import "TreeRootsRecommendation.h"
 #import "TreeTrunkCondition.h"
 #import "TreeTrunkRecommendation.h"
-
+#import "Image.h"
+#import "Photo.h"
 
 @interface AssessmentTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate> {
     @private

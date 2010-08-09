@@ -8,10 +8,10 @@
 
 #import "Photo.h"
 
-#import "Image.h"
 
 @implementation Photo 
 
-@dynamic images;
+@dynamic image;
+@dynamic image_caption;
 
 @end

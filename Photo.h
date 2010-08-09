@@ -8,15 +8,22 @@
 
 #import <CoreData/CoreData.h>
 
+@class Image;
 
 @interface Photo :  NSManagedObject  
 {
 }
 
-@property (nonatomic, retain) NSData * image;
-@property (nonatomic, retain) NSString * image_caption;
+@property (nonatomic, retain) NSSet* images;
 
 @end
 
 
+@interface Photo (CoreDataGeneratedAccessors)
+- (void)addImagesObject:(Image *)value;
+- (void)removeImagesObject:(Image *)value;
+- (void)addImages:(NSSet *)value;
+- (void)removeImages:(NSSet *)value;
+
+@end
 

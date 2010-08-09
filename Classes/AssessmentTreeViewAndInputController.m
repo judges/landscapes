@@ -198,7 +198,11 @@
 - (void)imagePickerController: (UIImagePickerController *)picker
         didFinishPickingImage: (UIImage *)image
                   editingInfo: (NSDictionary *)editingInfo {
-    assessmentTree.image = UIImageJPEGRepresentation(image, 1.0);
+    NSMutableSet *photos = [assessmentTree mutableSetValueForKey:@"images"];
+    Image *newPhoto = [NSEntityDescription insertNewObjectForEntityForName:@"Image" inManagedObjectContext:managedObjectContext];
+    newPhoto.image_data = UIImagePNGRepresentation(image);
+    newPhoto.image_caption = @"Caption";
+    [photos addObject:newPhoto];
     NSError *error;
     if (![managedObjectContext save:&error]) {
         NSLog(@"Error saving image.");

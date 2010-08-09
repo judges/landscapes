@@ -23,7 +23,6 @@
 		094632C412107AB800773E50 /* Landscape.m in Sources */ = {isa = PBXBuildFile; fileRef = 094632A712107AB800773E50 /* Landscape.m */; };
 		094632C512107AB800773E50 /* TreeOverallCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 094632A912107AB800773E50 /* TreeOverallCondition.m */; };
 		094632C612107AB800773E50 /* TreeCrownRecommendation.m in Sources */ = {isa = PBXBuildFile; fileRef = 094632AB12107AB800773E50 /* TreeCrownRecommendation.m */; };
-		094632C712107AB800773E50 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 094632AD12107AB800773E50 /* Photo.m */; };
 		094632C812107AB800773E50 /* TreeRootFlareRecommendation.m in Sources */ = {isa = PBXBuildFile; fileRef = 094632AF12107AB800773E50 /* TreeRootFlareRecommendation.m */; };
 		094632C912107AB800773E50 /* TreeTrunkCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 094632B112107AB800773E50 /* TreeTrunkCondition.m */; };
 		094632CA12107AB800773E50 /* Assessment.m in Sources */ = {isa = PBXBuildFile; fileRef = 094632B312107AB800773E50 /* Assessment.m */; };
@@ -33,6 +32,8 @@
 		094632CE12107AB800773E50 /* TreeTrunkRecommendation.m in Sources */ = {isa = PBXBuildFile; fileRef = 094632BB12107AB800773E50 /* TreeTrunkRecommendation.m */; };
 		094632CF12107AB800773E50 /* AssessmentTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 094632BD12107AB800773E50 /* AssessmentTree.m */; };
 		094632D012107AB800773E50 /* AssessmentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 094632BF12107AB800773E50 /* AssessmentType.m */; };
+		094633EF12109A1D00773E50 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 094633ED12109A1D00773E50 /* Image.m */; };
+		094633F712109A4600773E50 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 094633F612109A4600773E50 /* Photo.m */; };
 		09AED7E011FE4A820040A385 /* AssessmentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AED7DE11FE4A820040A385 /* AssessmentTableViewController.m */; };
 		09AED7E111FE4A820040A385 /* AssessmentTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09AED7DF11FE4A820040A385 /* AssessmentTableView.xib */; };
 		09AED84011FF29760040A385 /* AssessmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AED83F11FF29760040A385 /* AssessmentTableViewCell.m */; };
@@ -252,8 +253,6 @@
 		094632A912107AB800773E50 /* TreeOverallCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreeOverallCondition.m; path = ../TreeOverallCondition.m; sourceTree = "<group>"; };
 		094632AA12107AB800773E50 /* TreeCrownRecommendation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreeCrownRecommendation.h; path = ../TreeCrownRecommendation.h; sourceTree = "<group>"; };
 		094632AB12107AB800773E50 /* TreeCrownRecommendation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreeCrownRecommendation.m; path = ../TreeCrownRecommendation.m; sourceTree = "<group>"; };
-		094632AC12107AB800773E50 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Photo.h; path = ../Photo.h; sourceTree = "<group>"; };
-		094632AD12107AB800773E50 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Photo.m; path = ../Photo.m; sourceTree = "<group>"; };
 		094632AE12107AB800773E50 /* TreeRootFlareRecommendation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreeRootFlareRecommendation.h; path = ../TreeRootFlareRecommendation.h; sourceTree = "<group>"; };
 		094632AF12107AB800773E50 /* TreeRootFlareRecommendation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreeRootFlareRecommendation.m; path = ../TreeRootFlareRecommendation.m; sourceTree = "<group>"; };
 		094632B012107AB800773E50 /* TreeTrunkCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreeTrunkCondition.h; path = ../TreeTrunkCondition.h; sourceTree = "<group>"; };
@@ -272,6 +271,10 @@
 		094632BD12107AB800773E50 /* AssessmentTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssessmentTree.m; path = ../AssessmentTree.m; sourceTree = "<group>"; };
 		094632BE12107AB800773E50 /* AssessmentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssessmentType.h; path = ../AssessmentType.h; sourceTree = "<group>"; };
 		094632BF12107AB800773E50 /* AssessmentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssessmentType.m; path = ../AssessmentType.m; sourceTree = "<group>"; };
+		094633EC12109A1D00773E50 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Image.h; path = ../Image.h; sourceTree = "<group>"; };
+		094633ED12109A1D00773E50 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Image.m; path = ../Image.m; sourceTree = "<group>"; };
+		094633F512109A4600773E50 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Photo.h; path = ../Photo.h; sourceTree = "<group>"; };
+		094633F612109A4600773E50 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Photo.m; path = ../Photo.m; sourceTree = "<group>"; };
 		09AED7DD11FE4A820040A385 /* AssessmentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssessmentTableViewController.h; path = ../AssessmentTableViewController.h; sourceTree = "<group>"; };
 		09AED7DE11FE4A820040A385 /* AssessmentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssessmentTableViewController.m; path = ../AssessmentTableViewController.m; sourceTree = "<group>"; };
 		09AED7DF11FE4A820040A385 /* AssessmentTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssessmentTableView.xib; sourceTree = "<group>"; };
@@ -387,6 +390,8 @@
 		09AED84111FF2EF40040A385 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				094633EC12109A1D00773E50 /* Image.h */,
+				094633ED12109A1D00773E50 /* Image.m */,
 				0946329E12107AB800773E50 /* TreeOverallRecommendation.h */,
 				0946329F12107AB800773E50 /* TreeOverallRecommendation.m */,
 				094632A012107AB800773E50 /* TreeFormRecommendation.h */,
@@ -401,8 +406,6 @@
 				094632A912107AB800773E50 /* TreeOverallCondition.m */,
 				094632AA12107AB800773E50 /* TreeCrownRecommendation.h */,
 				094632AB12107AB800773E50 /* TreeCrownRecommendation.m */,
-				094632AC12107AB800773E50 /* Photo.h */,
-				094632AD12107AB800773E50 /* Photo.m */,
 				094632AE12107AB800773E50 /* TreeRootFlareRecommendation.h */,
 				094632AF12107AB800773E50 /* TreeRootFlareRecommendation.m */,
 				094632B012107AB800773E50 /* TreeTrunkCondition.h */,
@@ -421,6 +424,8 @@
 				094632BD12107AB800773E50 /* AssessmentTree.m */,
 				094632BE12107AB800773E50 /* AssessmentType.h */,
 				094632BF12107AB800773E50 /* AssessmentType.m */,
+				094633F512109A4600773E50 /* Photo.h */,
+				094633F612109A4600773E50 /* Photo.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -867,7 +872,6 @@
 				094632C412107AB800773E50 /* Landscape.m in Sources */,
 				094632C512107AB800773E50 /* TreeOverallCondition.m in Sources */,
 				094632C612107AB800773E50 /* TreeCrownRecommendation.m in Sources */,
-				094632C712107AB800773E50 /* Photo.m in Sources */,
 				094632C812107AB800773E50 /* TreeRootFlareRecommendation.m in Sources */,
 				094632C912107AB800773E50 /* TreeTrunkCondition.m in Sources */,
 				094632CA12107AB800773E50 /* Assessment.m in Sources */,
@@ -877,6 +881,8 @@
 				094632CE12107AB800773E50 /* TreeTrunkRecommendation.m in Sources */,
 				094632CF12107AB800773E50 /* AssessmentTree.m in Sources */,
 				094632D012107AB800773E50 /* AssessmentType.m in Sources */,
+				094633EF12109A1D00773E50 /* Image.m in Sources */,
+				094633F712109A4600773E50 /* Photo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
