@@ -24,6 +24,8 @@
             //initialize the arrays to store the conditions and recommendations
             conditionStringArray = [[NSMutableArray alloc] init];
             recommendationStringArray = [[NSMutableArray alloc] init];
+            //create imagepicker
+            imagePicker = [[UIImagePickerController alloc] init];
             //set appropriate title
             switch ([whichId intValue]) {
                 case 1:
@@ -657,6 +659,136 @@
     }
 }
 
+-(IBAction)photoButtonClick:(id)sender {
+    //user clicked photo button
+    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Photos" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take Photo", @"Add Existing", @"View Photos", nil];
+    popupQuery.actionSheetStyle = UIActionSheetStyleDefault;
+    [popupQuery showInView:self.view];
+    [popupQuery release];
+    
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera; 
+        imagePicker.allowsEditing = NO; 
+        imagePicker.delegate = self;
+        [self presentModalViewController:imagePicker animated:YES];
+    } else if (buttonIndex == 1) {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum; 
+        imagePicker.allowsEditing = NO; 
+        imagePicker.delegate = self;
+        [self presentModalViewController:imagePicker animated:YES];
+    } else if (buttonIndex == 2) {
+        //flip to ttimageview thing
+        
+        switch ([whichId intValue]) {
+            case 1:
+            {
+                [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:[NSDictionary dictionaryWithObject:@"TreeFormCondition" forKey:@"entity"]] applyAnimated:YES]];
+                break;
+            }
+            case 2:
+            {
+                [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:[NSDictionary dictionaryWithObject:@"TreeCrownCondition" forKey:@"entity"]] applyAnimated:YES]];
+                break;
+            }
+            case 3:
+            {
+                [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:[NSDictionary dictionaryWithObject:@"TreeTrunkCondition" forKey:@"entity"]] applyAnimated:YES]];
+                break;
+            }
+            case 4:
+            {
+                [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:[NSDictionary dictionaryWithObject:@"TreeRootFlareCondition" forKey:@"entity"]] applyAnimated:YES]];
+                break;
+            }
+            case 5:
+            {
+                [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:[NSDictionary dictionaryWithObject:@"TreeRootsCondition" forKey:@"entity"]] applyAnimated:YES]];
+                break;
+            }
+            case 6:
+            {
+                [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:[NSDictionary dictionaryWithObject:@"TreeOverallCondition" forKey:@"entity"]] applyAnimated:YES]];
+                break;
+            }
+            default:
+                break;
+        }
+        
+        
+    } else if (buttonIndex == 3) {
+        //cancel
+    }
+}
+
+- (void)imagePickerController: (UIImagePickerController *)picker
+        didFinishPickingImage: (UIImage *)image
+                  editingInfo: (NSDictionary *)editingInfo {
+    
+    Image *newPhoto = [NSEntityDescription insertNewObjectForEntityForName:@"Image" inManagedObjectContext:managedObjectContext];
+    newPhoto.image_data = UIImageJPEGRepresentation(image, 1.0);
+    newPhoto.image_caption = @"Caption";
+    
+    switch ([whichId intValue]) {
+        case 1:
+        {
+            NSMutableSet *photos = [tree.form_condition mutableSetValueForKey:@"images"];
+            [photos addObject:newPhoto];
+            [tree.form_condition setValue:photos forKey:@"images"];
+        }
+        case 2:
+        {
+            NSMutableSet *photos = [tree.crown_condition mutableSetValueForKey:@"images"];
+            [photos addObject:newPhoto];
+            [tree.form_condition setValue:photos forKey:@"images"];
+        }
+        case 3:
+        {
+            NSMutableSet *photos = [tree.trunk_condition mutableSetValueForKey:@"images"];
+            [photos addObject:newPhoto];
+            [tree.form_condition setValue:photos forKey:@"images"];
+        }
+        case 4:
+        {
+            NSMutableSet *photos = [tree.rootflare_condition mutableSetValueForKey:@"images"];
+            [photos addObject:newPhoto];
+            [tree.form_condition setValue:photos forKey:@"images"];
+        }
+        case 5:
+        {
+            NSMutableSet *photos = [tree.roots_condition mutableSetValueForKey:@"images"];
+            [photos addObject:newPhoto];
+            [tree.form_condition setValue:photos forKey:@"images"];
+        }
+        case 6:
+        {
+            NSMutableSet *photos = [tree.overall_condition mutableSetValueForKey:@"images"];
+            [photos addObject:newPhoto];
+            [tree.form_condition setValue:photos forKey:@"images"];
+        }
+            break;
+        default:
+            break;
+    }
+    
+    
+    
+    NSError *error;
+    if (![managedObjectContext save:&error]) {
+        NSLog(@"Error saving image.");
+    }
+    [managedObjectContext processPendingChanges];
+    [[imagePicker parentViewController] dismissModalViewControllerAnimated:YES];
+}
+
+- (void)imagePickerControllerDidCancel: (UIImagePickerController *)picker
+{
+    // in case of cancel, get rid of picker
+    [[picker parentViewController] dismissModalViewControllerAnimated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
@@ -679,6 +811,7 @@
     [recommendationStringArray release];
     [conditionArray release];
     [recommendationArray release];
+    [imagePicker release];
     [super dealloc];
 }
 

@@ -10,8 +10,9 @@
 #import "AppDelegate.h"
 
 
-@interface AssessmentTreeCRViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, NSFetchedResultsControllerDelegate> {
+@interface AssessmentTreeCRViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, NSFetchedResultsControllerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     AssessmentTree *tree;
+    UIImagePickerController *imagePicker;
     IBOutlet UIView *mainView;
     IBOutlet UIView *conditionView;
     IBOutlet UIView *recommendationView;
@@ -57,4 +58,5 @@
 -(IBAction)conditionTypingFinished;
 -(IBAction)recommendationTypingFinished;
 -(IBAction)segmentSwitch:(id)sender;
+-(IBAction)photoButtonClick:(id)sender;
 @end
