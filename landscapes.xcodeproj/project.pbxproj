@@ -55,7 +55,6 @@
 		1464EB85120AC64600F21DCE /* assessments-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB78120AC64600F21DCE /* assessments-57.png */; };
 		1464EB86120AC64600F21DCE /* cemetery-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB79120AC64600F21DCE /* cemetery-57.png */; };
 		1464EB87120AC64600F21DCE /* inventory-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB7A120AC64600F21DCE /* inventory-57.png */; };
-		1464EB88120AC64600F21DCE /* landscapes-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB7B120AC64600F21DCE /* landscapes-57.png */; };
 		1464EB89120AC64600F21DCE /* maps-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB7C120AC64600F21DCE /* maps-57.png */; };
 		1464EB8A120AC64600F21DCE /* ncptt-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB7D120AC64600F21DCE /* ncptt-57.png */; };
 		1464EB8B120AC64600F21DCE /* photos-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB7E120AC64600F21DCE /* photos-57.png */; };
@@ -64,6 +63,7 @@
 		1464EB8E120AC64600F21DCE /* vegetation-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB81120AC64600F21DCE /* vegetation-57.png */; };
 		1464EB8F120AC64600F21DCE /* wildlife-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB82120AC64600F21DCE /* wildlife-57.png */; };
 		14DCC6C211FDE35500A98045 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DCC6C111FDE35500A98045 /* CoreLocation.framework */; };
+		14E30BBA1211E9C70058C7C6 /* landscapes-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E30BB91211E9C70058C7C6 /* landscapes-57.png */; };
 		14EBCDAA11FE195700F36458 /* LauncherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EBCDA911FE195700F36458 /* LauncherViewController.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -310,7 +310,6 @@
 		1464EB78120AC64600F21DCE /* assessments-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "assessments-57.png"; sourceTree = "<group>"; };
 		1464EB79120AC64600F21DCE /* cemetery-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cemetery-57.png"; sourceTree = "<group>"; };
 		1464EB7A120AC64600F21DCE /* inventory-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inventory-57.png"; sourceTree = "<group>"; };
-		1464EB7B120AC64600F21DCE /* landscapes-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "landscapes-57.png"; sourceTree = "<group>"; };
 		1464EB7C120AC64600F21DCE /* maps-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "maps-57.png"; sourceTree = "<group>"; };
 		1464EB7D120AC64600F21DCE /* ncptt-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ncptt-57.png"; sourceTree = "<group>"; };
 		1464EB7E120AC64600F21DCE /* photos-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photos-57.png"; sourceTree = "<group>"; };
@@ -319,6 +318,7 @@
 		1464EB81120AC64600F21DCE /* vegetation-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vegetation-57.png"; sourceTree = "<group>"; };
 		1464EB82120AC64600F21DCE /* wildlife-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wildlife-57.png"; sourceTree = "<group>"; };
 		14DCC6C111FDE35500A98045 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
+		14E30BB91211E9C70058C7C6 /* landscapes-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "landscapes-57.png"; sourceTree = "<group>"; };
 		14EBCDA811FE195700F36458 /* LauncherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LauncherViewController.h; sourceTree = "<group>"; };
 		14EBCDA911FE195700F36458 /* LauncherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LauncherViewController.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -486,13 +486,13 @@
 		1440242C11FDE524000F936D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				14E30BB91211E9C70058C7C6 /* landscapes-57.png */,
 				09462F9F120C5C1800773E50 /* photo_camera_29.png */,
 				1464EB76120AC64600F21DCE /* archeologist-57.png */,
 				1464EB77120AC64600F21DCE /* structures-57.png */,
 				1464EB78120AC64600F21DCE /* assessments-57.png */,
 				1464EB79120AC64600F21DCE /* cemetery-57.png */,
 				1464EB7A120AC64600F21DCE /* inventory-57.png */,
-				1464EB7B120AC64600F21DCE /* landscapes-57.png */,
 				1464EB7C120AC64600F21DCE /* maps-57.png */,
 				1464EB7D120AC64600F21DCE /* ncptt-57.png */,
 				1464EB7E120AC64600F21DCE /* photos-57.png */,
@@ -870,7 +870,6 @@
 				1464EB85120AC64600F21DCE /* assessments-57.png in Resources */,
 				1464EB86120AC64600F21DCE /* cemetery-57.png in Resources */,
 				1464EB87120AC64600F21DCE /* inventory-57.png in Resources */,
-				1464EB88120AC64600F21DCE /* landscapes-57.png in Resources */,
 				1464EB89120AC64600F21DCE /* maps-57.png in Resources */,
 				1464EB8A120AC64600F21DCE /* ncptt-57.png in Resources */,
 				1464EB8B120AC64600F21DCE /* photos-57.png in Resources */,
@@ -879,6 +878,7 @@
 				1464EB8E120AC64600F21DCE /* vegetation-57.png in Resources */,
 				1464EB8F120AC64600F21DCE /* wildlife-57.png in Resources */,
 				09462FA0120C5C1800773E50 /* photo_camera_29.png in Resources */,
+				14E30BBA1211E9C70058C7C6 /* landscapes-57.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
