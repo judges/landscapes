@@ -55,7 +55,7 @@
                     NSLog(@"///////////Property: %@////////////", sub);
                     NSRelationshipDescription *rel = [property.entity.relationshipsByName objectForKey:sub];
                     NSLog(@"%@", [rel.destinationEntity.relationshipsByName objectForKey:@"images"]);
-                    if ([rel.destinationEntity.relationshipsByName objectForKey:@"images"] && ![sub isEqualToString:@"assessment"]) {
+                    if ([rel.destinationEntity.relationshipsByName objectForKey:@"images"] && ![sub isEqualToString:@"assessment"] && ![sub isEqualToString:@"tree"]) {
                         NSFetchRequest *subFetchRequest = [[NSFetchRequest alloc] init];
                         NSEntityDescription *entity = [NSEntityDescription entityForName:rel.destinationEntity.name inManagedObjectContext:managedObjectContext];
                         [subFetchRequest setEntity:entity];
