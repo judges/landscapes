@@ -14,8 +14,11 @@
 
 @interface PhotoViewController : TTPhotoViewController {
     PhotoSet *_photoSet;
+    int count;
+    NSString *entityString;
 }
-
+@property (nonatomic, assign) int count;
 @property (nonatomic, retain) PhotoSet *photoSet;
-
+@property (nonatomic, copy) NSString *entityString;
+-(id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query;
 @end

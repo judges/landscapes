@@ -26,17 +26,16 @@
             DisplayPhoto *photo = [[[DisplayPhoto alloc] initWithCaption:@"Caption" urlLarge:url urlSmall:url urlThumb:url size:img.size] autorelease];
             photo.photoSource = self;
             photo.index = i;
-            NSLog(@"Image %d: %@:",i, photo);
             [self.photos addObject:photo];
         }        
     }
-    NSLog(@"Images: %@, %@", self.photos, title);
     return self;
 }
 
 - (void) dealloc {
     self.title = nil;
-    self.photos = nil;    
+    self.photos = nil; 
+    [self.photos release];
     [super dealloc];
 }
 

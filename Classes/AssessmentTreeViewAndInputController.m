@@ -189,7 +189,7 @@
         [self presentModalViewController:imagePicker animated:YES];
     } else if (buttonIndex == 2) {
         //flip to ttimageview thing
-        [[TTNavigator navigator] openURLAction:[[TTURLAction actionWithURLPath:@"land://Photos"] applyAnimated:YES]];
+        [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:[NSDictionary dictionaryWithObject:@"AssessmentTree" forKey:@"entity"]]applyAnimated:YES]];
         
 
     } else if (buttonIndex == 3) {
