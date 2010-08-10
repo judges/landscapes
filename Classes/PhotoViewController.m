@@ -50,15 +50,35 @@
             //grab images one level down. This will need to be changed to some sort of
             //recursive function if we add another level in the future.
             if (![self.entityString isEqualToString:@"Photo"]) {
-                for (NSManagedObject *sub in property.entity.properties)
+                for (NSString *sub in property.entity.relationshipsByName)
                 {
-                    //This if statement filters properly but it shouldn't.
-                    if (![sub.entity.propertiesByName objectForKey:@"images"]) {
-                        for (Image *image in ((Photo *)sub).images)
+                    NSLog(@"///////////Property: %@////////////", sub);
+                    NSRelationshipDescription *rel = [property.entity.relationshipsByName objectForKey:sub];
+                    NSLog(@"%@", [rel.destinationEntity.relationshipsByName objectForKey:@"images"]);
+                    if ([rel.destinationEntity.relationshipsByName objectForKey:@"images"] && ![sub isEqualToString:@"assessment"]) {
+                        NSFetchRequest *subFetchRequest = [[NSFetchRequest alloc] init];
+                        NSEntityDescription *entity = [NSEntityDescription entityForName:rel.destinationEntity.name inManagedObjectContext:managedObjectContext];
+                        [subFetchRequest setEntity:entity];
+                        NSLog(@"Entity Name: %@", entity.name);
+                        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"tree == %@", property];
+                        NSLog(@"%@ == %@", property.entity.name, property);
+                        [subFetchRequest setPredicate:predicate];
+                        NSMutableArray *subFetchedObjects = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:subFetchRequest error:&error]];
+                        for (NSManagedObject *subProperty in subFetchedObjects)
                         {
-                           [photos addObject:image.image_data];
+                            NSLog(@"///////////SubProperty////////////");
+                            if ([subProperty.entity.propertiesByName objectForKey:@"images"]) {
+                                NSLog(@"///////////Has Images////////////");
+                                for (Image *subImage in ((Photo *)subProperty).images)
+                                {
+                                    NSLog(@"We have a subimage!");
+                                    [photos addObject:subImage.image_data];
+                                }
+                            }
                         }
-                    }                    
+                        [subFetchRequest release];
+                    }
+                    
                 }
             }
             

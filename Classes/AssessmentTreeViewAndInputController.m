@@ -218,7 +218,7 @@
 - (void)imagePickerControllerDidCancel: (UIImagePickerController *)picker
 {
     // in case of cancel, get rid of picker
-    [[picker parentViewController] dismissModalViewControllerAnimated:YES];
+    [[imagePicker parentViewController] dismissModalViewControllerAnimated:YES];
 }
 
 - (void)dealloc {
