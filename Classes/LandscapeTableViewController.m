@@ -36,9 +36,9 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	//Configure the bar
-	self.title = @"Landscapes";
 	
+	//Configure the table bar
+	self.title = @"Landscapes";
 	
 }
 

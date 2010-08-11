@@ -17,28 +17,36 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-		//self.title.font = [UIFont fontWithName:@"Helvetica" size: 10.0];
+
 		self.title = @"Landscapes";
+		//self.navigationBarStyle = UIBarStyleBlackTranslucent;
+		//self.statusBarStyle = UIStatusBarStyleDefault;
+		//self.navigationBarStyle = UIBarStyleDefault;
+
+		self.statusBarStyle = UIBarStyleBlackTranslucent;
 		self.navigationBarStyle = UIBarStyleBlackTranslucent;
+		
 	}
 	return self;
 }
 
-/*
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	//return TTIsSupportedOrientation(interfaceOrientation);
-	return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+	//return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+	return YES;
 }
- */
 
 
-/*
+
+
+
 -(void)reloadLauncherView
 {
     [self viewWillAppear:NO ];
 }
-*/
+
 
 
 - (void)dealloc {
@@ -56,6 +64,7 @@
 	_launcherView.opaque = YES;
 	_launcherView.delegate = self;
 	_launcherView.columnCount = 3;
+ 
 	
 	_launcherView.pages = [NSArray arrayWithObjects:
 						   [NSArray arrayWithObjects:
