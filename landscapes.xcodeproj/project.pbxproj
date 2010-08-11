@@ -47,6 +47,7 @@
 		141DFCCB120A955D00F86792 /* VegetationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141DFCC9120A955D00F86792 /* VegetationVC.xib */; };
 		1420B9711211E7E9002890BC /* LandscapeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1420B9701211E7E9002890BC /* LandscapeTableViewController.m */; };
 		1420B9741211E7FC002890BC /* LandscapeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1420B9731211E7FC002890BC /* LandscapeTableViewCell.m */; };
+		1429CE9112135575007F912D /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1429CE9012135575007F912D /* ReadMe.txt */; };
 		1440243F11FDE545000F936D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243011FDE545000F936D /* Default.png */; };
 		1440244A11FDE545000F936D /* Icon_128.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243B11FDE545000F936D /* Icon_128.png */; };
 		1440244B11FDE545000F936D /* Icon_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1440243C11FDE545000F936D /* Icon_256.png */; };
@@ -302,6 +303,7 @@
 		1420B9701211E7E9002890BC /* LandscapeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandscapeTableViewController.m; sourceTree = "<group>"; };
 		1420B9721211E7FC002890BC /* LandscapeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandscapeTableViewCell.h; sourceTree = "<group>"; };
 		1420B9731211E7FC002890BC /* LandscapeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandscapeTableViewCell.m; sourceTree = "<group>"; };
+		1429CE9012135575007F912D /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 		1440243011FDE545000F936D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1440243B11FDE545000F936D /* Icon_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_128.png; sourceTree = "<group>"; };
 		1440243C11FDE545000F936D /* Icon_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_256.png; sourceTree = "<group>"; };
@@ -532,6 +534,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				1429CE9012135575007F912D /* ReadMe.txt */,
 				1440242C11FDE524000F936D /* images */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -887,6 +890,7 @@
 				1464EB8F120AC64600F21DCE /* wildlife-57.png in Resources */,
 				09462FA0120C5C1800773E50 /* photo_camera_29.png in Resources */,
 				14E30BBA1211E9C70058C7C6 /* landscapes-57.png in Resources */,
+				1429CE9112135575007F912D /* ReadMe.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
