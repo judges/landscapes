@@ -12,13 +12,16 @@
 
 @class PhotoSet;
 
-@interface PhotoViewController : TTPhotoViewController {
+@interface PhotoViewController : TTPhotoViewController <UIActionSheetDelegate> {
     PhotoSet *_photoSet;
     int count;
     NSString *entityString;
+    UIBarButtonItem* _deleteButton;
 }
 @property (nonatomic, assign) int count;
 @property (nonatomic, retain) PhotoSet *photoSet;
 @property (nonatomic, copy) NSString *entityString;
 -(id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query;
+-(void)deleteAction;
+
 @end

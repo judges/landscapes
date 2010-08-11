@@ -8,6 +8,7 @@
 
 #import "PhotoSet.h"
 #import "DisplayPhoto.h"
+#import "AppDelegate.h"
 
 @implementation PhotoSet
 @synthesize title = _title;
@@ -65,5 +66,27 @@
     } else {
         return nil;
     }
+}
+-(void)deletePhotoAtIndex:(NSInteger)index {
+        if (index < _photos.count) {
+            //Refactor so that entries can actually be deleted.
+            /*
+            NSManagedObjectContext *managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+            NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+            NSEntityDescription *entity = [NSEntityDescription entityForName:@"Image" inManagedObjectContext:managedObjectContext];
+            [fetchRequest setEntity:entity];
+            NSString *url = [NSString stringWithFormat:@"temp://images/%d.jpg", index];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"image_data LIKE %@",  UIImageJPEGRepresentation(TTIMAGE(url), 1.0)];
+            [fetchRequest setPredicate:predicate];
+            NSError *error;
+            NSMutableArray *fetchedObjects = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:&error]];
+            for (Image *img in fetchedObjects) {
+                [managedObjectContext deleteObject:img];
+            }
+            [fetchRequest release];
+            */
+            [_photos removeObjectAtIndex:index];
+            
+        }
 }
 @end

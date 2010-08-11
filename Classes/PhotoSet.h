@@ -18,5 +18,5 @@
 @property (nonatomic, retain) NSMutableArray *photos;
 
 - (id) initWithTitle:(NSString *)title photos:(NSMutableArray *)photos;
-
+- (void)deletePhotoAtIndex:(NSInteger)index;
 @end

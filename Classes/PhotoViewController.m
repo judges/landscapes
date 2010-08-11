@@ -90,6 +90,35 @@
     self.photoSource = [[PhotoSet alloc] initWithTitle:@"Photos" photos:photos];
     count = [photos count];
     [photos release];
+    
+    //Override stuff from parent class
+    UIBarItem* space = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:
+                         UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];
+    _deleteButton = [[UIBarButtonItem alloc] initWithImage:
+                     TTIMAGE(@"bundle://icon_trash.png") 
+                     style:UIBarButtonItemStylePlain target:self action:@selector(deleteAction)];
+    _toolbar.items = [NSArray arrayWithObjects: space, space, _previousButton, space, _nextButton, space, _deleteButton, nil];
+    
+}
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (!buttonIndex == [actionSheet cancelButtonIndex])
+    {
+        [_photoSource deletePhotoAtIndex:_scrollView.centerPageIndex];
+        [self showActivity:nil];
+        [self moveToNextValidPhoto];
+        [_scrollView reloadData];
+        [self refresh];
+    }
+}
+
+- (void)deleteAction {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] 
+                                  initWithTitle:@"Are you sure you want to delete this photo?" delegate:self cancelButtonTitle:@"Cancel" 
+                                  destructiveButtonTitle:@"OK" otherButtonTitles: nil];
+
+    [actionSheet showInView:self.view];
+    [actionSheet release];
 }
 
 - (void) viewDidDisappear:(BOOL)animated {
@@ -103,6 +132,7 @@
 }
 
 - (void) dealloc {
+    [_deleteButton release];
     self.photoSet = nil; 
     self.count = 0;
     [self.photoSet release];
