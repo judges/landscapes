@@ -741,30 +741,35 @@
             NSMutableSet *photos = [tree.form_condition mutableSetValueForKey:@"images"];
             [photos addObject:newPhoto];
             [tree.form_condition setValue:photos forKey:@"images"];
+            break;
         }
         case 2:
         {
             NSMutableSet *photos = [tree.crown_condition mutableSetValueForKey:@"images"];
             [photos addObject:newPhoto];
             [tree.form_condition setValue:photos forKey:@"images"];
+            break;
         }
         case 3:
         {
             NSMutableSet *photos = [tree.trunk_condition mutableSetValueForKey:@"images"];
             [photos addObject:newPhoto];
             [tree.form_condition setValue:photos forKey:@"images"];
+            break;
         }
         case 4:
         {
             NSMutableSet *photos = [tree.rootflare_condition mutableSetValueForKey:@"images"];
             [photos addObject:newPhoto];
             [tree.form_condition setValue:photos forKey:@"images"];
+            break;
         }
         case 5:
         {
             NSMutableSet *photos = [tree.roots_condition mutableSetValueForKey:@"images"];
             [photos addObject:newPhoto];
             [tree.form_condition setValue:photos forKey:@"images"];
+            break;
         }
         case 6:
         {
