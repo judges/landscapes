@@ -8,9 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+@class Landscape;
+@class LandscapeTableViewCell;
 
-@interface LandscapeTableViewController : UIViewController {
+@interface LandscapeTableViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
 
+	@private
+	NSFetchedResultsController *fetchedResultsController;
+	NSManagedObjectContext *managedObjectContext;
+	
 }
+
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+
+- (void)showLandscape:(Landscape *)landscape animated:(BOOL)animated;
+- (void)configureCell:(LandscapeTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 
 @end
