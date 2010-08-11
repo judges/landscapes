@@ -26,6 +26,9 @@
     } 
     return self; 
 } 
+-(void)viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+}
 
 -(IBAction)segmentSwitch:(id)sender {
     //switch between view and input views
@@ -97,7 +100,6 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     if(!managedObjectContext){
         managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     }
@@ -212,6 +214,7 @@
     }
     [managedObjectContext processPendingChanges];
     [[imagePicker parentViewController] dismissModalViewControllerAnimated:YES];
+    [imagePicker resignFirstResponder];
 }
 
 

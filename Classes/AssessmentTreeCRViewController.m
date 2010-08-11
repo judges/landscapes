@@ -54,6 +54,10 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

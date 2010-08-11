@@ -14,7 +14,6 @@
 @interface AssessmentTreeViewAndInputController : UIViewController <UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     IBOutlet UIView *viewView;
     IBOutlet UIView *inputView;
-    IBOutlet UIView *mainView;
     IBOutlet UIButton *photoButton;
     
     Assessment *assessment;
