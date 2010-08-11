@@ -19,9 +19,6 @@
 	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
 
 		self.title = @"Landscapes";
-		//self.navigationBarStyle = UIBarStyleBlackTranslucent;
-		//self.statusBarStyle = UIStatusBarStyleDefault;
-		//self.navigationBarStyle = UIBarStyleDefault;
 
 		self.statusBarStyle = UIBarStyleBlackTranslucent;
 		self.navigationBarStyle = UIBarStyleBlackTranslucent;
@@ -128,8 +125,10 @@
 						   ];
 	[self.view addSubview:_launcherView];
 	
+	/*
 	TTLauncherItem* item = [_launcherView itemWithURL:@"land://data/assessments"];
 	item.badgeNumber = 2;
+	*/
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
