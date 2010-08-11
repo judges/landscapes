@@ -205,7 +205,7 @@
     NSMutableSet *photos = [assessmentTree mutableSetValueForKey:@"images"];
     Image *newPhoto = [NSEntityDescription insertNewObjectForEntityForName:@"Image" inManagedObjectContext:managedObjectContext];
     newPhoto.image_data = UIImageJPEGRepresentation(image, 1.0);
-    newPhoto.image_caption = @"Caption";
+    newPhoto.image_caption = @"Tree Assessment";
     [photos addObject:newPhoto];
     [assessmentTree setValue:photos forKey:@"images"];
     NSError *error;

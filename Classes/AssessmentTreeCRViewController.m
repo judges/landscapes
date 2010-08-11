@@ -733,11 +733,11 @@
     
     Image *newPhoto = [NSEntityDescription insertNewObjectForEntityForName:@"Image" inManagedObjectContext:managedObjectContext];
     newPhoto.image_data = UIImageJPEGRepresentation(image, 1.0);
-    newPhoto.image_caption = @"Caption";
     
     switch ([whichId intValue]) {
         case 1:
         {
+            newPhoto.image_caption = @"Tree Assessment Form Condition";
             NSMutableSet *photos = [tree.form_condition mutableSetValueForKey:@"images"];
             [photos addObject:newPhoto];
             [tree.form_condition setValue:photos forKey:@"images"];
@@ -745,37 +745,42 @@
         }
         case 2:
         {
+            newPhoto.image_caption = @"Tree Assessment Crown Condition";
             NSMutableSet *photos = [tree.crown_condition mutableSetValueForKey:@"images"];
             [photos addObject:newPhoto];
-            [tree.form_condition setValue:photos forKey:@"images"];
+            [tree.crown_condition setValue:photos forKey:@"images"];
             break;
         }
         case 3:
         {
+            newPhoto.image_caption = @"Tree Assessment Trunk Condition";
             NSMutableSet *photos = [tree.trunk_condition mutableSetValueForKey:@"images"];
             [photos addObject:newPhoto];
-            [tree.form_condition setValue:photos forKey:@"images"];
+            [tree.trunk_condition setValue:photos forKey:@"images"];
             break;
         }
         case 4:
         {
+            newPhoto.image_caption = @"Tree Assessment Rootflare Condition";
             NSMutableSet *photos = [tree.rootflare_condition mutableSetValueForKey:@"images"];
             [photos addObject:newPhoto];
-            [tree.form_condition setValue:photos forKey:@"images"];
+            [tree.rootflare_condition setValue:photos forKey:@"images"];
             break;
         }
         case 5:
         {
+            newPhoto.image_caption = @"Tree Assessment Roots Condition";
             NSMutableSet *photos = [tree.roots_condition mutableSetValueForKey:@"images"];
             [photos addObject:newPhoto];
-            [tree.form_condition setValue:photos forKey:@"images"];
+            [tree.roots_condition setValue:photos forKey:@"images"];
             break;
         }
         case 6:
         {
+            newPhoto.image_caption = @"Tree Assessment Overall Condition";
             NSMutableSet *photos = [tree.overall_condition mutableSetValueForKey:@"images"];
             [photos addObject:newPhoto];
-            [tree.form_condition setValue:photos forKey:@"images"];
+            [tree.overall_condition setValue:photos forKey:@"images"];
         }
             break;
         default:
