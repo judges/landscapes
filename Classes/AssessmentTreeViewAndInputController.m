@@ -195,7 +195,7 @@
     Image *newPhoto = [NSEntityDescription insertNewObjectForEntityForName:@"Image" inManagedObjectContext:managedObjectContext];
     newPhoto.image_data = UIImageJPEGRepresentation(image, 1.0);
     newPhoto.image_caption = @"Tree Assessment";
-    newPhoto.owner = assessmentTree;
+    //newPhoto.owner = assessmentTree;
     [photos addObject:newPhoto];
     [assessmentTree setValue:photos forKey:@"images"];
     NSError *error;
