@@ -43,6 +43,8 @@
 		09F293B51213372E00783F36 /* AssessmentTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F293A11213372E00783F36 /* AssessmentTree.m */; };
 		09F293B61213372E00783F36 /* AssessmentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F293A31213372E00783F36 /* AssessmentType.m */; };
 		09F293B71213372E00783F36 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F293A51213372E00783F36 /* Image.m */; };
+		09F2955E1214417500783F36 /* icon_trash.png in Resources */ = {isa = PBXBuildFile; fileRef = 09F2955C1214417500783F36 /* icon_trash.png */; };
+		09F2955F1214417500783F36 /* notes_100.png in Resources */ = {isa = PBXBuildFile; fileRef = 09F2955D1214417500783F36 /* notes_100.png */; };
 		141DFCCA120A955D00F86792 /* VegetationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 141DFCC8120A955D00F86792 /* VegetationVC.m */; };
 		141DFCCB120A955D00F86792 /* VegetationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141DFCC9120A955D00F86792 /* VegetationVC.xib */; };
 		1420B9711211E7E9002890BC /* LandscapeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1420B9701211E7E9002890BC /* LandscapeTableViewController.m */; };
@@ -297,6 +299,8 @@
 		09F293A31213372E00783F36 /* AssessmentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssessmentType.m; path = ../AssessmentType.m; sourceTree = "<group>"; };
 		09F293A41213372E00783F36 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Image.h; path = ../Image.h; sourceTree = "<group>"; };
 		09F293A51213372E00783F36 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Image.m; path = ../Image.m; sourceTree = "<group>"; };
+		09F2955C1214417500783F36 /* icon_trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_trash.png; sourceTree = "<group>"; };
+		09F2955D1214417500783F36 /* notes_100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notes_100.png; sourceTree = "<group>"; };
 		141DFCC7120A955D00F86792 /* VegetationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VegetationVC.h; sourceTree = "<group>"; };
 		141DFCC8120A955D00F86792 /* VegetationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VegetationVC.m; sourceTree = "<group>"; };
 		141DFCC9120A955D00F86792 /* VegetationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VegetationVC.xib; sourceTree = "<group>"; };
@@ -498,6 +502,8 @@
 		1440242C11FDE524000F936D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				09F2955C1214417500783F36 /* icon_trash.png */,
+				09F2955D1214417500783F36 /* notes_100.png */,
 				14327C1D12138E890087D958 /* wildlife-57.png */,
 				14327C1B12138D280087D958 /* parks-57.png */,
 				14E30BB91211E9C70058C7C6 /* landscapes-57.png */,
@@ -895,6 +901,8 @@
 				1429CE9112135575007F912D /* ReadMe.txt in Resources */,
 				14327C1C12138D280087D958 /* parks-57.png in Resources */,
 				14327C1E12138E890087D958 /* wildlife-57.png in Resources */,
+				09F2955E1214417500783F36 /* icon_trash.png in Resources */,
+				09F2955F1214417500783F36 /* notes_100.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="1"/>
+			<integer value="8"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -611,7 +611,7 @@
 							<object class="IBUIButton" id="291205336">
 								<reference key="NSNextResponder" ref="980112499"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{167, 278}, {133, 37}}</string>
+								<string key="NSFrame">{{174, 262}, {100, 100}}</string>
 								<reference key="NSSuperview" ref="980112499"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -622,7 +622,6 @@
 									<double key="NSSize">15</double>
 									<int key="NSfFlags">16</int>
 								</object>
-								<int key="IBUIButtonType">1</int>
 								<string key="IBUINormalTitle">Notes</string>
 								<object class="NSColor" key="IBUIHighlightedTitleColor" id="96568460">
 									<int key="NSColorSpace">3</int>
@@ -630,32 +629,16 @@
 								</object>
 								<object class="NSColor" key="IBUINormalTitleColor">
 									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+									<bytes key="NSRGB">MC4xOTYwNzg0MzE0IDAuMzA5ODAzOTIxNiAwLjUyMTU2ODYyNzUAA</bytes>
 								</object>
 								<object class="NSColor" key="IBUINormalTitleShadowColor" id="276161386">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MC41AA</bytes>
 								</object>
-							</object>
-							<object class="IBUIButton" id="438875710">
-								<reference key="NSNextResponder" ref="980112499"/>
-								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{167, 323}, {133, 37}}</string>
-								<reference key="NSSuperview" ref="980112499"/>
-								<reference key="IBUIBackgroundColor" ref="96568460"/>
-								<bool key="IBUIOpaque">NO</bool>
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<int key="IBUIContentHorizontalAlignment">0</int>
-								<int key="IBUIContentVerticalAlignment">0</int>
-								<reference key="IBUIFont" ref="730358796"/>
-								<int key="IBUIButtonType">1</int>
-								<string key="IBUINormalTitle">Photos</string>
-								<reference key="IBUIHighlightedTitleColor" ref="96568460"/>
-								<object class="NSColor" key="IBUINormalTitleColor">
-									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+								<object class="NSCustomResource" key="IBUINormalImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">notes_100.png</string>
 								</object>
-								<reference key="IBUINormalTitleShadowColor" ref="276161386"/>
 							</object>
 							<object class="IBUIImageView" id="628866649">
 								<reference key="NSNextResponder" ref="980112499"/>
@@ -1365,6 +1348,23 @@
 					</object>
 					<int key="connectionID">114</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">notesButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="291205336"/>
+					</object>
+					<int key="connectionID">115</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">notesButtonClick:</string>
+						<reference key="source" ref="291205336"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">116</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -1467,7 +1467,6 @@
 							<reference ref="195483670"/>
 							<reference ref="628866649"/>
 							<reference ref="291205336"/>
-							<reference ref="438875710"/>
 							<reference ref="907457899"/>
 							<reference ref="1025377753"/>
 							<reference ref="411060232"/>
@@ -1512,11 +1511,6 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">51</int>
 						<reference key="object" ref="291205336"/>
-						<reference key="parent" ref="980112499"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">52</int>
-						<reference key="object" ref="438875710"/>
 						<reference key="parent" ref="980112499"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -1731,7 +1725,6 @@
 					<string>38.IBPluginDependency</string>
 					<string>4.IBPluginDependency</string>
 					<string>51.IBPluginDependency</string>
-					<string>52.IBPluginDependency</string>
 					<string>53.IBPluginDependency</string>
 					<string>54.IBPluginDependency</string>
 					<string>55.IBPluginDependency</string>
@@ -1808,7 +1801,6 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -1827,7 +1819,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">114</int>
+			<int key="maxID">116</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1839,6 +1831,7 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>notesButtonClick:</string>
 							<string>photoButtonClick:</string>
 							<string>saveAssessor:</string>
 							<string>saveCaliper:</string>
@@ -1848,6 +1841,7 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -1860,6 +1854,7 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>notesButtonClick:</string>
 							<string>photoButtonClick:</string>
 							<string>saveAssessor:</string>
 							<string>saveCaliper:</string>
@@ -1869,6 +1864,10 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">notesButtonClick:</string>
+								<string key="candidateClassName">id</string>
+							</object>
 							<object class="IBActionInfo">
 								<string key="name">photoButtonClick:</string>
 								<string key="candidateClassName">id</string>
@@ -1917,6 +1916,7 @@
 							<string>height</string>
 							<string>heightField</string>
 							<string>inputView</string>
+							<string>notesButton</string>
 							<string>overallCText</string>
 							<string>overallRText</string>
 							<string>photoButton</string>
@@ -1948,6 +1948,7 @@
 							<string>UILabel</string>
 							<string>UITextField</string>
 							<string>UIView</string>
+							<string>UIButton</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>UIButton</string>
@@ -1982,6 +1983,7 @@
 							<string>height</string>
 							<string>heightField</string>
 							<string>inputView</string>
+							<string>notesButton</string>
 							<string>overallCText</string>
 							<string>overallRText</string>
 							<string>photoButton</string>
@@ -2066,6 +2068,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">inputView</string>
 								<string key="candidateClassName">UIView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">notesButton</string>
+								<string key="candidateClassName">UIButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">overallCText</string>
@@ -2361,6 +2367,7 @@
 				<string>Tree-Assessment-113x120.png</string>
 				<string>Tree-Assessment-280x295.png</string>
 				<string>button-default.png</string>
+				<string>notes_100.png</string>
 				<string>photo_camera_29.png</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
@@ -2368,6 +2375,7 @@
 				<string>{113, 120}</string>
 				<string>{280, 295}</string>
 				<string>{50, 50}</string>
+				<string>{100, 100}</string>
 				<string>{36, 29}</string>
 			</object>
 		</object>

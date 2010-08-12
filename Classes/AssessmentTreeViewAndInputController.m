@@ -50,6 +50,18 @@
     [popupQuery release];
     
 }
+-(IBAction)notesButtonClick:(id)sender {
+    TTPostController *postController = [[TTPostController alloc] init]; 
+    postController.delegate = self;
+    postController.textView.text = assessment.notes;
+    [postController showInView:self.view animated:YES]; 
+    [postController release]; 
+}
+- (void)postController:(TTPostController *)postController 
+           didPostText:(NSString *)text 
+            withResult:(id)result { 
+    assessment.notes = text; 
+}
 -(IBAction)treeButtonClick:(id)sender {
     //user clicked one of the tree buttons, so send them to the other view with the right id
     int clickId = [[(UIButton*)sender titleLabel].text intValue];
