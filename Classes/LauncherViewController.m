@@ -20,8 +20,8 @@
 
 		self.title = @"Landscapes";
 
-		self.statusBarStyle = UIBarStyleBlackTranslucent;
-		self.navigationBarStyle = UIBarStyleBlackTranslucent;
+		//self.statusBarStyle = UIBarStyleBlackTranslucent;
+		//self.navigationBarStyle = UIBarStyleBlackTranslucent;
 		
 	}
 	return self;
