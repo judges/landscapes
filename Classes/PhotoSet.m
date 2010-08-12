@@ -13,12 +13,14 @@
 @implementation PhotoSet
 @synthesize title = _title;
 @synthesize photos = _photos;
+@synthesize ids = _ids;
 
-- (id) initWithTitle:(NSString *)title photos:(NSMutableArray *)photos {
+- (id) initWithTitle:(NSString *)title photos:(NSMutableArray *)photos ids:(NSMutableArray *)ids{
     if ((self = [super init])) {
         [[TTURLCache sharedCache] setMaxPixelCount:0];
         self.title = title;
-        self.photos = [[NSMutableArray array] init];
+        self.photos = [[NSMutableArray alloc] init];
+        self.ids = [[NSMutableArray alloc] init];
         for(int i = 0; i < photos.count; ++i) {
             NSString *path = [NSString stringWithFormat:@"images/%d.jpg",i];
             UIImage *img = [UIImage imageWithData:[photos objectAtIndex:i]];
@@ -28,6 +30,7 @@
             photo.photoSource = self;
             photo.index = i;
             [self.photos addObject:photo];
+            [self.ids addObject:[ids objectAtIndex:i]];
         }        
     }
     return self;
@@ -36,7 +39,9 @@
 - (void) dealloc {
     self.title = nil;
     self.photos = nil; 
+    self.ids = nil;
     [self.photos release];
+    [self.ids release];
     [super dealloc];
 }
 
@@ -68,25 +73,13 @@
     }
 }
 -(void)deletePhotoAtIndex:(NSInteger)index {
-        if (index < _photos.count) {
-            //Refactor so that entries can actually be deleted.
-            /*
+        if (index < _photos.count) {       
             NSManagedObjectContext *managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-            NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-            NSEntityDescription *entity = [NSEntityDescription entityForName:@"Image" inManagedObjectContext:managedObjectContext];
-            [fetchRequest setEntity:entity];
-            NSString *url = [NSString stringWithFormat:@"temp://images/%d.jpg", index];
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"image_data LIKE %@",  UIImageJPEGRepresentation(TTIMAGE(url), 1.0)];
-            [fetchRequest setPredicate:predicate];
             NSError *error;
-            NSMutableArray *fetchedObjects = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:&error]];
-            for (Image *img in fetchedObjects) {
-                [managedObjectContext deleteObject:img];
-            }
-            [fetchRequest release];
-            */
+            Image *img = (Image *)[managedObjectContext objectWithID:[self.ids objectAtIndex:index]];
+            [managedObjectContext deleteObject:img];
+            [managedObjectContext save:&error];
             [_photos removeObjectAtIndex:index];
-            
         }
 }
 @end

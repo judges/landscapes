@@ -2,7 +2,7 @@
 //  Image.h
 //  landscapes
 //
-//  Created by Evan Cordell on 8/11/10.
+//  Created by Evan Cordell on 8/12/10.
 //  Copyright 2010 NCPTT. All rights reserved.
 //
 
@@ -13,8 +13,8 @@
 {
 }
 
-@property (nonatomic, retain) NSData * image_data;
 @property (nonatomic, retain) NSString * image_caption;
+@property (nonatomic, retain) NSData * image_data;
 
 @end
 

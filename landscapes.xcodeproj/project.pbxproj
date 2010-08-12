@@ -42,9 +42,9 @@
 		09F293B41213372E00783F36 /* TreeTrunkRecommendation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F2939F1213372E00783F36 /* TreeTrunkRecommendation.m */; };
 		09F293B51213372E00783F36 /* AssessmentTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F293A11213372E00783F36 /* AssessmentTree.m */; };
 		09F293B61213372E00783F36 /* AssessmentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F293A31213372E00783F36 /* AssessmentType.m */; };
-		09F293B71213372E00783F36 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F293A51213372E00783F36 /* Image.m */; };
 		09F2955E1214417500783F36 /* icon_trash.png in Resources */ = {isa = PBXBuildFile; fileRef = 09F2955C1214417500783F36 /* icon_trash.png */; };
 		09F2955F1214417500783F36 /* notes_100.png in Resources */ = {isa = PBXBuildFile; fileRef = 09F2955D1214417500783F36 /* notes_100.png */; };
+		09F2956B1214442100783F36 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F2956A1214442100783F36 /* Image.m */; };
 		141DFCCA120A955D00F86792 /* VegetationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 141DFCC8120A955D00F86792 /* VegetationVC.m */; };
 		141DFCCB120A955D00F86792 /* VegetationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141DFCC9120A955D00F86792 /* VegetationVC.xib */; };
 		1420B9711211E7E9002890BC /* LandscapeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1420B9701211E7E9002890BC /* LandscapeTableViewController.m */; };
@@ -297,10 +297,10 @@
 		09F293A11213372E00783F36 /* AssessmentTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssessmentTree.m; path = ../AssessmentTree.m; sourceTree = "<group>"; };
 		09F293A21213372E00783F36 /* AssessmentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssessmentType.h; path = ../AssessmentType.h; sourceTree = "<group>"; };
 		09F293A31213372E00783F36 /* AssessmentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssessmentType.m; path = ../AssessmentType.m; sourceTree = "<group>"; };
-		09F293A41213372E00783F36 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Image.h; path = ../Image.h; sourceTree = "<group>"; };
-		09F293A51213372E00783F36 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Image.m; path = ../Image.m; sourceTree = "<group>"; };
 		09F2955C1214417500783F36 /* icon_trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_trash.png; sourceTree = "<group>"; };
 		09F2955D1214417500783F36 /* notes_100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notes_100.png; sourceTree = "<group>"; };
+		09F295691214442100783F36 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		09F2956A1214442100783F36 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 		141DFCC7120A955D00F86792 /* VegetationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VegetationVC.h; sourceTree = "<group>"; };
 		141DFCC8120A955D00F86792 /* VegetationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VegetationVC.m; sourceTree = "<group>"; };
 		141DFCC9120A955D00F86792 /* VegetationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VegetationVC.xib; sourceTree = "<group>"; };
@@ -413,6 +413,9 @@
 		09AED84111FF2EF40040A385 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				09F2937F121336BC00783F36 /* Not Generated */,
+				09F295691214442100783F36 /* Image.h */,
+				09F2956A1214442100783F36 /* Image.m */,
 				09F293821213372E00783F36 /* TreeOverallRecommendation.h */,
 				09F293831213372E00783F36 /* TreeOverallRecommendation.m */,
 				09F293841213372E00783F36 /* TreeFormRecommendation.h */,
@@ -447,9 +450,6 @@
 				09F293A11213372E00783F36 /* AssessmentTree.m */,
 				09F293A21213372E00783F36 /* AssessmentType.h */,
 				09F293A31213372E00783F36 /* AssessmentType.m */,
-				09F293A41213372E00783F36 /* Image.h */,
-				09F293A51213372E00783F36 /* Image.m */,
-				09F2937F121336BC00783F36 /* Not Generated */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -944,7 +944,7 @@
 				09F293B41213372E00783F36 /* TreeTrunkRecommendation.m in Sources */,
 				09F293B51213372E00783F36 /* AssessmentTree.m in Sources */,
 				09F293B61213372E00783F36 /* AssessmentType.m in Sources */,
-				09F293B71213372E00783F36 /* Image.m in Sources */,
+				09F2956B1214442100783F36 /* Image.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

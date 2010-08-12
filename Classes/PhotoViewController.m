@@ -29,6 +29,7 @@
         self.entityString = @"Photo";
     }
     NSMutableArray *photos = [[NSMutableArray alloc] init];
+    NSMutableArray *ids = [[NSMutableArray alloc] init];
     NSManagedObjectContext *managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     
     // Create the fetch request for the entity.
@@ -46,6 +47,7 @@
             for (Image *image in ((Photo *)property).images)
             {
                 [photos addObject:image.image_data];
+                [ids addObject:image.objectID];
             }
             //grab images one level down. This will need to be changed to some sort of
             //recursive function if we add another level in the future.
@@ -73,6 +75,7 @@
                                 {
                                     NSLog(@"We have a subimage!");
                                     [photos addObject:subImage.image_data];
+                                    [ids addObject:subImage.objectID];
                                 }
                             }
                         }
@@ -87,9 +90,10 @@
     }
     [fetchRequest release];
     
-    self.photoSource = [[PhotoSet alloc] initWithTitle:@"Photos" photos:photos];
+    self.photoSource = [[PhotoSet alloc] initWithTitle:@"Photos" photos:photos ids:ids];
     count = [photos count];
     [photos release];
+    [ids release];
     
     //Override stuff from parent class
     UIBarItem* space = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:

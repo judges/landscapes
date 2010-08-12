@@ -12,11 +12,13 @@
 @interface PhotoSet : TTURLRequestModel <TTPhotoSource> {
     NSString *_title;
     NSMutableArray *_photos;
+    NSMutableArray *_ids;
 }
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, retain) NSMutableArray *photos;
+@property (nonatomic, retain) NSMutableArray *ids;
 
-- (id) initWithTitle:(NSString *)title photos:(NSMutableArray *)photos;
+- (id) initWithTitle:(NSString *)title photos:(NSMutableArray *)photos ids:(NSMutableArray *)ids;
 - (void)deletePhotoAtIndex:(NSInteger)index;
 @end
