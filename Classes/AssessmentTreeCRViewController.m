@@ -301,37 +301,37 @@
     switch ([whichId intValue]) {
         case 1:
         {
-            TreeFormCondition *item = (TreeFormCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
+            TreeFormCondition *item = [conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
             [managedObjectContext deleteObject:item];
             break;
         }
         case 2:
         {
-            TreeCrownCondition *item = (TreeCrownCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
+            TreeCrownCondition *item = [conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
             [managedObjectContext deleteObject:item];
             break;
         }
         case 3:
         {
-            TreeTrunkCondition *item = (TreeTrunkCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
+            TreeTrunkCondition *item = [conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
             [managedObjectContext deleteObject:item];
             break;
         }
         case 4:
         {
-            TreeRootFlareCondition *item = (TreeRootFlareCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
+            TreeRootFlareCondition *item = [conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
             [managedObjectContext deleteObject:item];
             break;
         }
         case 5:
         {
-            TreeRootsCondition *item = (TreeRootsCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
+            TreeRootsCondition *item = [conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
             [managedObjectContext deleteObject:item];
             break;
         }
         case 6:
         {
-            TreeOverallCondition *item = (TreeOverallCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
+            TreeOverallCondition *item = [conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
             [managedObjectContext deleteObject:item];
             break;
         }
@@ -344,6 +344,7 @@
        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
     }
     [conditionStringArray removeObjectAtIndex:[conditionPicker selectedRowInComponent:0]];
+	[conditionArray removeObjectAtIndex:[conditionPicker selectedRowInComponent:0]];
     [conditionPicker reloadComponent:0];
 }
 -(IBAction)deleteRecommendation {
@@ -351,37 +352,37 @@
     switch ([whichId intValue]) {
         case 1:
         {
-            TreeFormRecommendation *item = (TreeFormRecommendation *)[recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
+            TreeFormRecommendation *item = [recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
             [managedObjectContext deleteObject:item];
             break;
         }
         case 2:
         {
-            TreeCrownRecommendation *item = (TreeCrownRecommendation *)[recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
+            TreeCrownRecommendation *item = [recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
             [managedObjectContext deleteObject:item];
             break;
         }
         case 3:
         {
-            TreeTrunkRecommendation *item = (TreeTrunkRecommendation *)[recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
+            TreeTrunkRecommendation *item = [recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
             [managedObjectContext deleteObject:item];
             break;
         }
         case 4:
         {
-            TreeRootFlareRecommendation *item = (TreeRootFlareRecommendation *)[recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
+            TreeRootFlareRecommendation *item = [recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
             [managedObjectContext deleteObject:item];
             break;
         }
         case 5:
         {
-            TreeRootsRecommendation *item = (TreeRootsRecommendation *)[recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
+            TreeRootsRecommendation *item = [recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
             [managedObjectContext deleteObject:item];
             break;
         }
         case 6:
         {
-            TreeOverallRecommendation *item = (TreeOverallRecommendation *)[recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
+            TreeOverallRecommendation *item = [recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
             [managedObjectContext deleteObject:item];
             break;
         }
@@ -393,7 +394,8 @@
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
     }
     [recommendationStringArray removeObjectAtIndex:[recommendationPicker selectedRowInComponent:0]];
-    [recommendationPicker reloadComponent:0];
+    [recommendationArray removeObjectAtIndex:[recommendationPicker selectedRowInComponent:0]];
+	[recommendationPicker reloadComponent:0];
 }
 -(IBAction)conditionSaveButtonClick {
     //add new or edit existing condition
@@ -593,13 +595,17 @@
 }
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     //changes condition or recommendation to selected row
+	NSLog(@"didSelectRow Called");
     if (thePickerView == conditionPicker) {
         [conditionField setHidden: YES];
         [conditionSaveButton setHidden: YES];
         switch ([whichId intValue]) {
             case 1:
             {
-                tree.form.condition = (TreeFormCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
+				NSLog(@"Condition Array: %@", conditionArray);
+				NSLog(@"At index: %i", [conditionPicker selectedRowInComponent:0]);
+				NSLog(@"%@", [conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]]);
+                tree.form.condition = [conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
                 //TreeFormCondition *fc = (TreeFormCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
                 //tree.form.condition = fc;
                 //[tree.form setValue:[fc managedObjectContext:managedObjectContext objectWithID:[fc objectID]] forKey:@"condition"];
