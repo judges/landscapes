@@ -8,10 +8,12 @@
 
 #import "Image.h"
 
+#import "Photo.h"
 
 @implementation Image 
 
 @dynamic image_caption;
 @dynamic image_data;
+@dynamic owner;
 
 @end

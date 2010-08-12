@@ -32,7 +32,6 @@
 		09F293AA1213372E00783F36 /* Landscape.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F2938B1213372E00783F36 /* Landscape.m */; };
 		09F293AB1213372E00783F36 /* TreeOverallCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F2938D1213372E00783F36 /* TreeOverallCondition.m */; };
 		09F293AC1213372E00783F36 /* TreeCrownRecommendation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F2938F1213372E00783F36 /* TreeCrownRecommendation.m */; };
-		09F293AD1213372E00783F36 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F293911213372E00783F36 /* Photo.m */; };
 		09F293AE1213372E00783F36 /* TreeRootFlareRecommendation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F293931213372E00783F36 /* TreeRootFlareRecommendation.m */; };
 		09F293AF1213372E00783F36 /* TreeTrunkCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F293951213372E00783F36 /* TreeTrunkCondition.m */; };
 		09F293B01213372E00783F36 /* Assessment.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F293971213372E00783F36 /* Assessment.m */; };
@@ -44,7 +43,8 @@
 		09F293B61213372E00783F36 /* AssessmentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F293A31213372E00783F36 /* AssessmentType.m */; };
 		09F2955E1214417500783F36 /* icon_trash.png in Resources */ = {isa = PBXBuildFile; fileRef = 09F2955C1214417500783F36 /* icon_trash.png */; };
 		09F2955F1214417500783F36 /* notes_100.png in Resources */ = {isa = PBXBuildFile; fileRef = 09F2955D1214417500783F36 /* notes_100.png */; };
-		09F2956B1214442100783F36 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F2956A1214442100783F36 /* Image.m */; };
+		09F295E012144D5300783F36 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F295DD12144D5300783F36 /* Photo.m */; };
+		09F295E112144D5300783F36 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F295DF12144D5300783F36 /* Image.m */; };
 		141DFCCA120A955D00F86792 /* VegetationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 141DFCC8120A955D00F86792 /* VegetationVC.m */; };
 		141DFCCB120A955D00F86792 /* VegetationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141DFCC9120A955D00F86792 /* VegetationVC.xib */; };
 		1420B9711211E7E9002890BC /* LandscapeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1420B9701211E7E9002890BC /* LandscapeTableViewController.m */; };
@@ -277,8 +277,6 @@
 		09F2938D1213372E00783F36 /* TreeOverallCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreeOverallCondition.m; path = ../TreeOverallCondition.m; sourceTree = "<group>"; };
 		09F2938E1213372E00783F36 /* TreeCrownRecommendation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreeCrownRecommendation.h; path = ../TreeCrownRecommendation.h; sourceTree = "<group>"; };
 		09F2938F1213372E00783F36 /* TreeCrownRecommendation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreeCrownRecommendation.m; path = ../TreeCrownRecommendation.m; sourceTree = "<group>"; };
-		09F293901213372E00783F36 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Photo.h; path = ../Photo.h; sourceTree = "<group>"; };
-		09F293911213372E00783F36 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Photo.m; path = ../Photo.m; sourceTree = "<group>"; };
 		09F293921213372E00783F36 /* TreeRootFlareRecommendation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreeRootFlareRecommendation.h; path = ../TreeRootFlareRecommendation.h; sourceTree = "<group>"; };
 		09F293931213372E00783F36 /* TreeRootFlareRecommendation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreeRootFlareRecommendation.m; path = ../TreeRootFlareRecommendation.m; sourceTree = "<group>"; };
 		09F293941213372E00783F36 /* TreeTrunkCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreeTrunkCondition.h; path = ../TreeTrunkCondition.h; sourceTree = "<group>"; };
@@ -299,8 +297,10 @@
 		09F293A31213372E00783F36 /* AssessmentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssessmentType.m; path = ../AssessmentType.m; sourceTree = "<group>"; };
 		09F2955C1214417500783F36 /* icon_trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_trash.png; sourceTree = "<group>"; };
 		09F2955D1214417500783F36 /* notes_100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notes_100.png; sourceTree = "<group>"; };
-		09F295691214442100783F36 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
-		09F2956A1214442100783F36 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+		09F295DC12144D5300783F36 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		09F295DD12144D5300783F36 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		09F295DE12144D5300783F36 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		09F295DF12144D5300783F36 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 		141DFCC7120A955D00F86792 /* VegetationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VegetationVC.h; sourceTree = "<group>"; };
 		141DFCC8120A955D00F86792 /* VegetationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VegetationVC.m; sourceTree = "<group>"; };
 		141DFCC9120A955D00F86792 /* VegetationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VegetationVC.xib; sourceTree = "<group>"; };
@@ -414,8 +414,10 @@
 			isa = PBXGroup;
 			children = (
 				09F2937F121336BC00783F36 /* Not Generated */,
-				09F295691214442100783F36 /* Image.h */,
-				09F2956A1214442100783F36 /* Image.m */,
+				09F295DC12144D5300783F36 /* Photo.h */,
+				09F295DD12144D5300783F36 /* Photo.m */,
+				09F295DE12144D5300783F36 /* Image.h */,
+				09F295DF12144D5300783F36 /* Image.m */,
 				09F293821213372E00783F36 /* TreeOverallRecommendation.h */,
 				09F293831213372E00783F36 /* TreeOverallRecommendation.m */,
 				09F293841213372E00783F36 /* TreeFormRecommendation.h */,
@@ -430,8 +432,6 @@
 				09F2938D1213372E00783F36 /* TreeOverallCondition.m */,
 				09F2938E1213372E00783F36 /* TreeCrownRecommendation.h */,
 				09F2938F1213372E00783F36 /* TreeCrownRecommendation.m */,
-				09F293901213372E00783F36 /* Photo.h */,
-				09F293911213372E00783F36 /* Photo.m */,
 				09F293921213372E00783F36 /* TreeRootFlareRecommendation.h */,
 				09F293931213372E00783F36 /* TreeRootFlareRecommendation.m */,
 				09F293941213372E00783F36 /* TreeTrunkCondition.h */,
@@ -934,7 +934,6 @@
 				09F293AA1213372E00783F36 /* Landscape.m in Sources */,
 				09F293AB1213372E00783F36 /* TreeOverallCondition.m in Sources */,
 				09F293AC1213372E00783F36 /* TreeCrownRecommendation.m in Sources */,
-				09F293AD1213372E00783F36 /* Photo.m in Sources */,
 				09F293AE1213372E00783F36 /* TreeRootFlareRecommendation.m in Sources */,
 				09F293AF1213372E00783F36 /* TreeTrunkCondition.m in Sources */,
 				09F293B01213372E00783F36 /* Assessment.m in Sources */,
@@ -944,7 +943,8 @@
 				09F293B41213372E00783F36 /* TreeTrunkRecommendation.m in Sources */,
 				09F293B51213372E00783F36 /* AssessmentTree.m in Sources */,
 				09F293B61213372E00783F36 /* AssessmentType.m in Sources */,
-				09F2956B1214442100783F36 /* Image.m in Sources */,
+				09F295E012144D5300783F36 /* Photo.m in Sources */,
+				09F295E112144D5300783F36 /* Image.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
