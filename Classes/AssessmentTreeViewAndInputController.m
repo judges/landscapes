@@ -11,7 +11,7 @@
 
 @implementation AssessmentTreeViewAndInputController
 
-@synthesize assessment, assessmentTree, assessor, date, caliper, height;
+@synthesize assessmentTree, assessor, date, caliper, height;
 @synthesize formCText, crownCText, trunkCText, rootFlareCText, rootsCText, overallCText;
 @synthesize formRText, crownRText, trunkRText, rootFlareRText, rootsRText, overallRText;
 @synthesize assessorField, caliperField, heightField;
@@ -20,7 +20,7 @@
     //initializes and passes assessment from parent controller
     if (self = [super initWithNibName:@"AssessmentTreeViewAndInput" bundle:[NSBundle mainBundle]]){ 
         if(query && [query objectForKey:@"assessment"]){ 
-            self.assessment = (Assessment*) [query objectForKey:@"assessment"]; 
+            self.assessmentTree = (AssessmentTree*) [query objectForKey:@"assessment"]; 
             imagePicker = [[UIImagePickerController alloc] init];
         } 
     } 
@@ -53,14 +53,14 @@
 -(IBAction)notesButtonClick:(id)sender {
     TTPostController *postController = [[TTPostController alloc] init]; 
     postController.delegate = self;
-    postController.textView.text = assessment.notes;
+    postController.textView.text = assessmentTree.notes;
     [postController showInView:self.view animated:YES]; 
     [postController release]; 
 }
 - (void)postController:(TTPostController *)postController 
            didPostText:(NSString *)text 
             withResult:(id)result { 
-    assessment.notes = text; 
+    assessmentTree.notes = text; 
 }
 -(IBAction)treeButtonClick:(id)sender {
     //user clicked one of the tree buttons, so send them to the other view with the right id
@@ -73,7 +73,7 @@
     [assessorField resignFirstResponder];
     NSError *saveError;
     self.assessor.text = [(UITextField*)sender text];
-    self.assessment.assessor = [(UITextField*)sender text];
+    self.assessmentTree.assessor = [(UITextField*)sender text];
     if (![managedObjectContext save:&saveError]) {
         NSLog(@"Saving changes to assessor failed: %@", saveError);
     }
@@ -116,36 +116,14 @@
         managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     }
     
-    // Create the fetch request for the entity.
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    // Grab AssessmentTree that matches the Assessment.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"AssessmentTree" inManagedObjectContext:managedObjectContext];
-    [fetchRequest setEntity:entity];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"assessment == %@", self.assessment];
-    [fetchRequest setPredicate:predicate];
-    
-    // sort by assessment
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"assessment" ascending:YES];
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-    
-    [fetchRequest setSortDescriptors:sortDescriptors];
-    
-    NSError *error;
-    NSMutableArray *fetchedObjects = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:&error]];
-    
-    [fetchRequest release];
-    [sortDescriptor release];
-    [sortDescriptors release];
-    
     self.title = @"Tree";
-    self.assessor.text = self.assessment.assessor;
+    self.assessor.text = self.assessmentTree.assessor;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterLongStyle];
-    NSString *dateStr= [dateFormatter stringFromDate:self.assessment.created_at];
+    NSString *dateStr= [dateFormatter stringFromDate:self.assessmentTree.created_at];
     [dateFormatter release];
     self.date.text = dateStr;
-    if (self.assessment) {
-        self.assessmentTree = (AssessmentTree *)([fetchedObjects objectAtIndex:0]);
+    if (self.assessmentTree) {
         self.caliper.text = [NSString stringWithFormat:@"%@ \'", [self.assessmentTree.caliper stringValue]];
         self.height.text = [NSString stringWithFormat:@"%@ \'", [self.assessmentTree.height stringValue]]   ;
         self.formCText.text = self.assessmentTree.form_condition.name;
@@ -160,7 +138,7 @@
         self.rootFlareRText.text = self.assessmentTree.rootflare_recommendation.name;
         self.rootsRText.text = self.assessmentTree.roots_recommendation.name;
         self.overallRText.text = self.assessmentTree.overall_recommendation.name;
-        self.assessorField.text = self.assessment.assessor;
+        self.assessorField.text = self.assessmentTree.assessor;
         self.caliperField.text = [self.assessmentTree.caliper stringValue];
         self.heightField.text = [self.assessmentTree.height stringValue];
     }

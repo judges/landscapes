@@ -2,14 +2,13 @@
 //  AssessmentTree.h
 //  landscapes
 //
-//  Created by Evan Cordell on 8/11/10.
+//  Created by Evan Cordell on 8/12/10.
 //  Copyright 2010 NCPTT. All rights reserved.
 //
 
 #import <CoreData/CoreData.h>
-#import "Photo.h"
+#import "Assessment.h"
 
-@class Assessment;
 @class TreeCrownCondition;
 @class TreeCrownRecommendation;
 @class TreeFormCondition;
@@ -23,7 +22,7 @@
 @class TreeTrunkCondition;
 @class TreeTrunkRecommendation;
 
-@interface AssessmentTree :  Photo  
+@interface AssessmentTree :  Assessment  
 {
 }
 
@@ -33,7 +32,6 @@
 @property (nonatomic, retain) TreeRootsCondition * roots_condition;
 @property (nonatomic, retain) TreeFormCondition * form_condition;
 @property (nonatomic, retain) TreeOverallRecommendation * overall_recommendation;
-@property (nonatomic, retain) Assessment * assessment;
 @property (nonatomic, retain) TreeRootFlareRecommendation * rootflare_recommendation;
 @property (nonatomic, retain) TreeTrunkRecommendation * trunk_recommendation;
 @property (nonatomic, retain) TreeRootFlareCondition * rootflare_condition;

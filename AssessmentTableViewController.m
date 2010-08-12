@@ -68,14 +68,11 @@
     AssessmentType *type = [NSEntityDescription insertNewObjectForEntityForName: @"AssessmentType" inManagedObjectContext:context];
     type.name = @"Tree";
     
-    Assessment *assessment = [NSEntityDescription insertNewObjectForEntityForName:@"Assessment" inManagedObjectContext:context];
-    assessment.assessor = @"Test Assessor";
-    assessment.created_at = [NSDate date];
-    assessment.landscape = landscape;
-    assessment.type = type;
-    
     AssessmentTree *assessmentTree = [NSEntityDescription insertNewObjectForEntityForName:@"AssessmentTree" inManagedObjectContext:context];
-    assessmentTree.assessment = assessment;
+    assessmentTree.assessor = @"Test Assessor";
+    assessmentTree.created_at = [NSDate date];
+    assessmentTree.landscape = landscape;
+    assessmentTree.type = type;
     
     TreeCrownCondition *treeCrownCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeCrownCondition" inManagedObjectContext:context];
     treeCrownCondition.name = @"Good";
@@ -237,13 +234,13 @@
 }
 
 
-
+/*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-
+*/
 
 
 

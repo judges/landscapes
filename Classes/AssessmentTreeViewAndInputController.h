@@ -17,7 +17,6 @@
     IBOutlet UIButton *photoButton;
     IBOutlet UIButton *notesButton;
     
-    Assessment *assessment;
     AssessmentTree *assessmentTree;
     UIImagePickerController *imagePicker;
     

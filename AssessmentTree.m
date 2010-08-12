@@ -2,13 +2,12 @@
 //  AssessmentTree.m
 //  landscapes
 //
-//  Created by Evan Cordell on 8/11/10.
+//  Created by Evan Cordell on 8/12/10.
 //  Copyright 2010 NCPTT. All rights reserved.
 //
 
 #import "AssessmentTree.h"
 
-#import "Assessment.h"
 #import "TreeCrownCondition.h"
 #import "TreeCrownRecommendation.h"
 #import "TreeFormCondition.h"
@@ -30,7 +29,6 @@
 @dynamic roots_condition;
 @dynamic form_condition;
 @dynamic overall_recommendation;
-@dynamic assessment;
 @dynamic rootflare_recommendation;
 @dynamic trunk_recommendation;
 @dynamic rootflare_condition;
