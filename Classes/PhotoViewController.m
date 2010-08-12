@@ -11,13 +11,16 @@
 
 @implementation PhotoViewController
 @synthesize photoSet = _photoSet;
-@synthesize count, entityString;
+@synthesize count, entityString, objID;
 
 -(id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query {
     //initializes and passes assessment from parent controller
     if (self = [super init]){ 
         if(query && [query objectForKey:@"entity"]){ 
             self.entityString = (NSString*) [query objectForKey:@"entity"]; 
+        } 
+        if(query && [query objectForKey:@"objectID"]){ 
+            self.objID = (NSManagedObjectID*) [query objectForKey:@"objectID"]; 
         } 
     } 
     return self;    
@@ -38,14 +41,22 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:self.entityString inManagedObjectContext:managedObjectContext];
     [fetchRequest setEntity:entity];
     
+    
+    //HACK HACK HACK
+    if (![self.entityString isEqualToString:@"Photo"]) {
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self == %@", objID];
+            [fetchRequest setPredicate:predicate];
+    }
+    
     NSError *error;
     NSMutableArray *fetchedObjects = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:&error]];
-    
+    NSLog(@"Fetched Objects: %@", fetchedObjects);
     for (NSManagedObject *property in fetchedObjects)
     {
         if ([property.entity.propertiesByName objectForKey:@"images"]) {
             for (Image *image in ((Photo *)property).images)
             {
+                NSLog(@"TESTTEST");
                 [photos addObject:image.image_data];
                 [ids addObject:image.objectID];
             }
@@ -57,7 +68,7 @@
                     NSLog(@"///////////Property: %@////////////", sub);
                     NSRelationshipDescription *rel = [property.entity.relationshipsByName objectForKey:sub];
                     NSLog(@"%@", [rel.destinationEntity.relationshipsByName objectForKey:@"images"]);
-                    if ([rel.destinationEntity.relationshipsByName objectForKey:@"images"] && ![sub isEqualToString:@"assessment"] && ![sub isEqualToString:@"tree"]) {
+                    if ([rel.destinationEntity.relationshipsByName objectForKey:@"images"] && ![sub isEqualToString:@"assessment"] && ![sub isEqualToString:@"tree"] && ![sub isEqualToString:@"landscape"]) {
                         NSFetchRequest *subFetchRequest = [[NSFetchRequest alloc] init];
                         NSEntityDescription *entity = [NSEntityDescription entityForName:rel.destinationEntity.name inManagedObjectContext:managedObjectContext];
                         [subFetchRequest setEntity:entity];
@@ -127,12 +138,12 @@
 
 - (void) viewDidDisappear:(BOOL)animated {
     //Find the right place to unload this stuff!
-    /*
+    
     for(int i = 0; i < self.count; ++i) {
         NSString *path = [NSString stringWithFormat:@"images/%d.jpg",i];
         NSString *url = [NSString stringWithFormat:@"temp://%@", path];
         [[TTURLCache sharedCache] removeURL:url fromDisk:YES];
-    } */
+    } 
 }
 
 - (void) dealloc {

@@ -689,32 +689,39 @@
         switch ([whichId intValue]) {
             case 1:
             {
-                [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:[NSDictionary dictionaryWithObject:@"TreeFormCondition" forKey:@"entity"]] applyAnimated:YES]];
+                NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:@"TreeFormCondition", @"entity", [[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]] objectID] , @"objectID", nil];
+                NSLog(@"CONDITION: %@", [conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]]);
+                [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:query] applyAnimated:YES]];
                 break;
             }
             case 2:
             {
-                [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:[NSDictionary dictionaryWithObject:@"TreeCrownCondition" forKey:@"entity"]] applyAnimated:YES]];
+                NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:@"TreeCrownCondition", @"entity", [[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]] objectID] , @"objectID", nil];
+                [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:query] applyAnimated:YES]];
                 break;
             }
             case 3:
             {
-                [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:[NSDictionary dictionaryWithObject:@"TreeTrunkCondition" forKey:@"entity"]] applyAnimated:YES]];
+                NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:@"TreeTrunkCondition", @"entity", [[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]] objectID] , @"objectID", nil];
+                [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:query] applyAnimated:YES]];
                 break;
             }
             case 4:
             {
-                [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:[NSDictionary dictionaryWithObject:@"TreeRootFlareCondition" forKey:@"entity"]] applyAnimated:YES]];
+                NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:@"TreeRootFlareCondition", @"entity", [[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]] objectID] , @"objectID", nil];
+                [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:query] applyAnimated:YES]];
                 break;
             }
             case 5:
             {
-                [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:[NSDictionary dictionaryWithObject:@"TreeRootsCondition" forKey:@"entity"]] applyAnimated:YES]];
+                NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:@"TreeRootsCondition", @"entity", [[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]] objectID] , @"objectID", nil];
+                [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:query] applyAnimated:YES]];
                 break;
             }
             case 6:
             {
-                [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:[NSDictionary dictionaryWithObject:@"TreeOverallCondition" forKey:@"entity"]] applyAnimated:YES]];
+                NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:@"TreeOverallCondition", @"entity", [[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]] objectID] , @"objectID", nil];
+                [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:query] applyAnimated:YES]];
                 break;
             }
             default:
@@ -733,7 +740,6 @@
     
     Image *newPhoto = [NSEntityDescription insertNewObjectForEntityForName:@"Image" inManagedObjectContext:managedObjectContext];
     newPhoto.image_data = UIImageJPEGRepresentation(image, 1.0);
-    
     switch ([whichId intValue]) {
         case 1:
         {
@@ -741,40 +747,40 @@
             NSMutableSet *photos = [tree.form_condition mutableSetValueForKey:@"images"];
             [photos addObject:newPhoto];
             [tree.form_condition setValue:photos forKey:@"images"];
-            break;
         }
+            break;
         case 2:
         {
             newPhoto.image_caption = @"Tree Assessment Crown Condition";
             NSMutableSet *photos = [tree.crown_condition mutableSetValueForKey:@"images"];
             [photos addObject:newPhoto];
             [tree.crown_condition setValue:photos forKey:@"images"];
-            break;
         }
+            break;
         case 3:
         {
             newPhoto.image_caption = @"Tree Assessment Trunk Condition";
             NSMutableSet *photos = [tree.trunk_condition mutableSetValueForKey:@"images"];
             [photos addObject:newPhoto];
             [tree.trunk_condition setValue:photos forKey:@"images"];
-            break;
         }
+            break;
         case 4:
         {
             newPhoto.image_caption = @"Tree Assessment Rootflare Condition";
             NSMutableSet *photos = [tree.rootflare_condition mutableSetValueForKey:@"images"];
             [photos addObject:newPhoto];
             [tree.rootflare_condition setValue:photos forKey:@"images"];
-            break;
         }
+            break;
         case 5:
         {
             newPhoto.image_caption = @"Tree Assessment Roots Condition";
             NSMutableSet *photos = [tree.roots_condition mutableSetValueForKey:@"images"];
             [photos addObject:newPhoto];
             [tree.roots_condition setValue:photos forKey:@"images"];
-            break;
         }
+            break;
         case 6:
         {
             newPhoto.image_caption = @"Tree Assessment Overall Condition";
@@ -791,7 +797,7 @@
     
     NSError *error;
     if (![managedObjectContext save:&error]) {
-        NSLog(@"Error saving image.");
+        NSLog(@"Error saving image: %@", error);
     }
     [managedObjectContext processPendingChanges];
     [[imagePicker parentViewController] dismissModalViewControllerAnimated:YES];

@@ -16,11 +16,13 @@
     PhotoSet *_photoSet;
     int count;
     NSString *entityString;
+    NSManagedObjectID *objID;
     UIBarButtonItem* _deleteButton;
 }
 @property (nonatomic, assign) int count;
 @property (nonatomic, retain) PhotoSet *photoSet;
 @property (nonatomic, copy) NSString *entityString;
+@property (nonatomic, retain) NSManagedObjectID *objID;
 -(id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query;
 -(void)deleteAction;
 

@@ -181,9 +181,8 @@
         [self presentModalViewController:imagePicker animated:YES];
     } else if (buttonIndex == 2) {
         //flip to ttimageview thing
-        [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:[NSDictionary dictionaryWithObject:@"AssessmentTree" forKey:@"entity"]]applyAnimated:YES]];
-        
-
+        NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:@"AssessmentTree", @"entity", assessmentTree.objectID , @"objectID", nil];
+        [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:query] applyAnimated:YES]];
     } else if (buttonIndex == 3) {
         //cancel
     }
@@ -196,6 +195,7 @@
     Image *newPhoto = [NSEntityDescription insertNewObjectForEntityForName:@"Image" inManagedObjectContext:managedObjectContext];
     newPhoto.image_data = UIImageJPEGRepresentation(image, 1.0);
     newPhoto.image_caption = @"Tree Assessment";
+    newPhoto.owner = assessmentTree;
     [photos addObject:newPhoto];
     [assessmentTree setValue:photos forKey:@"images"];
     NSError *error;
