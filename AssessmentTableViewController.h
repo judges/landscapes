@@ -30,7 +30,8 @@
 #import "Image.h"
 #import "Photo.h"
 
-@interface AssessmentTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate> {
+@interface AssessmentTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UIActionSheetDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
+    UIActionSheet *actionSheet;
     @private
         NSFetchedResultsController *fetchedResultsController;
         NSManagedObjectContext *managedObjectContext;
@@ -41,4 +42,5 @@
 
 - (void)configureCell:(AssessmentTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)prepopulateDb;
+- (void)dismissActionSheet:(id)sender;
 @end

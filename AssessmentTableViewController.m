@@ -21,7 +21,9 @@
     [super viewDidLoad];
 	// Name the navigation bar
     self.title = @"Assessments";
-	
+    
+    actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    
 	// Include an Edit button. More properly, this should be called "Delete" - see setEditing
 	//self.navigationItem.leftBarButtonItem = self.editButtonItem;
 	//self.navigationItem.leftBarButtonItem.title = @"Delete";
@@ -132,9 +134,60 @@
 }
 
 - (void)add:(id)sender {
-    //code to add entry
+    
+    [actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
+    
+    CGRect pickerFrame = CGRectMake(0, 40, 0, 0);
+    
+    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:pickerFrame];
+    pickerView.showsSelectionIndicator = YES;
+    pickerView.dataSource = self;
+    pickerView.delegate = self;
+    
+    [actionSheet addSubview:pickerView];
+    [pickerView release];
+    
+    UISegmentedControl *closeButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"Close"]];
+    closeButton.momentary = YES; 
+    closeButton.frame = CGRectMake(10, 7.0f, 50.0f, 30.0f);
+    closeButton.segmentedControlStyle = UISegmentedControlStyleBar;
+    closeButton.tintColor = [UIColor blackColor];
+    [closeButton addTarget:self action:@selector(dismissActionSheet:) forControlEvents:UIControlEventValueChanged];
+    [actionSheet addSubview:closeButton];
+    [closeButton release];
+    
+    UISegmentedControl *addButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"Add"]];
+    addButton.momentary = YES; 
+    addButton.frame = CGRectMake(260, 7.0f, 50.0f, 30.0f);
+    addButton.segmentedControlStyle = UISegmentedControlStyleBar;
+    addButton.tintColor = [UIColor blackColor];
+    [addButton addTarget:self action:@selector(dismissActionSheet:) forControlEvents:UIControlEventValueChanged];
+    [actionSheet addSubview:addButton];
+    [addButton release];
+    
+    [actionSheet showInView:self.view];
+    [actionSheet setBounds:CGRectMake(0, 0, 320, 485)];
 }
 
+- (void)dismissActionSheet:(id)sender {
+    [actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {
+    //we only have one component in picker
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component {
+    return 0;
+}
+
+- (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [NSString string];
+}
+- (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -375,6 +428,7 @@
 
 
 - (void)dealloc {
+    [actionSheet release];
     [fetchedResultsController release];
     [super dealloc];
 }

@@ -53,7 +53,6 @@
     NSManagedObjectContext *managedObjectContext;
 }
 
-@property (nonatomic, retain) Assessment *assessment;
 @property (nonatomic, retain) AssessmentTree *assessmentTree;
 
 //view
