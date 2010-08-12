@@ -12,6 +12,7 @@
 @implementation AssessmentTableViewController
 @synthesize fetchedResultsController;
 @synthesize managedObjectContext;
+@synthesize typesArray, landscapesArray;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -22,11 +23,40 @@
 	// Name the navigation bar
     self.title = @"Assessments";
     
-    actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    //load managedObjectContext from AppDelegate
+    if(!managedObjectContext){
+        managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    }
     
-	// Include an Edit button. More properly, this should be called "Delete" - see setEditing
-	//self.navigationItem.leftBarButtonItem = self.editButtonItem;
-	//self.navigationItem.leftBarButtonItem.title = @"Delete";
+    //initialize actionsheet for adding new records
+    typeActionSheet = [[UIActionSheet alloc] initWithTitle:@"Type" delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    landscapeActionSheet = [[UIActionSheet alloc] initWithTitle:@"Landscape" delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    
+    //set up arrays for type and landscape picker
+    typesArray = [[NSMutableArray alloc] init];
+    landscapesArray = [[NSMutableArray alloc] init];
+    CGRect pickerFrame = CGRectMake(0, 40, 0, 0);
+    typePickerView = [[UIPickerView alloc] initWithFrame:pickerFrame];
+    landscapePickerView = [[UIPickerView alloc] initWithFrame:pickerFrame];
+    
+    //fetch data for type picker
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"AssessmentType" inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSError *error=nil;
+    NSMutableArray *tmp = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:&error]];
+    for (AssessmentType *at in tmp) {
+        [typesArray addObject:at];
+    }
+    
+    //fetch data for landscape picker
+    entity = [NSEntityDescription entityForName:@"Landscape" inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    tmp = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:&error]];
+    for (Landscape *l in tmp) {
+        [landscapesArray addObject:l];
+    }
+    [fetchRequest release];
 	
 	// Include an Add + button
     UIBarButtonItem *addButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add:)];
@@ -36,16 +66,12 @@
 	// Set the table view's row height
     self.tableView.rowHeight = 52.0;
 	
-    //load managedObjectContext from AppDelegate
-    if(!managedObjectContext){
-        managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-    }
+    
 
     //set up fetchedResultsController
     [self fetchedResultsController];
 
     //Perform fetch and catch any errors
-    NSError *error = nil;
     [fetchedResultsController performFetch:&error];
     
     //prepopulate if there are no records
@@ -54,12 +80,10 @@
         [fetchedResultsController performFetch:&error];
     }
     
+    
     if (error) {
         NSLog(@"Error occured fetching from db: %@", error);
     }
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 - (void)prepopulateDb {    
     NSManagedObjectContext *context = [self managedObjectContext];    
@@ -120,32 +144,17 @@
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
     }
 }
-- (void) setEditing:(BOOL)editing animated:(BOOL)animated {
-    //Do super before, it will change the name of the editing button
-    [super setEditing:editing animated:animated];
-	
-    if (editing) {
-		self.navigationItem.leftBarButtonItem.title = @"Done";
-		self.navigationItem.leftBarButtonItem.style = UIBarButtonItemStyleDone;
-    } else {
-		self.navigationItem.leftBarButtonItem.title = @"Delete";
-		self.navigationItem.leftBarButtonItem.style = UIBarButtonItemStyleBordered;
-    }
-}
 
 - (void)add:(id)sender {
+    //show the type picker with close and select buttons
+    [typeActionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
     
-    [actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
     
-    CGRect pickerFrame = CGRectMake(0, 40, 0, 0);
+    typePickerView.showsSelectionIndicator = YES;
+    typePickerView.dataSource = self;
+    typePickerView.delegate = self;
     
-    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:pickerFrame];
-    pickerView.showsSelectionIndicator = YES;
-    pickerView.dataSource = self;
-    pickerView.delegate = self;
-    
-    [actionSheet addSubview:pickerView];
-    [pickerView release];
+    [typeActionSheet addSubview:typePickerView];
     
     UISegmentedControl *closeButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"Close"]];
     closeButton.momentary = YES; 
@@ -153,24 +162,83 @@
     closeButton.segmentedControlStyle = UISegmentedControlStyleBar;
     closeButton.tintColor = [UIColor blackColor];
     [closeButton addTarget:self action:@selector(dismissActionSheet:) forControlEvents:UIControlEventValueChanged];
-    [actionSheet addSubview:closeButton];
+    [typeActionSheet addSubview:closeButton];
     [closeButton release];
     
-    UISegmentedControl *addButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"Add"]];
-    addButton.momentary = YES; 
-    addButton.frame = CGRectMake(260, 7.0f, 50.0f, 30.0f);
-    addButton.segmentedControlStyle = UISegmentedControlStyleBar;
-    addButton.tintColor = [UIColor blackColor];
-    [addButton addTarget:self action:@selector(dismissActionSheet:) forControlEvents:UIControlEventValueChanged];
-    [actionSheet addSubview:addButton];
-    [addButton release];
+    UISegmentedControl *selectButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"Select"]];
+    selectButton.momentary = YES; 
+    selectButton.frame = CGRectMake(260, 7.0f, 50.0f, 30.0f);
+    selectButton.segmentedControlStyle = UISegmentedControlStyleBar;
+    selectButton.tintColor = [UIColor blackColor];
+    [selectButton addTarget:self action:@selector(typeSelected:) forControlEvents:UIControlEventValueChanged];
+    [typeActionSheet addSubview:selectButton];
+    [selectButton release];
     
-    [actionSheet showInView:self.view];
-    [actionSheet setBounds:CGRectMake(0, 0, 320, 485)];
+    [typeActionSheet showInView:self.view];
+    [typeActionSheet setBounds:CGRectMake(0, 0, 320, 485)];
+    
+    //select the first entry by default
+    [self pickerView:typePickerView didSelectRow:0 inComponent:0]; 
+}
+
+- (void)typeSelected:(id)sender {
+    //type has been selected, so hide type picker and show landscape picker
+    [typeActionSheet dismissWithClickedButtonIndex:0 animated:YES];
+    
+    [landscapeActionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
+    
+    landscapePickerView.showsSelectionIndicator = YES;
+    landscapePickerView.dataSource = self;
+    landscapePickerView.delegate = self;
+    
+    [landscapeActionSheet addSubview:landscapePickerView];
+    
+    UISegmentedControl *closeButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"Close"]];
+    closeButton.momentary = YES; 
+    closeButton.frame = CGRectMake(10, 7.0f, 50.0f, 30.0f);
+    closeButton.segmentedControlStyle = UISegmentedControlStyleBar;
+    closeButton.tintColor = [UIColor blackColor];
+    [closeButton addTarget:self action:@selector(dismissActionSheet:) forControlEvents:UIControlEventValueChanged];
+    [landscapeActionSheet addSubview:closeButton];
+    [closeButton release];
+    
+    UISegmentedControl *selectButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"Select"]];
+    selectButton.momentary = YES; 
+    selectButton.frame = CGRectMake(260, 7.0f, 50.0f, 30.0f);
+    selectButton.segmentedControlStyle = UISegmentedControlStyleBar;
+    selectButton.tintColor = [UIColor blackColor];
+    [selectButton addTarget:self action:@selector(landscapeSelected:) forControlEvents:UIControlEventValueChanged];
+    [landscapeActionSheet addSubview:selectButton];
+    [selectButton release];
+    
+    [landscapeActionSheet showInView:self.view];
+    [landscapeActionSheet setBounds:CGRectMake(0, 0, 320, 485)];
+    
+    //select the first entry by default
+    [self pickerView:landscapePickerView didSelectRow:0 inComponent:0]; 
+}
+
+- (void)landscapeSelected:(id)sender {
+    //landscape and type have been selected, so hide landscape picker and add a new record to the db
+    [landscapeActionSheet dismissWithClickedButtonIndex:0 animated:YES];
+    NSError *error;
+    //this could easily be modified to insert objects dynamically rather than with an if.
+    if ([selectedType.name isEqualToString:@"Tree"]) {
+        AssessmentTree *new = [NSEntityDescription insertNewObjectForEntityForName:@"AssessmentTree" inManagedObjectContext:managedObjectContext];
+        new.type = selectedType;
+        new.landscape = selectedLandscape;
+        new.created_at = [NSDate date];
+
+        if (![managedObjectContext save:&error]) {
+            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        }
+    }
 }
 
 - (void)dismissActionSheet:(id)sender {
-    [actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+    //user clicks close on an action sheet
+    [typeActionSheet dismissWithClickedButtonIndex:0 animated:YES];
+    [landscapeActionSheet dismissWithClickedButtonIndex:0 animated:YES];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {
@@ -179,14 +247,31 @@
 }
 
 - (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component {
-    return 0;
+    //get number of rows for picker views
+    if (thePickerView==typePickerView) {
+        return [typesArray count];
+    } else {
+        return [landscapesArray count];
+    }
 }
 
 - (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [NSString string];
+    //load data into picker views
+    if (thePickerView==typePickerView) {
+        return [[typesArray objectAtIndex:row] name];
+    } else {
+        return [[landscapesArray objectAtIndex:row] name];
+    }
+
+    
 }
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-
+    //set the selected type or row based on user interaction
+    if (thePickerView==typePickerView) {
+        selectedType = [typesArray objectAtIndex:row];
+    } else {
+        selectedLandscape = [landscapesArray objectAtIndex:row];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -194,27 +279,10 @@
     
 }
 
-/*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
-/*
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-}
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-*/
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    //return (interfaceOrientation == UIInterfaceOrientationPortrait);
-	return YES;
+    return YES;
 }
 
 
@@ -287,25 +355,13 @@
 }
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-
-
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self setEditing:YES animated:YES];
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        [managedObjectContext deleteObject:[fetchedResultsController objectAtIndexPath:indexPath]];
+        NSError *error;
+        [managedObjectContext save:&error];
     }   
 }
 
@@ -428,7 +484,12 @@
 
 
 - (void)dealloc {
-    [actionSheet release];
+    [typesArray release];
+    [landscapesArray release];
+    [typePickerView release];
+    [landscapePickerView release];
+    [typeActionSheet release];
+    [landscapeActionSheet release];
     [fetchedResultsController release];
     [super dealloc];
 }

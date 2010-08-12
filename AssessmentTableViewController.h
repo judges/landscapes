@@ -31,7 +31,14 @@
 #import "Photo.h"
 
 @interface AssessmentTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UIActionSheetDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
-    UIActionSheet *actionSheet;
+    UIActionSheet *typeActionSheet;
+    UIActionSheet *landscapeActionSheet;
+    UIPickerView *typePickerView;
+    UIPickerView *landscapePickerView;
+    NSMutableArray *typesArray;
+    NSMutableArray *landscapesArray;
+    Landscape *selectedLandscape;
+    AssessmentType *selectedType;
     @private
         NSFetchedResultsController *fetchedResultsController;
         NSManagedObjectContext *managedObjectContext;
@@ -39,8 +46,11 @@
 }
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain) NSMutableArray *typesArray;
+@property (nonatomic, retain) NSMutableArray *landscapesArray;
 
 - (void)configureCell:(AssessmentTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)prepopulateDb;
 - (void)dismissActionSheet:(id)sender;
+- (void)typeSelected:(id)sender;
 @end
