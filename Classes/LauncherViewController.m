@@ -69,25 +69,29 @@
 															 image:@"bundle://landscapes-57.png"
 															   URL:@"land://Landscapes"  canDelete:NO] autorelease],
 
+							/*
 							[[[TTLauncherItem alloc] initWithTitle:@"Inventory"
 															 image:@"bundle://inventory-57.png"
 															   URL:@"land://Inventory" canDelete:NO] autorelease],
-							
+							*/
 							
 							[[[TTLauncherItem alloc] initWithTitle:@"Assessments"
 															 image:@"bundle://assessments-57.png"
 															   URL:@"land://assessments" canDelete:NO] autorelease],
 
+							
+							/*
 							[[[TTLauncherItem alloc] initWithTitle:@"Tasks"
 															 image:@"bundle://tasks-57.png"
 															   URL:@"land://Tasks" canDelete:NO] autorelease],							
 							
-							
+							*/
 							
 							[[[TTLauncherItem alloc] initWithTitle:@"Vegetation"
 															 image:@"bundle://vegetation-57.png"
-															   URL:@"land://assessments/TreeViewAndInput?" canDelete:NO] autorelease],	
+															   URL:@"land://Vegetation" canDelete:NO] autorelease],	
 
+							/*
 							[[[TTLauncherItem alloc] initWithTitle:@"Cemetery"
 															 image:@"bundle://cemetery-57.png"
 															   URL:@"land://Cemetery" canDelete:NO] autorelease],								
@@ -100,25 +104,41 @@
 															 image:@"bundle://wildlife-57.png"
 															   URL:@"land://Wildlife" canDelete:NO] autorelease],
 							
+							*/
+							 
 							[[[TTLauncherItem alloc] initWithTitle:@"Photos"
 															 image:@"bundle://photos-57.png"
-															   URL:@"land://Photos" canDelete:NO] autorelease],						
-							nil],
-
-						   [NSArray arrayWithObjects:
-						
+															   URL:@"land://Photos" canDelete:NO] autorelease],		
+							
+							/*
 							
 							[[[TTLauncherItem alloc] initWithTitle:@"Maps"
 															 image:@"bundle://maps-57.png"
 															   URL:@"land://Maps" canDelete:NO] autorelease],								
 							
+							*/
+							 
+							 
 							[[[TTLauncherItem alloc] initWithTitle:@"Settings"
 															 image:@"bundle://settings-57.png"
 															   URL:@"land://data/Settings" canDelete:NO] autorelease],								
+							
 
+							 
 							[[[TTLauncherItem alloc] initWithTitle:@"About NCPTT"
 															 image:@"bundle://ncptt-57.png"
 															   URL:@"land://data/About" canDelete:NO] autorelease],	
+							
+							
+							
+							nil],
+						   
+						   
+
+						   [NSArray arrayWithObjects:
+						
+							
+
 							
 							nil],
 						   nil

@@ -47,8 +47,6 @@
 		09F2963C12145DA400783F36 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F2962A12145DA400783F36 /* Image.m */; };
 		141DFCCA120A955D00F86792 /* VegetationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 141DFCC8120A955D00F86792 /* VegetationVC.m */; };
 		141DFCCB120A955D00F86792 /* VegetationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141DFCC9120A955D00F86792 /* VegetationVC.xib */; };
-		1420B9711211E7E9002890BC /* LandscapeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1420B9701211E7E9002890BC /* LandscapeTableViewController.m */; };
-		1420B9741211E7FC002890BC /* LandscapeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1420B9731211E7FC002890BC /* LandscapeTableViewCell.m */; };
 		1429CE9112135575007F912D /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1429CE9012135575007F912D /* ReadMe.txt */; };
 		14327C1C12138D280087D958 /* parks-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 14327C1B12138D280087D958 /* parks-57.png */; };
 		14327C1E12138E890087D958 /* wildlife-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 14327C1D12138E890087D958 /* wildlife-57.png */; };
@@ -304,10 +302,6 @@
 		141DFCC7120A955D00F86792 /* VegetationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VegetationVC.h; sourceTree = "<group>"; };
 		141DFCC8120A955D00F86792 /* VegetationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VegetationVC.m; sourceTree = "<group>"; };
 		141DFCC9120A955D00F86792 /* VegetationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VegetationVC.xib; sourceTree = "<group>"; };
-		1420B96F1211E7E9002890BC /* LandscapeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandscapeTableViewController.h; sourceTree = "<group>"; };
-		1420B9701211E7E9002890BC /* LandscapeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandscapeTableViewController.m; sourceTree = "<group>"; };
-		1420B9721211E7FC002890BC /* LandscapeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandscapeTableViewCell.h; sourceTree = "<group>"; };
-		1420B9731211E7FC002890BC /* LandscapeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandscapeTableViewCell.m; sourceTree = "<group>"; };
 		1429CE9012135575007F912D /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 		14327C1B12138D280087D958 /* parks-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parks-57.png"; sourceTree = "<group>"; };
 		14327C1D12138E890087D958 /* wildlife-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wildlife-57.png"; sourceTree = "<group>"; };
@@ -464,7 +458,6 @@
 		09AED84311FF2F040040A385 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1420B96E1211E7CC002890BC /* Landscapes */,
 				091E33AE12086B8E0046784A /* Assessments */,
 				14EBCDA811FE195700F36458 /* LauncherViewController.h */,
 				14EBCDA911FE195700F36458 /* LauncherViewController.m */,
@@ -486,17 +479,6 @@
 				094634451210A7A700773E50 /* DisplayPhoto.m */,
 			);
 			name = "Not Generated";
-			sourceTree = "<group>";
-		};
-		1420B96E1211E7CC002890BC /* Landscapes */ = {
-			isa = PBXGroup;
-			children = (
-				1420B96F1211E7E9002890BC /* LandscapeTableViewController.h */,
-				1420B9701211E7E9002890BC /* LandscapeTableViewController.m */,
-				1420B9721211E7FC002890BC /* LandscapeTableViewCell.h */,
-				1420B9731211E7FC002890BC /* LandscapeTableViewCell.m */,
-			);
-			name = Landscapes;
 			sourceTree = "<group>";
 		};
 		1440242C11FDE524000F936D /* images */ = {
@@ -925,8 +907,6 @@
 				094634461210A7A700773E50 /* DisplayPhoto.m in Sources */,
 				0946344B1210A81900773E50 /* PhotoSet.m in Sources */,
 				094634501210A86500773E50 /* PhotoViewController.m in Sources */,
-				1420B9711211E7E9002890BC /* LandscapeTableViewController.m in Sources */,
-				1420B9741211E7FC002890BC /* LandscapeTableViewCell.m in Sources */,
 				09F2962B12145DA400783F36 /* TreeOverallRecommendation.m in Sources */,
 				09F2962C12145DA400783F36 /* TreeFormRecommendation.m in Sources */,
 				09F2962D12145DA400783F36 /* TreeRootsCondition.m in Sources */,
