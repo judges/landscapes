@@ -63,6 +63,8 @@
 		1464EB8D120AC64600F21DCE /* tasks-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB80120AC64600F21DCE /* tasks-57.png */; };
 		1464EB8E120AC64600F21DCE /* vegetation-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB81120AC64600F21DCE /* vegetation-57.png */; };
 		14C23BF31214D5E500AA2678 /* LandscapesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C23BF21214D5E500AA2678 /* LandscapesTableViewController.m */; };
+		14C23D241214DEBD00AA2678 /* tree-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 14C23D231214DEBD00AA2678 /* tree-57.png */; };
+		14C23D2A1214E4E900AA2678 /* NPS-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 14C23D291214E4E900AA2678 /* NPS-57.png */; };
 		14DCC6C211FDE35500A98045 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DCC6C111FDE35500A98045 /* CoreLocation.framework */; };
 		14E30BBA1211E9C70058C7C6 /* landscapes-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E30BB91211E9C70058C7C6 /* landscapes-57.png */; };
 		14EBCDAA11FE195700F36458 /* LauncherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EBCDA911FE195700F36458 /* LauncherViewController.m */; };
@@ -317,6 +319,8 @@
 		1464EB81120AC64600F21DCE /* vegetation-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vegetation-57.png"; sourceTree = "<group>"; };
 		14C23BF11214D5E500AA2678 /* LandscapesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandscapesTableViewController.h; sourceTree = "<group>"; };
 		14C23BF21214D5E500AA2678 /* LandscapesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandscapesTableViewController.m; sourceTree = "<group>"; };
+		14C23D231214DEBD00AA2678 /* tree-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree-57.png"; sourceTree = "<group>"; };
+		14C23D291214E4E900AA2678 /* NPS-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NPS-57.png"; sourceTree = "<group>"; };
 		14DCC6C111FDE35500A98045 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
 		14E30BB91211E9C70058C7C6 /* landscapes-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "landscapes-57.png"; sourceTree = "<group>"; };
 		14EBCDA811FE195700F36458 /* LauncherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LauncherViewController.h; sourceTree = "<group>"; };
@@ -456,12 +460,11 @@
 		09AED84311FF2F040040A385 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				14C23D1E1214DD1400AA2678 /* Photos */,
 				14EBA2D81214CA1E00B995EF /* Landscapes */,
 				091E33AE12086B8E0046784A /* Assessments */,
 				14EBCDA811FE195700F36458 /* LauncherViewController.h */,
 				14EBCDA911FE195700F36458 /* LauncherViewController.m */,
-				0946344E1210A86500773E50 /* PhotoViewController.h */,
-				0946344F1210A86500773E50 /* PhotoViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -480,6 +483,8 @@
 		1440242C11FDE524000F936D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				14C23D291214E4E900AA2678 /* NPS-57.png */,
+				14C23D231214DEBD00AA2678 /* tree-57.png */,
 				09F2955C1214417500783F36 /* icon_trash.png */,
 				09F2955D1214417500783F36 /* notes_100.png */,
 				14327C1D12138E890087D958 /* wildlife-57.png */,
@@ -508,6 +513,15 @@
 				1440243C11FDE545000F936D /* Icon_256.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		14C23D1E1214DD1400AA2678 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				0946344E1210A86500773E50 /* PhotoViewController.h */,
+				0946344F1210A86500773E50 /* PhotoViewController.m */,
+			);
+			name = Photos;
 			sourceTree = "<group>";
 		};
 		14EBA2D81214CA1E00B995EF /* Landscapes */ = {
@@ -889,6 +903,8 @@
 				14327C1E12138E890087D958 /* wildlife-57.png in Resources */,
 				09F2955E1214417500783F36 /* icon_trash.png in Resources */,
 				09F2955F1214417500783F36 /* notes_100.png in Resources */,
+				14C23D241214DEBD00AA2678 /* tree-57.png in Resources */,
+				14C23D2A1214E4E900AA2678 /* NPS-57.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

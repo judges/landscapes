@@ -22,6 +22,7 @@
 		//Set navigation bar color
 		self.navigationBarTintColor = [UIColor colorWithRed:0.180 green:0.267 blue: 0.173 alpha:1.0];
 		
+		
 	}
 	return self;
 }
@@ -87,9 +88,9 @@
 							
 							*/
 							
-							[[[TTLauncherItem alloc] initWithTitle:@"Vegetation"
-															 image:@"bundle://vegetation-57.png"
-															   URL:@"land://Vegetation" canDelete:NO] autorelease],	
+							[[[TTLauncherItem alloc] initWithTitle:@"Trees"
+															 image:@"bundle://tree-57.png"
+															   URL:@"land://Trees" canDelete:NO] autorelease],	
 
 							/*
 							[[[TTLauncherItem alloc] initWithTitle:@"Cemetery"
@@ -122,7 +123,9 @@
 							[[[TTLauncherItem alloc] initWithTitle:@"Settings"
 															 image:@"bundle://settings-57.png"
 															   URL:@"land://data/Settings" canDelete:NO] autorelease],								
-							
+							[[[TTLauncherItem alloc] initWithTitle:@"NCPTT Web"
+															 image:@"bundle://ncptt-57.png"
+															   URL:@"http://www.ncptt.nps.gov" canDelete:NO] autorelease],								
 
 							
 							
@@ -135,9 +138,9 @@
 						   [NSArray arrayWithObjects:
 						
 							
-							[[[TTLauncherItem alloc] initWithTitle:@"NCPTT Web"
-															 image:@"bundle://ncptt-57.png"
-															   URL:@"http://www.ncptt.nps.gov" canDelete:NO] autorelease],								
+							[[[TTLauncherItem alloc] initWithTitle:@"NPS"
+															 image:@"bundle://nps-57.png"
+															   URL:@"http://www.nps.gov" canDelete:NO] autorelease],								
 
 							
 							nil],
