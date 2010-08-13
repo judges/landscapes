@@ -178,7 +178,9 @@
     [typeActionSheet setBounds:CGRectMake(0, 0, 320, 485)];
     
     //select the first entry by default
-    [self pickerView:typePickerView didSelectRow:0 inComponent:0]; 
+    if([typePickerView numberOfRowsInComponent:0] > 0) {
+        [self pickerView:typePickerView didSelectRow:0 inComponent:0];
+    }
 }
 
 - (void)typeSelected:(id)sender {
@@ -215,7 +217,10 @@
     [landscapeActionSheet setBounds:CGRectMake(0, 0, 320, 485)];
     
     //select the first entry by default
-    [self pickerView:landscapePickerView didSelectRow:0 inComponent:0]; 
+    if ([landscapePickerView numberOfRowsInComponent:0]>0) {
+        [self pickerView:landscapePickerView didSelectRow:0 inComponent:0];
+    }
+     
 }
 
 - (void)landscapeSelected:(id)sender {
