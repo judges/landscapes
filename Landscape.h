@@ -16,6 +16,7 @@
 }
 
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSDate * timeStamp;
 @property (nonatomic, retain) NSSet* assessments;
 
 @end

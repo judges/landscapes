@@ -8,10 +8,16 @@
 #import <UIKit/UIKit.h>
 #import <Three20/Three20.h>
 #import "AppDelegate.h"
+#import "Landscape.h"
+#import <CoreData/CoreData.h>
 
-
-@interface LandscapesTableViewController : TTTableViewController {
-
+@interface LandscapesTableViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
+	NSFetchedResultsController *fetchedResultsController;
+	NSManagedObjectContext *managedObjectContext;
 }
 
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+
 @end
+

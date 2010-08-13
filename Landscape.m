@@ -13,6 +13,7 @@
 @implementation Landscape 
 
 @dynamic name;
+@dynamic timeStamp;
 @dynamic assessments;
 
 @end
