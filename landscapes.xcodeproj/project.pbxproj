@@ -44,6 +44,7 @@
 		09F29BBC12159EA500783F36 /* AssessmentTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F29BA812159EA500783F36 /* AssessmentTree.m */; };
 		09F29BBD12159EA500783F36 /* AssessmentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F29BAA12159EA500783F36 /* AssessmentType.m */; };
 		09F29BBE12159EA500783F36 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F29BAC12159EA500783F36 /* Image.m */; };
+		09F29BD61215A2FB00783F36 /* button-notdone.png in Resources */ = {isa = PBXBuildFile; fileRef = 09F29BD51215A2FB00783F36 /* button-notdone.png */; };
 		1429CE9112135575007F912D /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1429CE9012135575007F912D /* ReadMe.txt */; };
 		14327C1C12138D280087D958 /* parks-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 14327C1B12138D280087D958 /* parks-57.png */; };
 		14327C1E12138E890087D958 /* wildlife-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 14327C1D12138E890087D958 /* wildlife-57.png */; };
@@ -299,6 +300,7 @@
 		09F29BAA12159EA500783F36 /* AssessmentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssessmentType.m; path = ../AssessmentType.m; sourceTree = "<group>"; };
 		09F29BAB12159EA500783F36 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Image.h; path = ../Image.h; sourceTree = "<group>"; };
 		09F29BAC12159EA500783F36 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Image.m; path = ../Image.m; sourceTree = "<group>"; };
+		09F29BD51215A2FB00783F36 /* button-notdone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-notdone.png"; sourceTree = "<group>"; };
 		1429CE9012135575007F912D /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 		14327C1B12138D280087D958 /* parks-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parks-57.png"; sourceTree = "<group>"; };
 		14327C1D12138E890087D958 /* wildlife-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wildlife-57.png"; sourceTree = "<group>"; };
@@ -483,6 +485,7 @@
 		1440242C11FDE524000F936D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				09F29BD51215A2FB00783F36 /* button-notdone.png */,
 				14C23DD41214F05600AA2678 /* edit_50.png */,
 				14C23D291214E4E900AA2678 /* NPS-57.png */,
 				14C23D231214DEBD00AA2678 /* tree-57.png */,
@@ -905,6 +908,7 @@
 				14C23D241214DEBD00AA2678 /* tree-57.png in Resources */,
 				14C23D2A1214E4E900AA2678 /* NPS-57.png in Resources */,
 				14C23DD51214F05600AA2678 /* edit_50.png in Resources */,
+				09F29BD61215A2FB00783F36 /* button-notdone.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

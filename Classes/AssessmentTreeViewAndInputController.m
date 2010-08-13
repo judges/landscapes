@@ -28,6 +28,55 @@
 } 
 -(void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+    if (self.assessmentTree) {
+        self.caliper.text = [NSString stringWithFormat:@"%@ \'", [self.assessmentTree.caliper stringValue]];
+        self.height.text = [NSString stringWithFormat:@"%@ \'", [self.assessmentTree.height stringValue]]   ;
+        self.formCText.text = self.assessmentTree.form_condition.name;
+        self.crownCText.text = self.assessmentTree.crown_condition.name;
+        self.trunkCText.text = self.assessmentTree.trunk_condition.name;
+        self.rootFlareCText.text = self.assessmentTree.rootflare_condition.name;
+        self.rootsCText.text = self.assessmentTree.roots_condition.name;
+        self.overallCText.text = self.assessmentTree.overall_condition.name;
+        self.formRText.text = self.assessmentTree.form_recommendation.name;
+        self.crownRText.text = self.assessmentTree.crown_recommendation.name;
+        self.trunkRText.text = self.assessmentTree.trunk_recommendation.name;
+        self.rootFlareRText.text = self.assessmentTree.rootflare_recommendation.name;
+        self.rootsRText.text = self.assessmentTree.roots_recommendation.name;
+        self.overallRText.text = self.assessmentTree.overall_recommendation.name;
+        self.assessorField.text = self.assessmentTree.assessor;
+        self.caliperField.text = [self.assessmentTree.caliper stringValue];
+        self.heightField.text = [self.assessmentTree.height stringValue];
+    }
+    if (self.formCText.text == nil || self.formRText.text == nil) {
+        [button1 setBackgroundImage:[UIImage imageNamed:@"button-notdone.png"] forState:UIControlStateNormal];
+    } else {
+        [button1 setBackgroundImage:[UIImage imageNamed:@"button-default.png"] forState:UIControlStateNormal];
+    }
+    if (self.crownCText.text == nil || self.crownRText.text == nil) {
+        [button2 setBackgroundImage:[UIImage imageNamed:@"button-notdone.png"] forState:UIControlStateNormal];
+    } else {
+        [button2 setBackgroundImage:[UIImage imageNamed:@"button-default.png"] forState:UIControlStateNormal];
+    }
+    if (self.trunkCText.text == nil || self.trunkRText.text == nil) {
+        [button3 setBackgroundImage:[UIImage imageNamed:@"button-notdone.png"] forState:UIControlStateNormal];
+    } else {
+        [button3 setBackgroundImage:[UIImage imageNamed:@"button-default.png"] forState:UIControlStateNormal];
+    }
+    if (self.rootFlareCText.text == nil || self.rootFlareRText.text == nil) {
+        [button4 setBackgroundImage:[UIImage imageNamed:@"button-notdone.png"] forState:UIControlStateNormal];
+    } else {
+        [button4 setBackgroundImage:[UIImage imageNamed:@"button-default.png"] forState:UIControlStateNormal];
+    }
+    if (self.rootsCText.text == nil || self.rootsRText.text == nil) {
+        [button5 setBackgroundImage:[UIImage imageNamed:@"button-notdone.png"] forState:UIControlStateNormal];
+    } else {
+        [button5 setBackgroundImage:[UIImage imageNamed:@"button-default.png"] forState:UIControlStateNormal];
+    }
+    if (self.overallCText.text == nil || self.overallRText.text == nil) {
+        [button6 setBackgroundImage:[UIImage imageNamed:@"button-notdone.png"] forState:UIControlStateNormal];
+    } else {
+        [button6 setBackgroundImage:[UIImage imageNamed:@"button-default.png"] forState:UIControlStateNormal];
+    }
 }
 
 -(IBAction)segmentSwitch:(id)sender {
@@ -123,25 +172,6 @@
     NSString *dateStr= [dateFormatter stringFromDate:self.assessmentTree.created_at];
     [dateFormatter release];
     self.date.text = dateStr;
-    if (self.assessmentTree) {
-        self.caliper.text = [NSString stringWithFormat:@"%@ \'", [self.assessmentTree.caliper stringValue]];
-        self.height.text = [NSString stringWithFormat:@"%@ \'", [self.assessmentTree.height stringValue]]   ;
-        self.formCText.text = self.assessmentTree.form_condition.name;
-        self.crownCText.text = self.assessmentTree.crown_condition.name;
-        self.trunkCText.text = self.assessmentTree.trunk_condition.name;
-        self.rootFlareCText.text = self.assessmentTree.rootflare_condition.name;
-        self.rootsCText.text = self.assessmentTree.roots_condition.name;
-        self.overallCText.text = self.assessmentTree.overall_condition.name;
-        self.formRText.text = self.assessmentTree.form_recommendation.name;
-        self.crownRText.text = self.assessmentTree.crown_recommendation.name;
-        self.trunkRText.text = self.assessmentTree.trunk_recommendation.name;
-        self.rootFlareRText.text = self.assessmentTree.rootflare_recommendation.name;
-        self.rootsRText.text = self.assessmentTree.roots_recommendation.name;
-        self.overallRText.text = self.assessmentTree.overall_recommendation.name;
-        self.assessorField.text = self.assessmentTree.assessor;
-        self.caliperField.text = [self.assessmentTree.caliper stringValue];
-        self.heightField.text = [self.assessmentTree.height stringValue];
-    }
     
 }
 
