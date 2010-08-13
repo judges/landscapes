@@ -6,9 +6,6 @@
 //  Copyright 2010 National Park Service/NCPTT. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <Three20/Three20.h>
-#import "AppDelegate.h"
 #import "LandscapesTableViewController.h"
 
 
@@ -22,15 +19,13 @@
 - (id) init {
   if (self = [super init]) {
     self.variableHeightRows = YES;
-	  
 
-    /* self.dataSource =
+	
+    self.dataSource =
       [TTListDataSource dataSourceWithObjects:
-        [[TTTableTitleItem item] applyTitle:@"Table cell item"],
+        nil,
          nil];
-	 	 */
   }
-
 
   return self;
 }

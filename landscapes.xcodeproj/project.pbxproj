@@ -64,9 +64,9 @@
 		1464EB8C120AC64600F21DCE /* settings-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB7F120AC64600F21DCE /* settings-57.png */; };
 		1464EB8D120AC64600F21DCE /* tasks-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB80120AC64600F21DCE /* tasks-57.png */; };
 		1464EB8E120AC64600F21DCE /* vegetation-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464EB81120AC64600F21DCE /* vegetation-57.png */; };
+		14C23BF31214D5E500AA2678 /* LandscapesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C23BF21214D5E500AA2678 /* LandscapesTableViewController.m */; };
 		14DCC6C211FDE35500A98045 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DCC6C111FDE35500A98045 /* CoreLocation.framework */; };
 		14E30BBA1211E9C70058C7C6 /* landscapes-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E30BB91211E9C70058C7C6 /* landscapes-57.png */; };
-		14EBA2D71214CA1400B995EF /* LandscapesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EBA2D61214CA1400B995EF /* LandscapesTableViewController.m */; };
 		14EBCDAA11FE195700F36458 /* LauncherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EBCDA911FE195700F36458 /* LauncherViewController.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -320,10 +320,10 @@
 		1464EB7F120AC64600F21DCE /* settings-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-57.png"; sourceTree = "<group>"; };
 		1464EB80120AC64600F21DCE /* tasks-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tasks-57.png"; sourceTree = "<group>"; };
 		1464EB81120AC64600F21DCE /* vegetation-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vegetation-57.png"; sourceTree = "<group>"; };
+		14C23BF11214D5E500AA2678 /* LandscapesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandscapesTableViewController.h; sourceTree = "<group>"; };
+		14C23BF21214D5E500AA2678 /* LandscapesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandscapesTableViewController.m; sourceTree = "<group>"; };
 		14DCC6C111FDE35500A98045 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
 		14E30BB91211E9C70058C7C6 /* landscapes-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "landscapes-57.png"; sourceTree = "<group>"; };
-		14EBA2D51214CA1400B995EF /* LandscapesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandscapesTableViewController.h; sourceTree = "<group>"; };
-		14EBA2D61214CA1400B995EF /* LandscapesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandscapesTableViewController.m; sourceTree = "<group>"; };
 		14EBCDA811FE195700F36458 /* LauncherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LauncherViewController.h; sourceTree = "<group>"; };
 		14EBCDA911FE195700F36458 /* LauncherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LauncherViewController.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -521,8 +521,8 @@
 		14EBA2D81214CA1E00B995EF /* Landscapes */ = {
 			isa = PBXGroup;
 			children = (
-				14EBA2D51214CA1400B995EF /* LandscapesTableViewController.h */,
-				14EBA2D61214CA1400B995EF /* LandscapesTableViewController.m */,
+				14C23BF11214D5E500AA2678 /* LandscapesTableViewController.h */,
+				14C23BF21214D5E500AA2678 /* LandscapesTableViewController.m */,
 			);
 			name = Landscapes;
 			sourceTree = "<group>";
@@ -938,7 +938,7 @@
 				09F2963A12145DA400783F36 /* AssessmentTree.m in Sources */,
 				09F2963B12145DA400783F36 /* AssessmentType.m in Sources */,
 				09F2963C12145DA400783F36 /* Image.m in Sources */,
-				14EBA2D71214CA1400B995EF /* LandscapesTableViewController.m in Sources */,
+				14C23BF31214D5E500AA2678 /* LandscapesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1044,7 +1044,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphonesimulator4.0;
 			};
 			name = Debug;
 		};
@@ -1058,7 +1058,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphonesimulator4.0;
 			};
 			name = Release;
 		};

@@ -19,11 +19,8 @@
 	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
 
 		self.title = @"Landscapes";
-		self.navigationBarTintColor = [UIColor colorWithRed:0.180 green:0.267 blue:
-									   0.173 alpha:1.0]; 
-
-		//self.statusBarStyle = UIBarStyleBlackTranslucent;
-		//self.navigationBarStyle = UIBarStyleBlackTranslucent;
+		//Set navigation bar color
+		self.navigationBarTintColor = [UIColor colorWithRed:0.180 green:0.267 blue: 0.173 alpha:1.0];
 		
 	}
 	return self;
