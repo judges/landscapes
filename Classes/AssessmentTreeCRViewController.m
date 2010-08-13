@@ -235,6 +235,8 @@
     recommendationArray = [[NSMutableArray alloc] initWithArray:rArray];
     [conditionPicker selectRow:selectedConditionIndex inComponent:0 animated:YES];
     [recommendationPicker selectRow:selectedRecommendationIndex inComponent:0 animated:YES];
+    [self pickerView:conditionPicker didSelectRow:selectedConditionIndex inComponent:0];
+    [self pickerView:recommendationPicker didSelectRow:selectedRecommendationIndex inComponent:0];
 }
 
 
@@ -397,6 +399,7 @@
             TreeFormCondition *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeFormCondition" inManagedObjectContext:managedObjectContext];
             item.name = [conditionField text];
             [conditionArray addObject:item];
+            tree.form_condition = item;
             break;
         }
         case 2:
@@ -404,6 +407,7 @@
             TreeCrownCondition *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeCrownCondition" inManagedObjectContext:managedObjectContext];
             item.name = [conditionField text];
             [conditionArray addObject:item];
+            tree.crown_condition = item;
             break;
         }
         case 3:
@@ -411,6 +415,7 @@
             TreeTrunkCondition *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeTrunkCondition" inManagedObjectContext:managedObjectContext];
             item.name = [conditionField text];
             [conditionArray addObject:item];
+            tree.trunk_condition = item;
             break;
         }
         case 4:
@@ -418,6 +423,7 @@
             TreeRootFlareCondition *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootFlareCondition" inManagedObjectContext:managedObjectContext];
             item.name = [conditionField text];
             [conditionArray addObject:item];
+            tree.rootflare_condition = item;
             break;
         }
         case 5:
@@ -425,6 +431,7 @@
             TreeRootsCondition *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootsCondition" inManagedObjectContext:managedObjectContext];
             item.name = [conditionField text];
             [conditionArray addObject:item];
+            tree.roots_condition = item;
             break;
         }
         case 6:
@@ -432,6 +439,7 @@
             TreeOverallCondition *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeOverallCondition" inManagedObjectContext:managedObjectContext];
             item.name = [conditionField text];
             [conditionArray addObject:item];
+            tree.overall_condition = item;
             break;
         }
         default:
@@ -444,7 +452,7 @@
     [conditionStringArray addObject:[conditionField text]];
     [conditionPicker reloadComponent:0];
     conditionField.text = @"";
-    [conditionPicker selectRow:[conditionStringArray count] - 1 inComponent:0 animated:YES];
+    [conditionPicker selectRow:[conditionArray count] - 1 inComponent:0 animated:YES];
 }
 -(IBAction)recommendationSaveButtonClick {
     //save new or edit existing recommendation
@@ -460,6 +468,7 @@
             TreeFormRecommendation *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeFormRecommendation" inManagedObjectContext:managedObjectContext];
             item.name = [recommendationField text];
             [recommendationArray addObject:item];
+            tree.form_recommendation = item;
             break;
         }
         case 2:
@@ -467,6 +476,7 @@
             TreeCrownRecommendation *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeCrownRecommendation" inManagedObjectContext:managedObjectContext];
             item.name = [recommendationField text];
             [recommendationArray addObject:item];
+            tree.crown_recommendation = item;
             break;
         }
         case 3:
@@ -474,6 +484,7 @@
             TreeTrunkRecommendation *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeTrunkRecommendation" inManagedObjectContext:managedObjectContext];
             item.name = [recommendationField text];
             [recommendationArray addObject:item];
+            tree.trunk_recommendation = item;
             break;
         }
         case 4:
@@ -481,6 +492,7 @@
             TreeRootFlareRecommendation *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootFlareRecommendation" inManagedObjectContext:managedObjectContext];
             item.name = [recommendationField text];
             [recommendationArray addObject:item];
+            tree.rootflare_recommendation = item;
             break;
         }
         case 5:
@@ -488,6 +500,7 @@
             TreeRootsRecommendation *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootsRecommendation" inManagedObjectContext:managedObjectContext];
             item.name = [recommendationField text];
             [recommendationArray addObject:item];
+            tree.roots_recommendation = item;
             break;
         }
         case 6:
@@ -495,6 +508,7 @@
             TreeOverallRecommendation *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeOverallRecommendation" inManagedObjectContext:managedObjectContext];
             item.name = [recommendationField text];
             [recommendationArray addObject:item];
+            tree.overall_recommendation = item;
             break;
         }
         default:
