@@ -124,10 +124,7 @@
 															   URL:@"land://data/Settings" canDelete:NO] autorelease],								
 							
 
-							 
-							[[[TTLauncherItem alloc] initWithTitle:@"NCPTT Web"
-															 image:@"bundle://ncptt-57.png"
-															   URL:@"http://www.ncptt.nps.gov" canDelete:NO] autorelease],	
+							
 							
 							
 							
@@ -138,6 +135,9 @@
 						   [NSArray arrayWithObjects:
 						
 							
+							[[[TTLauncherItem alloc] initWithTitle:@"NCPTT Web"
+															 image:@"bundle://ncptt-57.png"
+															   URL:@"http://www.ncptt.nps.gov" canDelete:NO] autorelease],								
 
 							
 							nil],

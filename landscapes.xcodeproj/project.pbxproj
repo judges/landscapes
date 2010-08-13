@@ -45,8 +45,6 @@
 		09F2963A12145DA400783F36 /* AssessmentTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F2962612145DA400783F36 /* AssessmentTree.m */; };
 		09F2963B12145DA400783F36 /* AssessmentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F2962812145DA400783F36 /* AssessmentType.m */; };
 		09F2963C12145DA400783F36 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F2962A12145DA400783F36 /* Image.m */; };
-		141DFCCA120A955D00F86792 /* VegetationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 141DFCC8120A955D00F86792 /* VegetationVC.m */; };
-		141DFCCB120A955D00F86792 /* VegetationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141DFCC9120A955D00F86792 /* VegetationVC.xib */; };
 		1429CE9112135575007F912D /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1429CE9012135575007F912D /* ReadMe.txt */; };
 		14327C1C12138D280087D958 /* parks-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 14327C1B12138D280087D958 /* parks-57.png */; };
 		14327C1E12138E890087D958 /* wildlife-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 14327C1D12138E890087D958 /* wildlife-57.png */; };
@@ -300,9 +298,6 @@
 		09F2962812145DA400783F36 /* AssessmentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssessmentType.m; path = ../AssessmentType.m; sourceTree = "<group>"; };
 		09F2962912145DA400783F36 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Image.h; path = ../Image.h; sourceTree = "<group>"; };
 		09F2962A12145DA400783F36 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Image.m; path = ../Image.m; sourceTree = "<group>"; };
-		141DFCC7120A955D00F86792 /* VegetationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VegetationVC.h; sourceTree = "<group>"; };
-		141DFCC8120A955D00F86792 /* VegetationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VegetationVC.m; sourceTree = "<group>"; };
-		141DFCC9120A955D00F86792 /* VegetationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VegetationVC.xib; sourceTree = "<group>"; };
 		1429CE9012135575007F912D /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 		14327C1B12138D280087D958 /* parks-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parks-57.png"; sourceTree = "<group>"; };
 		14327C1D12138E890087D958 /* wildlife-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wildlife-57.png"; sourceTree = "<group>"; };
@@ -465,9 +460,6 @@
 				091E33AE12086B8E0046784A /* Assessments */,
 				14EBCDA811FE195700F36458 /* LauncherViewController.h */,
 				14EBCDA911FE195700F36458 /* LauncherViewController.m */,
-				141DFCC7120A955D00F86792 /* VegetationVC.h */,
-				141DFCC8120A955D00F86792 /* VegetationVC.m */,
-				141DFCC9120A955D00F86792 /* VegetationVC.xib */,
 				0946344E1210A86500773E50 /* PhotoViewController.h */,
 				0946344F1210A86500773E50 /* PhotoViewController.m */,
 			);
@@ -879,7 +871,6 @@
 				091E377B1208CADE0046784A /* add_50.png in Resources */,
 				091E39191209C9BD0046784A /* delete_50.png in Resources */,
 				091E391D1209CAEE0046784A /* edit_50.png in Resources */,
-				141DFCCB120A955D00F86792 /* VegetationVC.xib in Resources */,
 				1464EB83120AC64600F21DCE /* archeologist-57.png in Resources */,
 				1464EB84120AC64600F21DCE /* structures-57.png in Resources */,
 				1464EB85120AC64600F21DCE /* assessments-57.png in Resources */,
@@ -916,7 +907,6 @@
 				09AED84011FF29760040A385 /* AssessmentTableViewCell.m in Sources */,
 				09F0D136120722F800BD9631 /* AssessmentTreeViewAndInputController.m in Sources */,
 				091E33A812086B5E0046784A /* AssessmentTreeCRViewController.m in Sources */,
-				141DFCCA120A955D00F86792 /* VegetationVC.m in Sources */,
 				094634461210A7A700773E50 /* DisplayPhoto.m in Sources */,
 				0946344B1210A81900773E50 /* PhotoSet.m in Sources */,
 				094634501210A86500773E50 /* PhotoViewController.m in Sources */,
