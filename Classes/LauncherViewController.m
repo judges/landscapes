@@ -19,6 +19,8 @@
 	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
 
 		self.title = @"Landscapes";
+		self.navigationBarTintColor = [UIColor colorWithRed:0.180 green:0.267 blue:
+									   0.173 alpha:1.0]; 
 
 		//self.statusBarStyle = UIBarStyleBlackTranslucent;
 		//self.navigationBarStyle = UIBarStyleBlackTranslucent;
@@ -57,7 +59,8 @@
 	[super loadView];
 	
 	_launcherView = [[TTLauncherView alloc] initWithFrame:self.view.bounds];
-	_launcherView.backgroundColor = [UIColor darkGrayColor];
+	_launcherView.backgroundColor = [UIColor colorWithRed:0.486 green:0.318 blue:
+									 0.192 alpha:1.0];
 	_launcherView.opaque = YES;
 	_launcherView.delegate = self;
 	_launcherView.columnCount = 3;
@@ -125,9 +128,9 @@
 							
 
 							 
-							[[[TTLauncherItem alloc] initWithTitle:@"About NCPTT"
+							[[[TTLauncherItem alloc] initWithTitle:@"NCPTT Web"
 															 image:@"bundle://ncptt-57.png"
-															   URL:@"land://data/About" canDelete:NO] autorelease],	
+															   URL:@"http://www.ncptt.nps.gov" canDelete:NO] autorelease],	
 							
 							
 							
@@ -157,7 +160,7 @@
 
 - (void)launcherView:(TTLauncherView*)launcher didSelectItem:(TTLauncherItem*)item {
 	TTNavigator *navigator = [TTNavigator navigator];
-	
+
     [navigator openURLAction:[TTURLAction actionWithURLPath:item.URL]];
 	
 }

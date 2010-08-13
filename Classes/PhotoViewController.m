@@ -15,6 +15,8 @@
 
 -(id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query {
     //initializes and passes assessment from parent controller
+	self.navigationBarTintColor = [UIColor colorWithRed:0.000 green:0.368 blue:
+								   0.125 alpha:1.0]; 
     if (self = [super init]){ 
         if(query && [query objectForKey:@"entity"]){ 
             self.entityString = (NSString*) [query objectForKey:@"entity"]; 
