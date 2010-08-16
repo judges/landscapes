@@ -21,6 +21,7 @@
             whichId = [query objectForKey:@"id"];
             //pass the TreeAssessment from the previous view
             tree = [query objectForKey:@"assessmentTree"];
+            NSLog(@"%@", tree);
             //initialize the arrays to store the conditions and recommendations
             conditionStringArray = [[NSMutableArray alloc] init];
             recommendationStringArray = [[NSMutableArray alloc] init];
