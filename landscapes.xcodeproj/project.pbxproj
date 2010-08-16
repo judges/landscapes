@@ -426,6 +426,7 @@
 		09AED84111FF2EF40040A385 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				09F2937F121336BC00783F36 /* Not Generated */,
 				09EF39DA1219E2050053E9CA /* TreeRootFlareRecommendation.h */,
 				09EF39DB1219E2050053E9CA /* TreeRootFlareRecommendation.m */,
 				09EF39DC1219E2050053E9CA /* TreeRoots.h */,
@@ -474,7 +475,6 @@
 				09EF3A071219E2050053E9CA /* Assessment.m */,
 				09EF3A081219E2050053E9CA /* TreeRootsCondition.h */,
 				09EF3A091219E2050053E9CA /* TreeRootsCondition.m */,
-				09F2937F121336BC00783F36 /* Not Generated */,
 			);
 			name = Models;
 			sourceTree = "<group>";

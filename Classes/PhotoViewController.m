@@ -8,6 +8,7 @@
 
 #import "PhotoViewController.h"
 #import "PhotoSet.h"
+#import "DisplayPhoto.h"
 
 @implementation PhotoViewController
 @synthesize photoSet = _photoSet;
@@ -81,76 +82,6 @@
     } 
     [self addPhotosFromObjectString:self.entityString withId:self.objID andComparator:@"self"];
 
-    
-    /*
-    NSManagedObjectContext *managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-    // Create the fetch request for the entity.
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    // Grab AssessmentTree that matches the Assessment.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:self.entityString inManagedObjectContext:managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    
-    //HACK HACK HACK
-    if (![self.entityString isEqualToString:@"Photo"]) {
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self == %@", objID];
-            [fetchRequest setPredicate:predicate];
-    }
-    
-    NSError *error;
-    NSMutableArray *fetchedObjects = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:&error]];
-    NSLog(@"Fetched Objects: %@", fetchedObjects);
-    for (NSManagedObject *property in fetchedObjects)
-    {
-        if ([property.entity.propertiesByName objectForKey:@"images"]) {
-            for (Image *image in ((Photo *)property).images)
-            {
-                NSLog(@"TESTTEST");
-                [photos addObject:image.image_data];
-                [ids addObject:image.objectID];
-            }
-            //grab images one level down. This will need to be changed to some sort of
-            //recursive function if we add another level in the future.
-            
-            if (![self.entityString isEqualToString:@"Photo"]) {
-                for (NSString *sub in property.entity.relationshipsByName)
-                {
-                    NSLog(@"///////////Property: %@////////////", sub);
-                    NSRelationshipDescription *rel = [property.entity.relationshipsByName objectForKey:sub];
-                    NSLog(@"%@", [rel.destinationEntity.relationshipsByName objectForKey:@"images"]);
-                    if ([rel.destinationEntity.relationshipsByName objectForKey:@"images"] && ![sub isEqualToString:@"assessment"] && ![sub isEqualToString:@"tree"] && ![sub isEqualToString:@"landscape"]) {
-                        NSFetchRequest *subFetchRequest = [[NSFetchRequest alloc] init];
-                        NSEntityDescription *entity = [NSEntityDescription entityForName:rel.destinationEntity.name inManagedObjectContext:managedObjectContext];
-                        [subFetchRequest setEntity:entity];
-                        NSLog(@"Entity Name: %@", entity.name);
-                        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"tree == %@", property];
-                        NSLog(@"%@ == %@", property.entity.name, property);
-                        [subFetchRequest setPredicate:predicate];
-                        NSMutableArray *subFetchedObjects = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:subFetchRequest error:&error]];
-                        for (NSManagedObject *subProperty in subFetchedObjects)
-                        {
-                            NSLog(@"///////////SubProperty////////////");
-                            if ([subProperty.entity.propertiesByName objectForKey:@"images"]) {
-                                NSLog(@"///////////Has Images////////////");
-                                for (Image *subImage in ((Photo *)subProperty).images)
-                                {
-                                    NSLog(@"We have a subimage!");
-                                    [photos addObject:subImage.image_data];
-                                    [ids addObject:subImage.objectID];
-                                }
-                            }
-                        }
-                        [subFetchRequest release];
-                    }
-                    
-                }
-            }
-            
-        }
-        
-    }
-    [fetchRequest release];
-    */
     self.photoSource = [[PhotoSet alloc] initWithTitle:@"Photos" photos:photos ids:ids];
     count = [photos count];    
     
@@ -196,6 +127,9 @@
 }
 
 - (void) dealloc {
+    for (DisplayPhoto *p in self.photoSet.photos) {
+        [p release];
+    }
     [photos release];
     [ids release];
     [_deleteButton release];
