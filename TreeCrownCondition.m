@@ -8,9 +8,11 @@
 
 #import "TreeCrownCondition.h"
 
+#import "TreeCrown.h"
 
 @implementation TreeCrownCondition 
 
 @dynamic name;
+@dynamic crown;
 
 @end

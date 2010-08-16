@@ -8,9 +8,11 @@
 
 #import "TreeTrunkCondition.h"
 
+#import "TreeTrunk.h"
 
 @implementation TreeTrunkCondition 
 
 @dynamic name;
+@dynamic trunk;
 
 @end

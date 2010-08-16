@@ -15,7 +15,7 @@
 @implementation TreeTrunk 
 
 @dynamic condition;
-@dynamic tree;
 @dynamic recommendation;
+@dynamic tree;
 
 @end

@@ -8,14 +8,23 @@
 
 #import <CoreData/CoreData.h>
 
+@class TreeForm;
 
 @interface TreeFormCondition :  NSManagedObject  
 {
 }
 
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSSet* form;
 
 @end
 
 
+@interface TreeFormCondition (CoreDataGeneratedAccessors)
+- (void)addFormObject:(TreeForm *)value;
+- (void)removeFormObject:(TreeForm *)value;
+- (void)addForm:(NSSet *)value;
+- (void)removeForm:(NSSet *)value;
+
+@end
 

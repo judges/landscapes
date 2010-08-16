@@ -126,6 +126,19 @@
     TreeOverallRecommendation *treeOverallRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeOverallRecommendation" inManagedObjectContext:context];
     treeOverallRecommendation.name = @"No Action";
     
+    TreeCrown *treeCrown = [NSEntityDescription insertNewObjectForEntityForName:@"TreeCrown" inManagedObjectContext:context];
+    assessmentTree.crown = treeCrown;
+    TreeForm *treeForm = [NSEntityDescription insertNewObjectForEntityForName:@"TreeForm" inManagedObjectContext:context];
+    assessmentTree.form = treeForm;
+    TreeTrunk *treeTrunk = [NSEntityDescription insertNewObjectForEntityForName:@"TreeTrunk" inManagedObjectContext:context];
+    assessmentTree.trunk = treeTrunk;
+    TreeRootFlare *treeRootFlare = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootFlare" inManagedObjectContext:context];
+    assessmentTree.rootflare = treeRootFlare;
+    TreeRoots *treeRoots = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRoots" inManagedObjectContext:context];
+    assessmentTree.roots = treeRoots;
+    TreeOverall *treeOverall = [NSEntityDescription insertNewObjectForEntityForName:@"TreeOverall" inManagedObjectContext:context];
+    assessmentTree.overall = treeOverall;
+    
     assessmentTree.crown.condition = treeCrownCondition;
     assessmentTree.form.condition = treeFormCondition;
     assessmentTree.rootflare.condition = treeRootFlareCondition;
@@ -233,7 +246,19 @@
         new.type = selectedType;
         new.landscape = selectedLandscape;
         new.created_at = [NSDate date];
-
+        TreeCrown *treeCrown = [NSEntityDescription insertNewObjectForEntityForName:@"TreeCrown" inManagedObjectContext:managedObjectContext];
+        new.crown = treeCrown;
+        TreeForm *treeForm = [NSEntityDescription insertNewObjectForEntityForName:@"TreeForm" inManagedObjectContext:managedObjectContext];
+        new.form = treeForm;
+        TreeTrunk *treeTrunk = [NSEntityDescription insertNewObjectForEntityForName:@"TreeTrunk" inManagedObjectContext:managedObjectContext];
+        new.trunk = treeTrunk;
+        TreeRootFlare *treeRootFlare = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootFlare" inManagedObjectContext:managedObjectContext];
+        new.rootflare = treeRootFlare;
+        TreeRoots *treeRoots = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRoots" inManagedObjectContext:managedObjectContext];
+        new.roots = treeRoots;
+        TreeOverall *treeOverall = [NSEntityDescription insertNewObjectForEntityForName:@"TreeOverall" inManagedObjectContext:managedObjectContext];
+        new.overall = treeOverall;
+        
         if (![managedObjectContext save:&error]) {
             NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
         }

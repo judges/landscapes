@@ -18,8 +18,8 @@
 }
 
 @property (nonatomic, retain) TreeRootFlareCondition * condition;
-@property (nonatomic, retain) TreeRootFlareRecommendation * recommendation;
 @property (nonatomic, retain) AssessmentTree * tree;
+@property (nonatomic, retain) TreeRootFlareRecommendation * recommendation;
 
 @end
 

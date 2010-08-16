@@ -18,8 +18,8 @@
 }
 
 @property (nonatomic, retain) TreeFormCondition * condition;
-@property (nonatomic, retain) AssessmentTree * tree;
 @property (nonatomic, retain) TreeFormRecommendation * recommendation;
+@property (nonatomic, retain) AssessmentTree * tree;
 
 @end
 

@@ -8,9 +8,11 @@
 
 #import "TreeRootsRecommendation.h"
 
+#import "TreeRoots.h"
 
 @implementation TreeRootsRecommendation 
 
 @dynamic name;
+@dynamic roots;
 
 @end

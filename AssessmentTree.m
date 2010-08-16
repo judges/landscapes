@@ -8,7 +8,10 @@
 
 #import "AssessmentTree.h"
 
+#import "TreeCrown.h"
+#import "TreeForm.h"
 #import "TreeOverall.h"
+#import "TreeRootFlare.h"
 #import "TreeRoots.h"
 #import "TreeTrunk.h"
 
@@ -16,11 +19,11 @@
 
 @dynamic height;
 @dynamic caliper;
-@dynamic form;
+@dynamic crown;
 @dynamic rootflare;
 @dynamic roots;
 @dynamic trunk;
 @dynamic overall;
-@dynamic crown;
+@dynamic form;
 
 @end

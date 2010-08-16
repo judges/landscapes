@@ -30,7 +30,7 @@
     self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
     if (self.assessmentTree) {
         self.caliper.text = [NSString stringWithFormat:@"%@ \'", [self.assessmentTree.caliper stringValue]];
-        self.height.text = [NSString stringWithFormat:@"%@ \'", [self.assessmentTree.height stringValue]]   ;
+        self.height.text = [NSString stringWithFormat:@"%@ \'", [self.assessmentTree.height stringValue]];
         self.formCText.text = self.assessmentTree.form.condition.name;
         self.crownCText.text = self.assessmentTree.crown.condition.name;
         self.trunkCText.text = self.assessmentTree.trunk.condition.name;

@@ -15,7 +15,7 @@
 @implementation TreeOverall 
 
 @dynamic condition;
-@dynamic tree;
 @dynamic recommendation;
+@dynamic tree;
 
 @end

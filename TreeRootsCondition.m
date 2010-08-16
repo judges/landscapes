@@ -8,9 +8,11 @@
 
 #import "TreeRootsCondition.h"
 
+#import "TreeRoots.h"
 
 @implementation TreeRootsCondition 
 
 @dynamic name;
+@dynamic roots;
 
 @end

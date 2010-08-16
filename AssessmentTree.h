@@ -9,12 +9,12 @@
 #import <CoreData/CoreData.h>
 #import "Assessment.h"
 
+@class TreeCrown;
+@class TreeForm;
 @class TreeOverall;
+@class TreeRootFlare;
 @class TreeRoots;
 @class TreeTrunk;
-@class TreeForm;
-@class TreeRootFlare;
-@class TreeCrown;
 
 @interface AssessmentTree :  Assessment  
 {
@@ -22,12 +22,12 @@
 
 @property (nonatomic, retain) NSDecimalNumber * height;
 @property (nonatomic, retain) NSDecimalNumber * caliper;
-@property (nonatomic, retain) TreeForm * form;
+@property (nonatomic, retain) TreeCrown * crown;
 @property (nonatomic, retain) TreeRootFlare * rootflare;
 @property (nonatomic, retain) TreeRoots * roots;
 @property (nonatomic, retain) TreeTrunk * trunk;
 @property (nonatomic, retain) TreeOverall * overall;
-@property (nonatomic, retain) TreeCrown * crown;
+@property (nonatomic, retain) TreeForm * form;
 
 @end
 

@@ -8,9 +8,11 @@
 
 #import "TreeOverallCondition.h"
 
+#import "TreeOverall.h"
 
 @implementation TreeOverallCondition 
 
 @dynamic name;
+@dynamic overall;
 
 @end

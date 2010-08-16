@@ -8,9 +8,11 @@
 
 #import "TreeCrownRecommendation.h"
 
+#import "TreeCrown.h"
 
 @implementation TreeCrownRecommendation 
 
 @dynamic name;
+@dynamic crown;
 
 @end

@@ -12,8 +12,8 @@
 
 @implementation Image 
 
-@dynamic image_caption;
 @dynamic image_data;
+@dynamic image_caption;
 @dynamic owner;
 
 @end

@@ -8,9 +8,11 @@
 
 #import "TreeTrunkRecommendation.h"
 
+#import "TreeTrunk.h"
 
 @implementation TreeTrunkRecommendation 
 
 @dynamic name;
+@dynamic trunk;
 
 @end

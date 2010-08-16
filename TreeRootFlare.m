@@ -15,7 +15,7 @@
 @implementation TreeRootFlare 
 
 @dynamic condition;
-@dynamic recommendation;
 @dynamic tree;
+@dynamic recommendation;
 
 @end

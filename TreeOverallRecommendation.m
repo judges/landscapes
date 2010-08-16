@@ -8,9 +8,11 @@
 
 #import "TreeOverallRecommendation.h"
 
+#import "TreeOverall.h"
 
 @implementation TreeOverallRecommendation 
 
 @dynamic name;
+@dynamic overall;
 
 @end

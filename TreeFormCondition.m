@@ -8,9 +8,11 @@
 
 #import "TreeFormCondition.h"
 
+#import "TreeForm.h"
 
 @implementation TreeFormCondition 
 
 @dynamic name;
+@dynamic form;
 
 @end

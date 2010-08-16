@@ -14,8 +14,8 @@
 {
 }
 
-@property (nonatomic, retain) NSString * image_caption;
 @property (nonatomic, retain) NSData * image_data;
+@property (nonatomic, retain) NSString * image_caption;
 @property (nonatomic, retain) Photo * owner;
 
 @end

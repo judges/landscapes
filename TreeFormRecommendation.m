@@ -8,9 +8,11 @@
 
 #import "TreeFormRecommendation.h"
 
+#import "TreeForm.h"
 
 @implementation TreeFormRecommendation 
 
 @dynamic name;
+@dynamic form;
 
 @end

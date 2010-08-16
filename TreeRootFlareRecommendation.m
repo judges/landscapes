@@ -8,9 +8,11 @@
 
 #import "TreeRootFlareRecommendation.h"
 
+#import "TreeRootFlare.h"
 
 @implementation TreeRootFlareRecommendation 
 
 @dynamic name;
+@dynamic rootflare;
 
 @end

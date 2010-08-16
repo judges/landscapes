@@ -8,9 +8,11 @@
 
 #import "TreeRootFlareCondition.h"
 
+#import "TreeRootFlare.h"
 
 @implementation TreeRootFlareCondition 
 
 @dynamic name;
+@dynamic rootflare;
 
 @end
