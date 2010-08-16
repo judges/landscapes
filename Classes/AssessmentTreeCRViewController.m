@@ -118,14 +118,14 @@
         case 1:
         {
             for (TreeFormCondition *item in cArray) {
-                if (tree.form_condition == item) {
+                if (tree.form.condition == item) {
                     selectedConditionIndex = cCtr;
                 }
                 ++cCtr;
                 [conditionStringArray addObject:item.name];
             }
             for (TreeFormRecommendation *item in rArray) {
-                if (tree.form_recommendation == item) {
+                if (tree.form.recommendation == item) {
                     selectedRecommendationIndex = rCtr;
                 }
                 ++rCtr;
@@ -136,14 +136,14 @@
         case 2:
         {
             for (TreeCrownCondition *item in cArray) {
-                if (tree.crown_condition == item) {
+                if (tree.crown.condition == item) {
                     selectedConditionIndex = cCtr;
                 }
                 ++cCtr;
                 [conditionStringArray addObject:item.name];
             }
             for (TreeCrownRecommendation *item in rArray) {
-                if (tree.crown_recommendation == item) {
+                if (tree.crown.recommendation == item) {
                     selectedRecommendationIndex = rCtr;
                 }
                 ++rCtr;
@@ -154,14 +154,14 @@
         case 3:
         {
             for (TreeTrunkCondition *item in cArray) {
-                if (tree.trunk_condition == item) {
+                if (tree.trunk.condition == item) {
                     selectedConditionIndex = cCtr;
                 }
                 ++cCtr;
                 [conditionStringArray addObject:item.name];
             }
             for (TreeTrunkRecommendation *item in rArray) {
-                if (tree.trunk_recommendation == item) {
+                if (tree.trunk.recommendation == item) {
                     selectedRecommendationIndex = rCtr;
                 }
                 ++rCtr;
@@ -172,14 +172,14 @@
         case 4:
         {
             for (TreeRootFlareCondition *item in cArray) {
-                if (tree.rootflare_condition == item) {
+                if (tree.rootflare.condition == item) {
                     selectedConditionIndex = cCtr;
                 }
                 ++cCtr;
                 [conditionStringArray addObject:item.name];
             }
             for (TreeRootFlareRecommendation *item in rArray) {
-                if (tree.rootflare_recommendation == item) {
+                if (tree.rootflare.recommendation == item) {
                     selectedRecommendationIndex = rCtr;
                 }
                 ++rCtr;
@@ -190,14 +190,14 @@
         case 5:
         {
             for (TreeRootsCondition *item in cArray) {
-                if (tree.roots_condition == item) {
+                if (tree.roots.condition == item) {
                     selectedConditionIndex = cCtr;
                 }
                 ++cCtr;
                 [conditionStringArray addObject:item.name];
             }
             for (TreeRootsRecommendation *item in rArray) {
-                if (tree.roots_recommendation == item) {
+                if (tree.roots.recommendation == item) {
                     selectedRecommendationIndex = rCtr;
                 }
                 ++rCtr;
@@ -208,14 +208,14 @@
         case 6:
         {
             for (TreeOverallCondition *item in cArray) {
-                if (tree.overall_condition == item) {
+                if (tree.overall.condition == item) {
                     selectedConditionIndex = cCtr;
                 }
                 ++cCtr;
                 [conditionStringArray addObject:item.name];
             }
             for (TreeOverallRecommendation *item in rArray) {
-                if (tree.overall_recommendation == item) {
+                if (tree.overall.recommendation == item) {
                     selectedRecommendationIndex = rCtr;
                 }
                 ++rCtr;
@@ -399,7 +399,7 @@
             TreeFormCondition *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeFormCondition" inManagedObjectContext:managedObjectContext];
             item.name = [conditionField text];
             [conditionArray addObject:item];
-            tree.form_condition = item;
+            tree.form.condition = item;
             break;
         }
         case 2:
@@ -407,7 +407,7 @@
             TreeCrownCondition *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeCrownCondition" inManagedObjectContext:managedObjectContext];
             item.name = [conditionField text];
             [conditionArray addObject:item];
-            tree.crown_condition = item;
+            tree.crown.condition = item;
             break;
         }
         case 3:
@@ -415,7 +415,7 @@
             TreeTrunkCondition *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeTrunkCondition" inManagedObjectContext:managedObjectContext];
             item.name = [conditionField text];
             [conditionArray addObject:item];
-            tree.trunk_condition = item;
+            tree.trunk.condition = item;
             break;
         }
         case 4:
@@ -423,7 +423,7 @@
             TreeRootFlareCondition *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootFlareCondition" inManagedObjectContext:managedObjectContext];
             item.name = [conditionField text];
             [conditionArray addObject:item];
-            tree.rootflare_condition = item;
+            tree.rootflare.condition = item;
             break;
         }
         case 5:
@@ -431,7 +431,7 @@
             TreeRootsCondition *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootsCondition" inManagedObjectContext:managedObjectContext];
             item.name = [conditionField text];
             [conditionArray addObject:item];
-            tree.roots_condition = item;
+            tree.roots.condition = item;
             break;
         }
         case 6:
@@ -439,7 +439,7 @@
             TreeOverallCondition *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeOverallCondition" inManagedObjectContext:managedObjectContext];
             item.name = [conditionField text];
             [conditionArray addObject:item];
-            tree.overall_condition = item;
+            tree.overall.condition = item;
             break;
         }
         default:
@@ -468,7 +468,7 @@
             TreeFormRecommendation *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeFormRecommendation" inManagedObjectContext:managedObjectContext];
             item.name = [recommendationField text];
             [recommendationArray addObject:item];
-            tree.form_recommendation = item;
+            tree.form.recommendation = item;
             break;
         }
         case 2:
@@ -476,7 +476,7 @@
             TreeCrownRecommendation *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeCrownRecommendation" inManagedObjectContext:managedObjectContext];
             item.name = [recommendationField text];
             [recommendationArray addObject:item];
-            tree.crown_recommendation = item;
+            tree.crown.recommendation = item;
             break;
         }
         case 3:
@@ -484,7 +484,7 @@
             TreeTrunkRecommendation *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeTrunkRecommendation" inManagedObjectContext:managedObjectContext];
             item.name = [recommendationField text];
             [recommendationArray addObject:item];
-            tree.trunk_recommendation = item;
+            tree.trunk.recommendation = item;
             break;
         }
         case 4:
@@ -492,7 +492,7 @@
             TreeRootFlareRecommendation *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootFlareRecommendation" inManagedObjectContext:managedObjectContext];
             item.name = [recommendationField text];
             [recommendationArray addObject:item];
-            tree.rootflare_recommendation = item;
+            tree.rootflare.recommendation = item;
             break;
         }
         case 5:
@@ -500,7 +500,7 @@
             TreeRootsRecommendation *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootsRecommendation" inManagedObjectContext:managedObjectContext];
             item.name = [recommendationField text];
             [recommendationArray addObject:item];
-            tree.roots_recommendation = item;
+            tree.roots.recommendation = item;
             break;
         }
         case 6:
@@ -508,7 +508,7 @@
             TreeOverallRecommendation *item = [NSEntityDescription insertNewObjectForEntityForName:@"TreeOverallRecommendation" inManagedObjectContext:managedObjectContext];
             item.name = [recommendationField text];
             [recommendationArray addObject:item];
-            tree.overall_recommendation = item;
+            tree.overall.recommendation = item;
             break;
         }
         default:
@@ -590,37 +590,37 @@
             case 1:
             {
                 TreeFormCondition *fc = (TreeFormCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
-                tree.form_condition = fc;
+                tree.form.condition = fc;
                 break;
             }
             case 2:
             {
                 TreeCrownCondition *fc = (TreeCrownCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
-                tree.crown_condition = fc;
+                tree.crown.condition = fc;
                 break;
             }
             case 3:
             {
                 TreeTrunkCondition *fc = (TreeTrunkCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
-                tree.trunk_condition = fc;
+                tree.trunk.condition = fc;
                 break;
             }
             case 4:
             {
                 TreeRootFlareCondition *fc = (TreeRootFlareCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
-                tree.rootflare_condition = fc;
+                tree.rootflare.condition = fc;
                 break;
             }
             case 5:
             {
                 TreeRootsCondition *fc = (TreeRootsCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
-                tree.roots_condition = fc;
+                tree.roots.condition = fc;
                 break;
             }
             case 6:
             {
                 TreeOverallCondition *fc = (TreeOverallCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
-                tree.overall_condition = fc;
+                tree.overall.condition = fc;
                 break;
             }
             default:
@@ -634,37 +634,37 @@
             case 1:
             {
                 TreeFormRecommendation *fr = (TreeFormRecommendation *)[recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
-                tree.form_recommendation = fr;
+                tree.form.recommendation = fr;
                 break;
             }
             case 2:
             {
                 TreeCrownRecommendation *fr = (TreeCrownRecommendation *)[recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
-                tree.crown_recommendation = fr;
+                tree.crown.recommendation = fr;
                 break;
             }
             case 3:
             {
                 TreeTrunkRecommendation *fc = (TreeTrunkRecommendation *)[recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
-                tree.trunk_recommendation = fc;
+                tree.trunk.recommendation = fc;
                 break;
             }
             case 4:
             {
                 TreeRootFlareRecommendation *fc = (TreeRootFlareRecommendation *)[recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
-                tree.rootflare_recommendation = fc;
+                tree.rootflare.recommendation = fc;
                 break;
             }
             case 5:
             {
                 TreeRootsRecommendation *fc = (TreeRootsRecommendation *)[recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
-                tree.roots_recommendation = fc;
+                tree.roots.recommendation = fc;
                 break;
             }
             case 6:
             {
                 TreeOverallRecommendation *fc = (TreeOverallRecommendation *)[recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
-                tree.overall_recommendation = fc;
+                tree.overall.recommendation = fc;
                 break;
             }
             default:
@@ -758,49 +758,49 @@
         case 1:
         {
             newPhoto.image_caption = @"Tree Assessment Form Condition";
-            NSMutableSet *photos = [tree.form_condition mutableSetValueForKey:@"images"];
+            NSMutableSet *photos = [tree.form mutableSetValueForKey:@"images"];
             [photos addObject:newPhoto];
-            [tree.form_condition setValue:photos forKey:@"images"];
+            [tree.form setValue:photos forKey:@"images"];
         }
             break;
         case 2:
         {
             newPhoto.image_caption = @"Tree Assessment Crown Condition";
-            NSMutableSet *photos = [tree.crown_condition mutableSetValueForKey:@"images"];
+            NSMutableSet *photos = [tree.crown mutableSetValueForKey:@"images"];
             [photos addObject:newPhoto];
-            [tree.crown_condition setValue:photos forKey:@"images"];
+            [tree.crown setValue:photos forKey:@"images"];
         }
             break;
         case 3:
         {
             newPhoto.image_caption = @"Tree Assessment Trunk Condition";
-            NSMutableSet *photos = [tree.trunk_condition mutableSetValueForKey:@"images"];
+            NSMutableSet *photos = [tree.trunk mutableSetValueForKey:@"images"];
             [photos addObject:newPhoto];
-            [tree.trunk_condition setValue:photos forKey:@"images"];
+            [tree.trunk setValue:photos forKey:@"images"];
         }
             break;
         case 4:
         {
             newPhoto.image_caption = @"Tree Assessment Rootflare Condition";
-            NSMutableSet *photos = [tree.rootflare_condition mutableSetValueForKey:@"images"];
+            NSMutableSet *photos = [tree.rootflare mutableSetValueForKey:@"images"];
             [photos addObject:newPhoto];
-            [tree.rootflare_condition setValue:photos forKey:@"images"];
+            [tree.rootflare setValue:photos forKey:@"images"];
         }
             break;
         case 5:
         {
             newPhoto.image_caption = @"Tree Assessment Roots Condition";
-            NSMutableSet *photos = [tree.roots_condition mutableSetValueForKey:@"images"];
+            NSMutableSet *photos = [tree.roots mutableSetValueForKey:@"images"];
             [photos addObject:newPhoto];
-            [tree.roots_condition setValue:photos forKey:@"images"];
+            [tree.roots setValue:photos forKey:@"images"];
         }
             break;
         case 6:
         {
             newPhoto.image_caption = @"Tree Assessment Overall Condition";
-            NSMutableSet *photos = [tree.overall_condition mutableSetValueForKey:@"images"];
+            NSMutableSet *photos = [tree.overall mutableSetValueForKey:@"images"];
             [photos addObject:newPhoto];
-            [tree.overall_condition setValue:photos forKey:@"images"];
+            [tree.overall setValue:photos forKey:@"images"];
         }
             break;
         default:

@@ -2,30 +2,20 @@
 //  TreeOverallCondition.h
 //  landscapes
 //
-//  Created by Evan Cordell on 8/13/10.
+//  Created by Evan Cordell on 8/16/10.
 //  Copyright 2010 NCPTT. All rights reserved.
 //
 
 #import <CoreData/CoreData.h>
-#import "Photo.h"
 
-@class AssessmentTree;
 
-@interface TreeOverallCondition :  Photo  
+@interface TreeOverallCondition :  NSManagedObject  
 {
 }
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSSet* tree;
 
 @end
 
 
-@interface TreeOverallCondition (CoreDataGeneratedAccessors)
-- (void)addTreeObject:(AssessmentTree *)value;
-- (void)removeTreeObject:(AssessmentTree *)value;
-- (void)addTree:(NSSet *)value;
-- (void)removeTree:(NSSet *)value;
-
-@end
 

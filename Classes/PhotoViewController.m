@@ -38,15 +38,10 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:objectString inManagedObjectContext:managedObjectContext];
     [fetchRequest setEntity:entity];
     //Grab the object that's identified by theId, equal to a comparator
-    if ([comparator isEqualToString:@"self"]) {
-        //a hack because predicates don't let us dynamically set a key of self for some reason.
+    if (![entityString isEqualToString:@"Photo"]) {
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self == %@", theId];
-        [fetchRequest setPredicate:predicate];
-    } else {
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", comparator, theId];
-        [fetchRequest setPredicate:predicate];
+        [fetchRequest setPredicate:predicate]; 
     }
-    
 
     //fetch the objects
     NSError *error;
@@ -54,45 +49,37 @@
     for (NSManagedObject *item in fetchedObjects)
     {
         if ([item.entity.propertiesByName objectForKey:@"images"]) {
-            for (Image *image in ((Photo *)item).images)
-            {
-                [photos addObject:image.image_data];
-                [ids addObject:image.objectID];
-            }
-            //fetch children
-            //have to hardcode
+            [self addPhotos:((Photo *)item).images];
             
+            
+            //fetch children, filtered by class type. 
+            //This seems more hard coded than it should be, but it's actually the best way.
+            if ([objectString isEqualToString:@"AssessmentTree"]) {
+                [self addPhotos:((AssessmentTree *)item).form.images];
+                [self addPhotos:((AssessmentTree *)item).crown.images];
+                [self addPhotos:((AssessmentTree *)item).trunk.images];
+                [self addPhotos:((AssessmentTree *)item).rootflare.images];
+                [self addPhotos:((AssessmentTree *)item).roots.images];
+                [self addPhotos:((AssessmentTree *)item).overall.images];
+            }
         }
     }
     [fetchRequest release];
+}
+
+- (void) addPhotos:(NSSet *)arr {
+    for (Image *image in arr) {
+        [photos addObject:image.image_data];
+        [ids addObject:image.objectID];
+    }
 }
 
 - (void) viewDidLoad {
     //if called from launcher, show all photos
     if (!self.entityString) {
         self.entityString = @"Photo";
-        NSManagedObjectContext *managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-        // Create the fetch request for the entity.
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        // Grab AssessmentTree that matches the Assessment.
-        NSEntityDescription *entity = [NSEntityDescription entityForName:self.entityString inManagedObjectContext:managedObjectContext];
-        [fetchRequest setEntity:entity];
-        NSError *error;
-        NSMutableArray *fetchedObjects = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:&error]];
-        for (NSManagedObject *property in fetchedObjects)
-        {
-            if ([property.entity.propertiesByName objectForKey:@"images"]) {
-                for (Image *image in ((Photo *)property).images)
-                {
-                    [photos addObject:image.image_data];
-                    [ids addObject:image.objectID];
-                }
-            }
-        }
-        [fetchRequest release];
-    } else {
-        [self addPhotosFromObjectString:self.entityString withId:self.objID andComparator:@"self"];
-    }
+    } 
+    [self addPhotosFromObjectString:self.entityString withId:self.objID andComparator:@"self"];
 
     
     /*

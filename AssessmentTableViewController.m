@@ -126,18 +126,18 @@
     TreeOverallRecommendation *treeOverallRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeOverallRecommendation" inManagedObjectContext:context];
     treeOverallRecommendation.name = @"No Action";
     
-    assessmentTree.crown_condition = treeCrownCondition;
-    assessmentTree.form_condition = treeFormCondition;
-    assessmentTree.rootflare_condition = treeRootFlareCondition;
-    assessmentTree.roots_condition = treeRootsCondition;
-    assessmentTree.trunk_condition = treeTrunkCondition;
-    assessmentTree.overall_condition = treeOverallCondition;
-    assessmentTree.crown_recommendation = treeCrownRecommendation;
-    assessmentTree.form_recommendation = treeFormRecommendation;
-    assessmentTree.rootflare_recommendation = treeRootFlareRecommendation;
-    assessmentTree.roots_recommendation = treeRootsRecommendation;
-    assessmentTree.trunk_recommendation = treeTrunkRecommendation;
-    assessmentTree.overall_recommendation = treeOverallRecommendation;
+    assessmentTree.crown.condition = treeCrownCondition;
+    assessmentTree.form.condition = treeFormCondition;
+    assessmentTree.rootflare.condition = treeRootFlareCondition;
+    assessmentTree.roots.condition = treeRootsCondition;
+    assessmentTree.trunk.condition = treeTrunkCondition;
+    assessmentTree.overall.condition = treeOverallCondition;
+    assessmentTree.crown.recommendation = treeCrownRecommendation;
+    assessmentTree.form.recommendation = treeFormRecommendation;
+    assessmentTree.rootflare.recommendation = treeRootFlareRecommendation;
+    assessmentTree.roots.recommendation = treeRootsRecommendation;
+    assessmentTree.trunk.recommendation = treeTrunkRecommendation;
+    assessmentTree.overall.recommendation = treeOverallRecommendation;
     
     NSError *error;
     if (![context save:&error]) {
