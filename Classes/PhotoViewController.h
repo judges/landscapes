@@ -29,6 +29,6 @@
 @property (nonatomic, retain) NSMutableArray *ids;
 -(id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query;
 -(void)deleteAction;
--(void)addPhotosFromObjectString:(NSString *)objectString withId:(NSManagedObjectID *)theId andComparator:(id)comparator;
+-(void)addPhotosFromObjectString:(NSString *)objectString withId:(NSManagedObjectID *)theId andComparator:(NSString *)comparator;
 
 @end

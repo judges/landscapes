@@ -30,19 +30,24 @@
     return self;    
 }
 
--(void)addPhotosFromObjectString:(NSString *)objectString withId:(NSManagedObjectID *)theId andComparator:(id)comparator {
+-(void)addPhotosFromObjectString:(NSString *)objectString withId:(NSManagedObjectID *)theId andComparator:(NSString *)comparator {
     NSManagedObjectContext *managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     // Create the fetch request for the entity.
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Set the entity we're requesting
     NSEntityDescription *entity = [NSEntityDescription entityForName:objectString inManagedObjectContext:managedObjectContext];
     [fetchRequest setEntity:entity];
-    //Only load all of them if we're grabbing Photo
-    if (![objectString isEqualToString:@"Photo"] || ![objectString isEqualToString:@"landscape"]) {
-        //Grab the object that's identified by theId, equal to a comparator
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%@ == %@", comparator, theId];
+    //Grab the object that's identified by theId, equal to a comparator
+    if ([comparator isEqualToString:@"self"]) {
+        //a hack because predicates don't let us dynamically set a key of self for some reason.
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self == %@", theId];
+        [fetchRequest setPredicate:predicate];
+    } else {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", comparator, theId];
         [fetchRequest setPredicate:predicate];
     }
+    
+
     //fetch the objects
     NSError *error;
     NSMutableArray *fetchedObjects = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:&error]];
@@ -54,12 +59,9 @@
                 [photos addObject:image.image_data];
                 [ids addObject:image.objectID];
             }
-        }
-        for (NSString *sub in item.entity.relationshipsByName)
-        {
-            if ([item.entity.propertiesByName objectForKey:@"images"]) {
-                [self addPhotosFromObjectString:sub withId:item.objectID andComparator:item];
-            }
+            //fetch children
+            //have to hardcode
+            
         }
     }
     [fetchRequest release];
@@ -69,10 +71,29 @@
     //if called from launcher, show all photos
     if (!self.entityString) {
         self.entityString = @"Photo";
+        NSManagedObjectContext *managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+        // Create the fetch request for the entity.
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        // Grab AssessmentTree that matches the Assessment.
+        NSEntityDescription *entity = [NSEntityDescription entityForName:self.entityString inManagedObjectContext:managedObjectContext];
+        [fetchRequest setEntity:entity];
+        NSError *error;
+        NSMutableArray *fetchedObjects = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:&error]];
+        for (NSManagedObject *property in fetchedObjects)
+        {
+            if ([property.entity.propertiesByName objectForKey:@"images"]) {
+                for (Image *image in ((Photo *)property).images)
+                {
+                    [photos addObject:image.image_data];
+                    [ids addObject:image.objectID];
+                }
+            }
+        }
+        [fetchRequest release];
+    } else {
+        [self addPhotosFromObjectString:self.entityString withId:self.objID andComparator:@"self"];
     }
-    
-    
-    [self addPhotosFromObjectString:self.entityString withId:self.objID andComparator:self];
+
     
     /*
     NSManagedObjectContext *managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
