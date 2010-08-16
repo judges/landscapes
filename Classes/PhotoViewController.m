@@ -11,7 +11,7 @@
 
 @implementation PhotoViewController
 @synthesize photoSet = _photoSet;
-@synthesize count, entityString, objID;
+@synthesize count, entityString, objID, photos, ids;
 
 -(id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query {
     //initializes and passes assessment from parent controller
@@ -24,8 +24,45 @@
         if(query && [query objectForKey:@"objectID"]){ 
             self.objID = (NSManagedObjectID*) [query objectForKey:@"objectID"]; 
         } 
+        photos = [[NSMutableArray alloc] init];
+        ids = [[NSMutableArray alloc] init];
     } 
     return self;    
+}
+
+-(void)addPhotosFromObjectString:(NSString *)objectString withId:(NSManagedObjectID *)theId andComparator:(id)comparator {
+    NSManagedObjectContext *managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    // Create the fetch request for the entity.
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    // Set the entity we're requesting
+    NSEntityDescription *entity = [NSEntityDescription entityForName:objectString inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    //Only load all of them if we're grabbing Photo
+    if (![objectString isEqualToString:@"Photo"] || ![objectString isEqualToString:@"landscape"]) {
+        //Grab the object that's identified by theId, equal to a comparator
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%@ == %@", comparator, theId];
+        [fetchRequest setPredicate:predicate];
+    }
+    //fetch the objects
+    NSError *error;
+    NSMutableArray *fetchedObjects = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:&error]];
+    for (NSManagedObject *item in fetchedObjects)
+    {
+        if ([item.entity.propertiesByName objectForKey:@"images"]) {
+            for (Image *image in ((Photo *)item).images)
+            {
+                [photos addObject:image.image_data];
+                [ids addObject:image.objectID];
+            }
+        }
+        for (NSString *sub in item.entity.relationshipsByName)
+        {
+            if ([item.entity.propertiesByName objectForKey:@"images"]) {
+                [self addPhotosFromObjectString:sub withId:item.objectID andComparator:item];
+            }
+        }
+    }
+    [fetchRequest release];
 }
 
 - (void) viewDidLoad {
@@ -33,14 +70,12 @@
     if (!self.entityString) {
         self.entityString = @"Photo";
     }
-
-	//Override the default black tinted navigation bar color
-	self.navigationBarTintColor = [UIColor colorWithRed:0.180 green:0.267 blue: 0.173 alpha:1.0];
-	
-    NSMutableArray *photos = [[NSMutableArray alloc] init];
-    NSMutableArray *ids = [[NSMutableArray alloc] init];
-    NSManagedObjectContext *managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     
+    
+    [self addPhotosFromObjectString:self.entityString withId:self.objID andComparator:self];
+    
+    /*
+    NSManagedObjectContext *managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     // Create the fetch request for the entity.
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Grab AssessmentTree that matches the Assessment.
@@ -68,6 +103,7 @@
             }
             //grab images one level down. This will need to be changed to some sort of
             //recursive function if we add another level in the future.
+            
             if (![self.entityString isEqualToString:@"Photo"]) {
                 for (NSString *sub in property.entity.relationshipsByName)
                 {
@@ -106,20 +142,18 @@
         
     }
     [fetchRequest release];
-    
+    */
     self.photoSource = [[PhotoSet alloc] initWithTitle:@"Photos" photos:photos ids:ids];
-    count = [photos count];
-    [photos release];
-    [ids release];
+    count = [photos count];    
     
     //Override stuff from parent class
+    self.navigationBarTintColor = [UIColor colorWithRed:0.180 green:0.267 blue: 0.173 alpha:1.0];
     UIBarItem* space = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:
                          UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];
     _deleteButton = [[UIBarButtonItem alloc] initWithImage:
                      TTIMAGE(@"bundle://icon_trash.png") 
                      style:UIBarButtonItemStylePlain target:self action:@selector(deleteAction)];
     _toolbar.items = [NSArray arrayWithObjects: space, space, _previousButton, space, _nextButton, space, _deleteButton, nil];
-    
     _toolbar.tintColor = [UIColor colorWithRed:0.180 green:0.267 blue: 0.173 alpha:1.0];
 }
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
@@ -154,6 +188,8 @@
 }
 
 - (void) dealloc {
+    [photos release];
+    [ids release];
     [_deleteButton release];
     self.photoSet = nil; 
     self.count = 0;

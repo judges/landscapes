@@ -119,13 +119,14 @@
 }
 -(IBAction)saveAssessor:(id)sender {
     //edit the assessor field
+    NSManagedObjectContext *context = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     [assessorField resignFirstResponder];
     NSError *saveError;
-    self.assessor.text = [(UITextField*)sender text];
     self.assessmentTree.assessor = [(UITextField*)sender text];
-    if (![managedObjectContext save:&saveError]) {
+    if (![context save:&saveError]) {
         NSLog(@"Saving changes to assessor failed: %@", saveError);
     }
+    self.assessor.text = self.assessmentTree.assessor;
 }
 -(IBAction)saveCaliper:(id)sender {
     //edit the caliper field
