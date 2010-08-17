@@ -216,7 +216,7 @@
         imagePicker.delegate = self;
         [self presentModalViewController:imagePicker animated:YES];
     } else if (buttonIndex == 1) {
-        imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum; 
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary; 
         imagePicker.allowsEditing = NO; 
         imagePicker.delegate = self;
         [self presentModalViewController:imagePicker animated:YES];

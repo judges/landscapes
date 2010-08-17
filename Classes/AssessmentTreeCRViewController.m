@@ -703,7 +703,7 @@
         imagePicker.delegate = self;
         [self presentModalViewController:imagePicker animated:YES];
     } else if (buttonIndex == 1) {
-        imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum; 
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary; 
         imagePicker.allowsEditing = NO; 
         imagePicker.delegate = self;
         [self presentModalViewController:imagePicker animated:YES];
@@ -713,38 +713,38 @@
         switch ([whichId intValue]) {
             case 1:
             {
-                NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:@"TreeFormCondition", @"entity", [[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]] objectID] , @"objectID", nil];
+                NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:@"TreeForm", @"entity", [tree.form objectID] , @"objectID", nil];
                 NSLog(@"CONDITION: %@", [conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]]);
                 [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:query] applyAnimated:YES]];
                 break;
             }
             case 2:
             {
-                NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:@"TreeCrownCondition", @"entity", [[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]] objectID] , @"objectID", nil];
+                NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:@"TreeCrown", @"entity", [tree.crown objectID] , @"objectID", nil];
                 [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:query] applyAnimated:YES]];
                 break;
             }
             case 3:
             {
-                NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:@"TreeTrunkCondition", @"entity", [[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]] objectID] , @"objectID", nil];
+                NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:@"TreeTrunk", @"entity", [tree.trunk objectID] , @"objectID", nil];
                 [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:query] applyAnimated:YES]];
                 break;
             }
             case 4:
             {
-                NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:@"TreeRootFlareCondition", @"entity", [[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]] objectID] , @"objectID", nil];
+                NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:@"TreeRootFlare", @"entity", [tree.rootflare objectID] , @"objectID", nil];
                 [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:query] applyAnimated:YES]];
                 break;
             }
             case 5:
             {
-                NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:@"TreeRootsCondition", @"entity", [[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]] objectID] , @"objectID", nil];
+                NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:@"TreeRoots", @"entity", [tree.roots objectID] , @"objectID", nil];
                 [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:query] applyAnimated:YES]];
                 break;
             }
             case 6:
             {
-                NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:@"TreeOverallCondition", @"entity", [[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]] objectID] , @"objectID", nil];
+                NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:@"TreeOverall", @"entity", [tree.overall objectID] , @"objectID", nil];
                 [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:query] applyAnimated:YES]];
                 break;
             }
