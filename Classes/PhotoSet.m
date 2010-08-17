@@ -15,7 +15,7 @@
 @synthesize photos = _photos;
 @synthesize ids = _ids;
 
-- (id) initWithTitle:(NSString *)title photos:(NSMutableArray *)photos ids:(NSMutableArray *)ids{
+- (id) initWithTitle:(NSString *)title photos:(NSMutableArray *)photos ids:(NSMutableArray *)ids captions:(NSMutableArray *)captions{
     if ((self = [super init])) {
         [[TTURLCache sharedCache] setMaxPixelCount:0];
         self.title = title;
@@ -26,7 +26,7 @@
             UIImage *img = [UIImage imageWithData:[photos objectAtIndex:i]];
             NSString *url = [NSString stringWithFormat:@"temp://%@", path];
             [[TTURLCache sharedCache] storeImage:img forURL:url];
-            DisplayPhoto *photo = [[[DisplayPhoto alloc] initWithCaption:@"Caption" urlLarge:url urlSmall:url urlThumb:url size:img.size] autorelease];
+            DisplayPhoto *photo = [[[DisplayPhoto alloc] initWithCaption:[captions objectAtIndex:i] urlLarge:url urlSmall:url urlThumb:url size:img.size] autorelease];
             photo.photoSource = self;
             photo.index = i;
             [self.photos addObject:photo];

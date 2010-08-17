@@ -19,6 +19,7 @@
     NSManagedObjectID *objID;
     NSMutableArray *photos;
     NSMutableArray *ids;
+    NSMutableArray *captions;
     UIBarButtonItem* _deleteButton;
 }
 @property (nonatomic, assign) int count;
@@ -27,8 +28,9 @@
 @property (nonatomic, retain) NSManagedObjectID *objID;
 @property (nonatomic, retain) NSMutableArray *photos;
 @property (nonatomic, retain) NSMutableArray *ids;
+@property (nonatomic, retain) NSMutableArray *captions;
 -(id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query;
 -(void)deleteAction;
--(void)addPhotosFromObjectString:(NSString *)objectString withId:(NSManagedObjectID *)theId andComparator:(NSString * )comparator;
+-(void)addPhotosFromObjectString:(NSString *)objectString withId:(NSManagedObjectID *)theId;
 -(void)addPhotos:(NSSet *)arr;
 @end

@@ -599,8 +599,10 @@
         switch ([whichId intValue]) {
             case 1:
             {
-                TreeFormCondition *fc = (TreeFormCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
-                tree.form.condition = fc;
+                tree.form.condition = (TreeFormCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
+                //TreeFormCondition *fc = (TreeFormCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
+                //tree.form.condition = fc;
+                //[tree.form setValue:[fc managedObjectContext:managedObjectContext objectWithID:[fc objectID]] forKey:@"condition"];
                 break;
             }
             case 2:
@@ -744,7 +746,7 @@
             }
             case 6:
             {
-                NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:@"TreeOverall", @"entity", [tree.overall objectID] , @"objectID", nil];
+                NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:@"TreeOverall", @"entity", [tree.trunk objectID] , @"objectID", nil];
                 [[TTNavigator navigator] openURLAction:[[[TTURLAction actionWithURLPath:@"land://Photos"] applyQuery:query] applyAnimated:YES]];
                 break;
             }

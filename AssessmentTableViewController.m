@@ -20,13 +20,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	// Name the navigation bar
+	  // Name the navigation bar
     self.title = @"Assessments";
     
     //load managedObjectContext from AppDelegate
     if(!managedObjectContext){
         managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     }
+    
+    NSError *error=nil;
     
     //initialize actionsheet for adding new records
     typeActionSheet = [[UIActionSheet alloc] initWithTitle:@"Type" delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
@@ -38,12 +40,31 @@
     CGRect pickerFrame = CGRectMake(0, 40, 0, 0);
     typePickerView = [[UIPickerView alloc] initWithFrame:pickerFrame];
     landscapePickerView = [[UIPickerView alloc] initWithFrame:pickerFrame];
+	
+	  // Include an Add + button
+    UIBarButtonItem *addButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add:)];
+    self.navigationItem.rightBarButtonItem = addButtonItem;
+    [addButtonItem release];	
+	
+	  // Set the table view's row height
+    self.tableView.rowHeight = 52.0;
+	
+    //set up fetchedResultsController
+    [self fetchedResultsController];
+
+    //Perform fetch and catch any errors
+    [fetchedResultsController performFetch:&error];
+    
+    //prepopulate if there are no records
+    if ([[[fetchedResultsController sections] objectAtIndex:0] numberOfObjects] == 0) {
+        [self prepopulateDb];
+        [fetchedResultsController performFetch:&error];
+    }
     
     //fetch data for type picker
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"AssessmentType" inManagedObjectContext:managedObjectContext];
     [fetchRequest setEntity:entity];
-    NSError *error=nil;
     NSMutableArray *tmp = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:&error]];
     for (AssessmentType *at in tmp) {
         [typesArray addObject:at];
@@ -57,86 +78,62 @@
         [landscapesArray addObject:l];
     }
     [fetchRequest release];
-	
-	// Include an Add + button
-    UIBarButtonItem *addButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add:)];
-    self.navigationItem.rightBarButtonItem = addButtonItem;
-    [addButtonItem release];	
-	
-	// Set the table view's row height
-    self.tableView.rowHeight = 52.0;
-	
-    
-
-    //set up fetchedResultsController
-    [self fetchedResultsController];
-
-    //Perform fetch and catch any errors
-    [fetchedResultsController performFetch:&error];
-    
-    //prepopulate if there are no records
-    if ([[[fetchedResultsController sections] objectAtIndex:0] numberOfObjects] == 0) {
-        [self prepopulateDb];
-        [fetchedResultsController performFetch:&error];
-    }
-    
     
     if (error) {
         NSLog(@"Error occured fetching from db: %@", error);
     }
 }
 - (void)prepopulateDb {    
-    NSManagedObjectContext *context = [self managedObjectContext];    
-    
-    Landscape *landscape = [NSEntityDescription insertNewObjectForEntityForName:@"Landscape" inManagedObjectContext:context];
+       
+    Landscape *landscape = [NSEntityDescription insertNewObjectForEntityForName:@"Landscape" inManagedObjectContext:managedObjectContext];
     landscape.name = @"Test Landscape";
     
-    AssessmentType *type = [NSEntityDescription insertNewObjectForEntityForName: @"AssessmentType" inManagedObjectContext:context];
+    AssessmentType *type = [NSEntityDescription insertNewObjectForEntityForName: @"AssessmentType" inManagedObjectContext:managedObjectContext];
     type.name = @"Tree";
     
-    AssessmentTree *assessmentTree = [NSEntityDescription insertNewObjectForEntityForName:@"AssessmentTree" inManagedObjectContext:context];
+    AssessmentTree *assessmentTree = [NSEntityDescription insertNewObjectForEntityForName:@"AssessmentTree" inManagedObjectContext:managedObjectContext];
     assessmentTree.assessor = @"Test Assessor";
     assessmentTree.created_at = [NSDate date];
     assessmentTree.landscape = landscape;
     assessmentTree.type = type;
     
-    TreeCrownCondition *treeCrownCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeCrownCondition" inManagedObjectContext:context];
+    TreeCrownCondition *treeCrownCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeCrownCondition" inManagedObjectContext:managedObjectContext];
     treeCrownCondition.name = @"Good";
-    TreeFormCondition *treeFormCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeFormCondition" inManagedObjectContext:context];
+    TreeFormCondition *treeFormCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeFormCondition" inManagedObjectContext:managedObjectContext];
     treeFormCondition.name = @"Good";
-    TreeRootFlareCondition *treeRootFlareCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootFlareCondition" inManagedObjectContext:context];
+    TreeRootFlareCondition *treeRootFlareCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootFlareCondition" inManagedObjectContext:managedObjectContext];
     treeRootFlareCondition.name = @"Good";
-    TreeRootsCondition *treeRootsCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootsCondition" inManagedObjectContext:context];
+    TreeRootsCondition *treeRootsCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootsCondition" inManagedObjectContext:managedObjectContext];
     treeRootsCondition.name = @"Good";
-    TreeTrunkCondition *treeTrunkCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeTrunkCondition" inManagedObjectContext:context];
+    TreeTrunkCondition *treeTrunkCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeTrunkCondition" inManagedObjectContext:managedObjectContext];
     treeTrunkCondition.name = @"Good";
-    TreeOverallCondition *treeOverallCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeOverallCondition" inManagedObjectContext:context];
+    TreeOverallCondition *treeOverallCondition = [NSEntityDescription insertNewObjectForEntityForName:@"TreeOverallCondition" inManagedObjectContext:managedObjectContext];
     treeOverallCondition.name = @"Good";
     
-    TreeCrownRecommendation *treeCrownRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeCrownRecommendation" inManagedObjectContext:context];
+    TreeCrownRecommendation *treeCrownRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeCrownRecommendation" inManagedObjectContext:managedObjectContext];
     treeCrownRecommendation.name = @"No Action";
-    TreeFormRecommendation *treeFormRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeFormRecommendation" inManagedObjectContext:context];
+    TreeFormRecommendation *treeFormRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeFormRecommendation" inManagedObjectContext:managedObjectContext];
     treeFormRecommendation.name = @"No Action";
-    TreeRootFlareRecommendation *treeRootFlareRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootFlareRecommendation" inManagedObjectContext:context];
+    TreeRootFlareRecommendation *treeRootFlareRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootFlareRecommendation" inManagedObjectContext:managedObjectContext];
     treeRootFlareRecommendation.name = @"No Action";
-    TreeRootsRecommendation *treeRootsRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootsRecommendation" inManagedObjectContext:context];
+    TreeRootsRecommendation *treeRootsRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootsRecommendation" inManagedObjectContext:managedObjectContext];
     treeRootsRecommendation.name = @"No Action";
-    TreeTrunkRecommendation *treeTrunkRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeTrunkRecommendation" inManagedObjectContext:context];
+    TreeTrunkRecommendation *treeTrunkRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeTrunkRecommendation" inManagedObjectContext:managedObjectContext];
     treeTrunkRecommendation.name = @"No Action";
-    TreeOverallRecommendation *treeOverallRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeOverallRecommendation" inManagedObjectContext:context];
+    TreeOverallRecommendation *treeOverallRecommendation = [NSEntityDescription insertNewObjectForEntityForName:@"TreeOverallRecommendation" inManagedObjectContext:managedObjectContext];
     treeOverallRecommendation.name = @"No Action";
     
-    TreeCrown *treeCrown = [NSEntityDescription insertNewObjectForEntityForName:@"TreeCrown" inManagedObjectContext:context];
+    TreeCrown *treeCrown = [NSEntityDescription insertNewObjectForEntityForName:@"TreeCrown" inManagedObjectContext:managedObjectContext];
     assessmentTree.crown = treeCrown;
-    TreeForm *treeForm = [NSEntityDescription insertNewObjectForEntityForName:@"TreeForm" inManagedObjectContext:context];
+    TreeForm *treeForm = [NSEntityDescription insertNewObjectForEntityForName:@"TreeForm" inManagedObjectContext:managedObjectContext];
     assessmentTree.form = treeForm;
-    TreeTrunk *treeTrunk = [NSEntityDescription insertNewObjectForEntityForName:@"TreeTrunk" inManagedObjectContext:context];
+    TreeTrunk *treeTrunk = [NSEntityDescription insertNewObjectForEntityForName:@"TreeTrunk" inManagedObjectContext:managedObjectContext];
     assessmentTree.trunk = treeTrunk;
-    TreeRootFlare *treeRootFlare = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootFlare" inManagedObjectContext:context];
+    TreeRootFlare *treeRootFlare = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRootFlare" inManagedObjectContext:managedObjectContext];
     assessmentTree.rootflare = treeRootFlare;
-    TreeRoots *treeRoots = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRoots" inManagedObjectContext:context];
+    TreeRoots *treeRoots = [NSEntityDescription insertNewObjectForEntityForName:@"TreeRoots" inManagedObjectContext:managedObjectContext];
     assessmentTree.roots = treeRoots;
-    TreeOverall *treeOverall = [NSEntityDescription insertNewObjectForEntityForName:@"TreeOverall" inManagedObjectContext:context];
+    TreeOverall *treeOverall = [NSEntityDescription insertNewObjectForEntityForName:@"TreeOverall" inManagedObjectContext:managedObjectContext];
     assessmentTree.overall = treeOverall;
     
     assessmentTree.crown.condition = treeCrownCondition;
@@ -153,7 +150,7 @@
     assessmentTree.overall.recommendation = treeOverallRecommendation;
     
     NSError *error;
-    if (![context save:&error]) {
+    if (![managedObjectContext save:&error]) {
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
     }
 }
@@ -262,7 +259,9 @@
         if (![managedObjectContext save:&error]) {
             NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
         }
+        [self tableView:(UITableView *)(self.view) didSelectRowAtIndexPath:[fetchedResultsController indexPathForObject:new]];
     }
+    
 }
 
 - (void)dismissActionSheet:(id)sender {
@@ -438,7 +437,7 @@
         [fetchRequest setEntity:entity];
         
         // Edit the sort key as appropriate.
-        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"created_at" ascending:YES];
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"created_at" ascending:NO];
         NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
         
         [fetchRequest setSortDescriptors:sortDescriptors];

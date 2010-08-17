@@ -129,11 +129,10 @@
 }
 -(IBAction)saveAssessor:(id)sender {
     //edit the assessor field
-    NSManagedObjectContext *context = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     [assessorField resignFirstResponder];
     NSError *saveError;
     self.assessmentTree.assessor = [(UITextField*)sender text];
-    if (![context save:&saveError]) {
+    if (![managedObjectContext save:&saveError]) {
         NSLog(@"Saving changes to assessor failed: %@", saveError);
     }
     self.assessor.text = self.assessmentTree.assessor;

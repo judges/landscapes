@@ -12,7 +12,7 @@
 
 @implementation PhotoViewController
 @synthesize photoSet = _photoSet;
-@synthesize count, entityString, objID, photos, ids;
+@synthesize count, entityString, objID, photos, ids, captions;
 
 -(id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query {
     //initializes and passes assessment from parent controller
@@ -27,11 +27,12 @@
         } 
         photos = [[NSMutableArray alloc] init];
         ids = [[NSMutableArray alloc] init];
+        captions = [[NSMutableArray alloc] init];
     } 
     return self;    
 }
 
--(void)addPhotosFromObjectString:(NSString *)objectString withId:(NSManagedObjectID *)theId andComparator:(NSString *)comparator {
+-(void)addPhotosFromObjectString:(NSString *)objectString withId:(NSManagedObjectID *)theId {
     NSManagedObjectContext *managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     // Create the fetch request for the entity.
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -72,6 +73,7 @@
     for (Image *image in arr) {
         [photos addObject:image.image_data];
         [ids addObject:image.objectID];
+        [captions addObject:image.image_caption];
     }
 }
 
@@ -80,9 +82,9 @@
     if (!self.entityString) {
         self.entityString = @"Photo";
     } 
-    [self addPhotosFromObjectString:self.entityString withId:self.objID andComparator:@"self"];
+    [self addPhotosFromObjectString:self.entityString withId:self.objID];
 
-    self.photoSource = [[PhotoSet alloc] initWithTitle:@"Photos" photos:photos ids:ids];
+    self.photoSource = [[PhotoSet alloc] initWithTitle:@"Photos" photos:photos ids:ids captions:captions];
     count = [photos count];    
     
     //Override stuff from parent class
@@ -122,6 +124,7 @@
     }
     [photos release];
     [ids release];
+    [captions release];
     [_deleteButton release];
     self.photoSet = nil; 
     self.count = 0;
