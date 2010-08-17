@@ -96,7 +96,11 @@
                      style:UIBarButtonItemStylePlain target:self action:@selector(deleteAction)];
     _toolbar.items = [NSArray arrayWithObjects: space, space, _previousButton, space, _nextButton, space, _deleteButton, nil];
     _toolbar.tintColor = [UIColor colorWithRed:0.180 green:0.267 blue: 0.173 alpha:1.0];
+    if (!(count>0)) {
+        _deleteButton.enabled = NO;
+    }
 }
+
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     if (!buttonIndex == [actionSheet cancelButtonIndex])
@@ -106,6 +110,9 @@
         [self moveToNextValidPhoto];
         [_scrollView reloadData];
         [self refresh];
+        if (!([photos count]>0)) {
+            _deleteButton.enabled = NO;
+        }
     }
 }
 
