@@ -56,6 +56,16 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+    //clear the shared cache
+    int urlctr = 0;
+    NSString *path = [NSString stringWithFormat:@"images/%d.jpg", urlctr];
+    NSString *url = [NSString stringWithFormat:@"temp://%@", path];
+    while ([[TTURLCache sharedCache] hasDataForURL:url]) {
+        path = [NSString stringWithFormat:@"images/%d.jpg",urlctr];
+        url = [NSString stringWithFormat:@"temp://%@", path];
+        [[TTURLCache sharedCache] removeURL:url fromDisk:YES];
+        ++urlctr;
+    }
 }
 
 - (void)viewDidLoad {

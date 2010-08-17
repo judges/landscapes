@@ -77,6 +77,16 @@
     } else {
         [button6 setBackgroundImage:[UIImage imageNamed:@"button-default.png"] forState:UIControlStateNormal];
     }
+    //clear the shared cache
+    int urlctr = 0;
+    NSString *path = [NSString stringWithFormat:@"images/%d.jpg", urlctr];
+    NSString *url = [NSString stringWithFormat:@"temp://%@", path];
+    while ([[TTURLCache sharedCache] hasDataForURL:url]) {
+        path = [NSString stringWithFormat:@"images/%d.jpg",urlctr];
+        url = [NSString stringWithFormat:@"temp://%@", path];
+        [[TTURLCache sharedCache] removeURL:url fromDisk:YES];
+        ++urlctr;
+    }
 }
 
 -(IBAction)segmentSwitch:(id)sender {

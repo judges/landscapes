@@ -116,16 +116,6 @@
     [actionSheet release];
 }
 
-- (void) viewDidDisappear:(BOOL)animated {
-    //Find the right place to unload this stuff!
-    
-    for(int i = 0; i < self.count; ++i) {
-        NSString *path = [NSString stringWithFormat:@"images/%d.jpg",i];
-        NSString *url = [NSString stringWithFormat:@"temp://%@", path];
-        [[TTURLCache sharedCache] removeURL:url fromDisk:YES];
-    } 
-}
-
 - (void) dealloc {
     for (DisplayPhoto *p in self.photoSet.photos) {
         [p release];
