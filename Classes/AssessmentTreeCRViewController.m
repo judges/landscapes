@@ -595,50 +595,38 @@
 }
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     //changes condition or recommendation to selected row
-	NSLog(@"didSelectRow Called");
     if (thePickerView == conditionPicker) {
         [conditionField setHidden: YES];
         [conditionSaveButton setHidden: YES];
         switch ([whichId intValue]) {
             case 1:
             {
-				NSLog(@"Condition Array: %@", conditionArray);
-				NSLog(@"At index: %i", [conditionPicker selectedRowInComponent:0]);
-				NSLog(@"%@", [conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]]);
-                tree.form.condition = [conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
-                //TreeFormCondition *fc = (TreeFormCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
-                //tree.form.condition = fc;
-                //[tree.form setValue:[fc managedObjectContext:managedObjectContext objectWithID:[fc objectID]] forKey:@"condition"];
+				tree.form.condition = [conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
                 break;
             }
             case 2:
             {
-                TreeCrownCondition *fc = (TreeCrownCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
-                tree.crown.condition = fc;
+                tree.crown.condition = [conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
                 break;
             }
             case 3:
             {
-                TreeTrunkCondition *fc = (TreeTrunkCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
-                tree.trunk.condition = fc;
+                tree.trunk.condition = [conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
                 break;
             }
             case 4:
             {
-                TreeRootFlareCondition *fc = (TreeRootFlareCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
-                tree.rootflare.condition = fc;
+                tree.rootflare.condition = [conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
                 break;
             }
             case 5:
             {
-                TreeRootsCondition *fc = (TreeRootsCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
-                tree.roots.condition = fc;
+                tree.roots.condition = [conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
                 break;
             }
             case 6:
             {
-                TreeOverallCondition *fc = (TreeOverallCondition *)[conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
-                tree.overall.condition = fc;
+                tree.overall.condition = [conditionArray objectAtIndex:[conditionPicker selectedRowInComponent:0]];
                 break;
             }
             default:
@@ -651,38 +639,32 @@
         switch ([whichId intValue]) {
             case 1:
             {
-                TreeFormRecommendation *fr = (TreeFormRecommendation *)[recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
-                tree.form.recommendation = fr;
+                tree.form.recommendation = [recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
                 break;
             }
             case 2:
             {
-                TreeCrownRecommendation *fr = (TreeCrownRecommendation *)[recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
-                tree.crown.recommendation = fr;
+                tree.crown.recommendation = [recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
                 break;
             }
             case 3:
             {
-                TreeTrunkRecommendation *fc = (TreeTrunkRecommendation *)[recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
-                tree.trunk.recommendation = fc;
+                tree.trunk.recommendation = [recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
                 break;
             }
             case 4:
             {
-                TreeRootFlareRecommendation *fc = (TreeRootFlareRecommendation *)[recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
-                tree.rootflare.recommendation = fc;
+                tree.rootflare.recommendation = [recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
                 break;
             }
             case 5:
             {
-                TreeRootsRecommendation *fc = (TreeRootsRecommendation *)[recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
-                tree.roots.recommendation = fc;
+                tree.roots.recommendation = [recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
                 break;
             }
             case 6:
             {
-                TreeOverallRecommendation *fc = (TreeOverallRecommendation *)[recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
-                tree.overall.recommendation = fc;
+                tree.overall.recommendation = [recommendationArray objectAtIndex:[recommendationPicker selectedRowInComponent:0]];
                 break;
             }
             default:
